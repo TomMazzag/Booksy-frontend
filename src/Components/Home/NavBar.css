@@ -3,26 +3,36 @@
 .navbar {
     background-color: #A1CCD1;
     color: #fff;
-    padding: 10px;
+    padding: 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
 .navbar-logo {
-    font-size: 1.5em;
+    display: flex;
+    align-items: center;
+    color: #000000;
+    font-size: 35px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-left: auto;
 }
 
 .navbar-categories {
-    font-weight: bold;
-    cursor: pointer;
+    display: flex;
+    align-items: center;
     color: #000000;
     font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-left: auto;
 }
 
 .navbar-search {
     margin-left: auto; /* Push search input to the right */
-    width: 340px;
+    width: auto;
+    
 }
 
 .navbar-search input[type="text"] {
@@ -30,6 +40,7 @@
     border-radius: 5px;
     border: 1px solid #ccc;
     width: 250px;
+    height: 18px;
 }
 
 .navbar-actions {
@@ -38,6 +49,7 @@
     color: #000000;
     font-size: 20px;
     font-weight: bold;
+    margin-left: auto;
 }
 
 .navbar-actions div {

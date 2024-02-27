@@ -1,5 +1,5 @@
-// import { Link } from "react-router-dom";
-// import React from 'react';
+// src/Home/HomePage.jsx
+
 import Navbar from "../Components/Home/NavBar.jsx";
 import CategoryCard from "../Components/Home/CategoryCard.jsx";
 import Footer from "../Components/Home/Footer.jsx";

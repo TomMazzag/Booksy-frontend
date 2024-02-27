@@ -1,8 +1,11 @@
+/* src/Components/Home/Footer.css */
+
+
     .footer {
         background-color: #f8f8f8;
         padding: 20px 0;
         color: #333;
-        margin-top: 40px;
+        margin-top: 60px;
     }
     
     .footer-content {
@@ -21,6 +24,12 @@
     .footer-section h5 {
         color: #000;
         margin-bottom: 10px;
+        font-size: medium;
+    }
+
+    .footer-section h5:hover {
+        text-decoration: underline;
+        cursor: pointer;
     }
     
     .footer-section ul {
@@ -32,6 +41,7 @@
         margin-bottom: 5px;
         cursor: pointer;
         color: #666;
+        font-size: small;
     }
     
     .footer-section ul li:hover {

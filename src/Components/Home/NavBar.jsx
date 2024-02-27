@@ -1,22 +1,13 @@
-// import React from 'react';
-// import { useNavigate } from "react-router-dom";
+// src/Components/Home/NavBar.jsx
 
-
-// import React from 'react';
-// import { useNavigate } from "react-router-dom";
 import "../Home/NavBar.css";
-
-
-
-
-
 
 
     const Navbar = () => {
     return (
         <nav className="navbar">
         <div className="navbar-logo">
-            {/* Insert your logo here */}
+            <div className="logo"> Booksy </div>
         </div>
         <div className="navbar-categories">
             <div className="categories"> Categories </div>
