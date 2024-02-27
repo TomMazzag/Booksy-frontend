@@ -1,0 +1,32 @@
+
+.home-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 33vh; /* Set the height to one-third of the viewport height */
+}
+
+.home-page h1 {
+    font-size: 2em; /* Adjust font size as needed */
+}
+
+.category-grid-container {
+    display: grid;
+    justify-content: center; /* Center align horizontally */
+}
+
+
+.category-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columns */
+    grid-gap: 20px; /* spacing between cards */
+    justify-content: center; /* center align grid horizontally */
+}
+
+.category-card {
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px;
+}
