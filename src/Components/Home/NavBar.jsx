@@ -1,47 +1,86 @@
 // import React from 'react';
-import { useNavigate } from "react-router-dom";
-import "../Home/NavBar.css" // Import CSS file
+// import { useNavigate } from "react-router-dom";
 
-const Navbar = () => {
-    const navigate = useNavigate();
-    const id = window.localStorage.getItem("id")
 
-// all navigation routes are placeholders, as we will be using modals
-    const profilePage = (id) => {
-        navigate(`/profile/${id}`);
-    };
-    const home = () => {
-        navigate("/posts")
-    }
+// import React from 'react';
+// import { useNavigate } from "react-router-dom";
+import "../Home/NavBar.css";
 
-    const shoppingBasket = () => {
-        navigate("/basket")
-    }
 
-    const favouriteBooks = () => {
-        navigate(`/favourites/${id}`)
-    }
 
-    const signIn = () => {
-        navigate("signIn")
-    }
 
+
+
+
+    const Navbar = () => {
     return (
-        <nav>
-            <div onClick={home} className="logoAndText">
-                <p>Booksy</p>
-            </div>
-            
-            <div className="pageButtons">
-                <button onClick={home}>Home</button>
-                <button onClick={() => profilePage(id)}>Profile</button>
-                <button onClick={home}>Home</button>
-                <button onClick={shoppingBasket}>Shopping Basket</button>
-                <button onClick={favouriteBooks}>Favourite Books</button>
-                <button onClick={signIn}>Sign In</button>
-            </div>
+        <nav className="navbar">
+        <div className="navbar-logo">
+            {/* Insert your logo here */}
+        </div>
+        <div className="navbar-categories">
+            {/* You can dynamically generate categories or hardcode them here */}
+        </div>
+        <div className="navbar-search">
+            <input type="text" placeholder="Search Books" />
+            {/* Add search icon if necessary */}
+        </div>
+        <div className="navbar-actions">
+            {/* Replace the placeholders with actual paths to your icons or components */}
+            <div className="sign-in">Sign In</div>
+            <div className="profile">Profile</div>
+            <div className="heart">♥</div>
+            <div className="basket">Shopping Cart</div>
+        </div>
         </nav>
     );
-};
+    };
 
-export default Navbar;
+    export default Navbar;
+
+
+
+
+
+
+// const Navbar = () => {
+//     const navigate = useNavigate();
+//     const id = window.localStorage.getItem("id")
+
+//     const profilePage = () => {
+//         navigate(`/profile/${id}`);
+//     };
+
+//     const home = () => {
+//         navigate("/posts");
+//     };
+
+//     const shoppingBasket = () => {
+//         navigate("/basket");
+//     };
+
+//     const favouriteBooks = () => {
+//         navigate(`/favourites/${id}`);
+//     };
+
+//     const signIn = () => {
+//         navigate("/signIn");
+//     };
+
+//     return (
+//         <nav>
+//             <div onClick={home}>
+//                 <p>Booksy</p>
+//             </div>
+//             <div>
+//                 <button onClick={home}>Home</button>
+//                 <button onClick={profilePage}>Profile</button>
+//                 <button onClick={shoppingBasket}>Shopping Basket</button>
+//                 <button onClick={favouriteBooks}>Favourite Books</button>
+//                 <button onClick={signIn}>Sign In</button>
+//             </div>
+//         </nav>
+//     );
+// };
+
+// export default Navbar;

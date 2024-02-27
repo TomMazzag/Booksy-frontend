@@ -1,28 +1,43 @@
-/* Navbar.css */
+/* NavBar.css */
 
-nav {
-    background-color: #333; /* Dark background color */
-    color: white; /* Text color */
-    padding: 10px; /* Padding around the navbar */
-}
-
-.logoAndText {
-    cursor: pointer; /* Show pointer cursor when hovering over the logo */
-}
-
-.pageButtons {
+.navbar {
+    background-color: #A1CCD1;
+    color: #fff;
+    padding: 10px;
     display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-.pageButtons button {
-    background-color: transparent;
-    border: none;
-    color: white;
-    padding: 10px 20px;
-    margin-right: 10px;
+.navbar-logo {
+    font-size: 1.5em;
+}
+
+.navbar-categories {
+    /* Add styles for categories if needed */
+}
+
+.navbar-search {
+    margin-left: auto; /* Push search input to the right */
+}
+
+.navbar-search input[type="text"] {
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.navbar-actions {
+    display: flex;
+    align-items: center;
+}
+
+.navbar-actions div {
+    margin-left: 10px;
     cursor: pointer;
 }
 
-.pageButtons button:hover {
-    background-color: rgba(255, 255, 255, 0.1); /* Light background color on hover */
+/* Styles for navigation buttons */
+.navbar-actions div:hover {
+    text-decoration: underline;
 }
