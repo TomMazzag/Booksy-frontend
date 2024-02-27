@@ -1,6 +1,6 @@
 // import { Link } from "react-router-dom";
 // import React from 'react';
-// import Navbar from "../Components/Home/NavBar.jsx";
+import Navbar from "../Components/Home/NavBar.jsx";
 import "./HomePage.css";
 import CategoryCard from "../Components/Home/CategoryCard.jsx";
 
@@ -10,7 +10,7 @@ export const HomePage = () => {
 
     return (
         <>
-        {/* <Navbar /> */}
+        <Navbar />
         <div className="title">
             <h1>Shop By Category!</h1>
             </div>

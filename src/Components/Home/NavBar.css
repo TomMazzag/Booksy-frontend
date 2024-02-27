@@ -1,68 +1,43 @@
-/* nav {
-    background: #1877F2;
+/* NavBar.css */
+
+.navbar {
+    background-color: #A1CCD1;
+    color: #fff;
     padding: 10px;
     display: flex;
-    align-items: center;
     justify-content: space-between;
-    width: 100%;
-    box-sizing: border-box;
-    }
-    
-    nav .logo {
+    align-items: center;
+}
 
-        pointer-events: none;
-        cursor: pointer;
-    }
+.navbar-logo {
+    font-size: 1.5em;
+}
 
-    nav .logoAndText {
-        display: flex;
-        align-items: center;
-        pointer-events: auto;
-        cursor: pointer;
-    }
-    
-    nav .pageButtons {
-        display: flex;
-        align-items: center;
-        position: absolute;
-        left: 50%;
-        transform: translateX(-50%);
-    }
+.navbar-categories {
+    /* Add styles for categories if needed */
+}
 
-    nav p {
-        margin: 0;
-        color: white;
-        font-size: 1.7rem;
-        font-weight: 800;
-        margin-left: 10px;
-    }
+.navbar-search {
+    margin-left: auto; /* Push search input to the right */
+}
 
-
-    nav button {
-    background: #1877F2;
-    color: white;
-    padding: 8px 16px;
-    border-radius: 4px;
-    cursor: pointer;
-    margin-left: 10px;
-    outline: none;
-    border: none;
-    font-size: larger;
-    }
-
-    nav button:hover {
-        background-color: rgba(0, 0, 255, 0.202);
-    }
-
-    nav input {
-    padding: 8px;
-    border-radius: 4px;
+.navbar-search input[type="text"] {
+    padding: 5px;
+    border-radius: 5px;
     border: 1px solid #ccc;
-    margin-right: 10px;
-    position: relative;
-    }
+}
 
-    nav .flex-container {
-        display: flex;
-        align-items: center;
-    } */
+.navbar-actions {
+    display: flex;
+    align-items: center;
+}
+
+.navbar-actions div {
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+/* Styles for navigation buttons */
+.navbar-actions div:hover {
+    text-decoration: underline;
+}
