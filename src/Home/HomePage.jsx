@@ -1,8 +1,10 @@
 // import { Link } from "react-router-dom";
 // import React from 'react';
 import Navbar from "../Components/Home/NavBar.jsx";
-import "./HomePage.css";
 import CategoryCard from "../Components/Home/CategoryCard.jsx";
+import Footer from "../Components/Home/Footer.jsx";
+import "./HomePage.css";
+
 
 export const HomePage = () => {
 
@@ -17,7 +19,6 @@ export const HomePage = () => {
         "Mystery",
         "Autobiography"
     ];
-    
 
     return (
         <>
@@ -32,6 +33,7 @@ export const HomePage = () => {
                     ))}
                 </div>
             </div>
+            <Footer />
         </>
     );
 }

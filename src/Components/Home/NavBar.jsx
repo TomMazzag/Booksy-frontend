@@ -19,7 +19,7 @@ import "../Home/NavBar.css";
             {/* Insert your logo here */}
         </div>
         <div className="navbar-categories">
-            {/* You can dynamically generate categories or hardcode them here */}
+            <div className="categories"> Categories </div>
         </div>
         <div className="navbar-search">
             <input type="text" placeholder="Search Books" />
