@@ -1,13 +1,24 @@
 // import { Link } from "react-router-dom";
 // import React from 'react';
 import Navbar from "../Components/Home/NavBar.jsx";
-import "./HomePage.css";
 import CategoryCard from "../Components/Home/CategoryCard.jsx";
 import Footer from "../Components/Home/Footer.jsx";
+import "./HomePage.css";
+
 
 export const HomePage = () => {
 
-    const categories = ["Science Fiction", "Romance", "Philosophy", "Airport reads", "Adventure", "Horror"];
+    const categories = [
+        "Young Adult",
+        "Romance",
+        "Action",
+        "History",
+        "Non-fiction",
+        "Thriller",
+        "LGBTQIA+",
+        "Mystery",
+        "Autobiography"
+    ];
 
     return (
         <>
