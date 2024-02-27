@@ -10,19 +10,28 @@
 }
 
 .navbar-logo {
-    font-size: 1.5em;
+    display: flex;
+    align-items: center;
+    color: #000000;
+    font-size: 35px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-left: auto;
 }
 
 .navbar-categories {
-    font-weight: bold;
-    cursor: pointer;
+    display: flex;
+    align-items: center;
     color: #000000;
     font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-left: auto;
 }
 
 .navbar-search {
     margin-left: auto; /* Push search input to the right */
-    width: 340px;
+    width: auto;
 }
 
 .navbar-search input[type="text"] {
@@ -38,6 +47,7 @@
     color: #000000;
     font-size: 20px;
     font-weight: bold;
+    margin-left: auto;
 }
 
 .navbar-actions div {
