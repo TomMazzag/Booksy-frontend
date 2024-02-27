@@ -36,7 +36,7 @@ body.active-modal {
 .close-modal {
     position: absolute;
     top: 30px;
-    right:60px;
+    right: 35px;
     padding: 5px 7px;
     background-color: rgb(255, 255, 255);
 }
@@ -46,4 +46,25 @@ body.active-modal {
 }
 .cl-formButtonPrimary:Hover {
     background-color: rgb(124, 157, 150);
+}
+
+.cl-internal-19xp6v9 {
+    box-sizing: inherit;
+    display: flex;
+    flex-flow: column;
+    -webkit-box-align: stretch;
+    align-items: stretch;
+    -webkit-box-pack: start;
+    justify-content: flex-start;
+    gap: 3.5rem;
+    will-change: transform, opacity, height;
+    border-radius: 1rem;
+    background-color: white;
+    transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform;
+    transition-duration: 200ms;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 24px 48px;
+    border: 1px solid transparent;
+    width: 25rem;
+    max-width: calc(-5rem + 100vw);
+    padding: 3rem 3rem 3rem;
 }
