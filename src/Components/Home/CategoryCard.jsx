@@ -1,7 +1,8 @@
-// import React from 'react';
+// src/Components/Home/CategoryCard.jsx
+
 import "./CategoryCard.css"
 
-const CategoryCard = ({category}) => {
+const CategoryCard = ({ category }) => {
 
     let images = ["http://books.google.com/books/content?id=s1gVAAAAYAAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api", 
     "http://books.google.com/books/content?id=80pje6QWDEYC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",

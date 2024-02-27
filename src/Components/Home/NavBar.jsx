@@ -1,9 +1,5 @@
-// import React from 'react';
-// import { useNavigate } from "react-router-dom";
+// src/Components/Home/NavBar.jsx
 
-
-// import React from 'react';
-// import { useNavigate } from "react-router-dom";
 import "../Home/NavBar.css";
 
 

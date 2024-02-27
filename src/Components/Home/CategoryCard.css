@@ -1,3 +1,5 @@
+/* src/Components/Home/CategoryCard.css */
+
 .category-grid-container {
     display: grid;
     justify-content: center; /* Center align horizontally */
@@ -15,7 +17,7 @@
     background-color: #fff; /* White background */
     border: 1px solid #ddd; /* Light border */
     border-radius: 5px; /* Rounded corners */
-    padding: 50px; /* Padding around the card content */
+    padding: 50pxx; /*Padding around the card content */
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Shadow effect */
     transition: box-shadow 0.3s ease; 
 
@@ -27,7 +29,7 @@
 .category-card {
     background-color: #fff; /* White background */
     border: 1px solid #ddd; /* Light border */
-    border-radius: 5px; /* Rounded corners */
+    border-radius: 30px; /* Rounded corners */
     padding: 30px; /* Padding around the card content */
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Shadow effect */
     transition: box-shadow 0.3s ease; 
