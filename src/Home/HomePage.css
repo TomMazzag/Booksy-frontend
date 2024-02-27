@@ -20,6 +20,7 @@ body {
 .category-grid-container {
     display: grid;
     justify-content: center; /* Center align horizontally */
+    height:auto;
 }
 
 .category-grid {
@@ -46,7 +47,7 @@ body {
     background-color: #fff; /* White background */
     border: 1px solid #ddd; /* Light border */
     border-radius: 5px; /* Rounded corners */
-    padding: 40px; /* Padding around the card content */
+    padding: 30px; /* Padding around the card content */
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Shadow effect */
     transition: box-shadow 0.3s ease; 
 

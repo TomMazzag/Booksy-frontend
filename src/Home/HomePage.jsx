@@ -3,6 +3,7 @@
 import Navbar from "../Components/Home/NavBar.jsx";
 import "./HomePage.css";
 import CategoryCard from "../Components/Home/CategoryCard.jsx";
+import Footer from "../Components/Home/Footer.jsx";
 
 export const HomePage = () => {
 
@@ -21,6 +22,7 @@ export const HomePage = () => {
                     ))}
                 </div>
             </div>
+            <Footer />
         </>
     );
 }
