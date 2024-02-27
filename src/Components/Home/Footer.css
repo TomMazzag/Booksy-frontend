@@ -2,6 +2,7 @@
         background-color: #f8f8f8;
         padding: 20px 0;
         color: #333;
+        margin-top: 40px;
     }
     
     .footer-content {
@@ -51,6 +52,7 @@
     background-color: #A1CCD1;
     padding: 20px 0;
     color: #333;
+    padding: 2px 0;
 }
 .footer-content {
     display: flex;

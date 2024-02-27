@@ -39,7 +39,7 @@
             </div>
         </div>
         <div className="footer-bottom">
-            <p>&copy; {new Date().getFullYear()} YourAppName. All rights reserved.</p>
+            <p>&copy; {new Date().getFullYear()} Booksy. All rights reserved.</p>
         </div>
         </footer>
     );

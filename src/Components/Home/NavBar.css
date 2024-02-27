@@ -14,22 +14,30 @@
 }
 
 .navbar-categories {
-    /* Add styles for categories if needed */
+    font-weight: bold;
+    cursor: pointer;
+    color: #000000;
+    font-size: 20px;
 }
 
 .navbar-search {
     margin-left: auto; /* Push search input to the right */
+    width: 340px;
 }
 
 .navbar-search input[type="text"] {
     padding: 5px;
     border-radius: 5px;
     border: 1px solid #ccc;
+    width: 250px;
 }
 
 .navbar-actions {
     display: flex;
     align-items: center;
+    color: #000000;
+    font-size: 20px;
+    font-weight: bold;
 }
 
 .navbar-actions div {
@@ -39,5 +47,9 @@
 
 /* Styles for navigation buttons */
 .navbar-actions div:hover {
+    text-decoration: underline;
+}
+
+.navbar-categories div:hover {
     text-decoration: underline;
 }
