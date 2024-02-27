@@ -1,10 +1,8 @@
 // import { Link } from "react-router-dom";
-// import Navbar from "../Components/Home/NavBar";
 // import React from 'react';
-import Navbar from "../Components/Home/NavBar";
+// import Navbar from "../Components/Home/NavBar.jsx";
 import "./HomePage.css";
-import CategoryCard from "../Components/Home/CategoryCard";
-
+import CategoryCard from "../Components/Home/CategoryCard.jsx";
 
 export const HomePage = () => {
 
