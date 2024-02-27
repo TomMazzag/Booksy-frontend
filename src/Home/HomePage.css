@@ -1,9 +1,9 @@
 
-.home-page {
+.title {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 33vh; /* Set the height to one-third of the viewport height */
+    height: 35vh; /* Set the height to one-third of the viewport height */
 }
 
 .home-page h1 {
