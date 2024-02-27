@@ -1,0 +1,51 @@
+.nav-item {
+    margin-right: 20px;
+}
+
+.btn-outline-danger {
+    color: red;
+}
+
+.fa-heart {
+    color: red;
+}
+
+/* Ensure the .centered-content class affects only direct children for layout purposes */
+.centered-content > .row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 20px; /* Adjust spacing as needed */
+}
+
+/* This will make the book description take full width */
+.centered-content > .row:nth-child(2),
+.centered-content > .row:nth-child(3) {
+flex-basis: 100%;
+}
+
+/* Ensure the image and details are aligned side by side */
+.centered-content > .row > .col-md-4 {
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
+.centered-content > .row > .col-md-5 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+/* Adjust the book description and reviews rows to center their content */
+.centered-content > .row > .col-md-10.offset-md-1 {
+display: flex;
+justify-content: center;
+text-align: left; /* Align text to the left */
+}
+
+.go_back_button {
+    position: absolute;
+    left: 1rem;
+}
