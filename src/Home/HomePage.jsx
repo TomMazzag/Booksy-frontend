@@ -1,6 +1,7 @@
 // import { Link } from "react-router-dom";
 // import Navbar from "../Components/Home/NavBar";
 // import React from 'react';
+import Navbar from "../Components/Home/NavBar";
 import "./HomePage.css";
 import CategoryCard from "../Components/Home/CategoryCard";
 
@@ -11,6 +12,7 @@ export const HomePage = () => {
 
     return (
         <>
+        {/* <Navbar /> */}
         <div className="title">
             <h1>Shop By Category!</h1>
             </div>
@@ -24,3 +26,12 @@ export const HomePage = () => {
         </>
     );
 }
+
+
+
+// TODO: Code which allows the category cards to become a button, navigate to 
+// relevant page: 
+
+// // <Link key={index} to={`/category/${category}`}>
+// <CategoryCard category={category} />
+// </Link>
