@@ -6,7 +6,18 @@ import CategoryCard from "../Components/Home/CategoryCard.jsx";
 
 export const HomePage = () => {
 
-    const categories = ["Science Fiction", "Romance", "Philosophy", "Airport reads", "Adventure", "Horror"];
+    const categories = [
+        "Young Adult",
+        "Romance",
+        "Action",
+        "History",
+        "Non-fiction",
+        "Thriller",
+        "LGBTQIA+",
+        "Mystery",
+        "Autobiography"
+    ];
+    
 
     return (
         <>
