@@ -12,9 +12,9 @@ function SignInComponent () {
 
     return (
         <div> 
-            <h4 onClick={toggleModal} className="button-modal"> 
+            <p onClick={toggleModal} className="button-modal"> 
             Account
-            </h4>
+            </p>
                 {modal && (
                     <div className ="modal">
                         <div className="overlay">
