@@ -1,0 +1,21 @@
+/* src/Home/HomePage.css */
+
+body {
+    background-color: #F4F2DE; /* Change to your desired background color */
+    margin: 0; /* Reset default body margin */
+    padding: 0; 
+    font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+}
+
+.title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 20vh; /* Set the height to one-third of the viewport height */
+}
+
+.title h1 {
+    font-size: 2.5em; /* Adjust font size as needed */
+    font-family: "Guardian-EgypTT", "Charter", "Charter Bitstream", "Cambria", "Noto Serif Light", "Droid Serif", "Georgia", "serif";
+    letter-spacing: .46515px;
+}
