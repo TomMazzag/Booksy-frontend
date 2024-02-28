@@ -4,7 +4,7 @@ import Navbar from "../../components/Home/NavBar.jsx";
 import CategoryCard from "../../components/Home/CategoryCard.jsx";
 import Footer from "../../components/Home/Footer.jsx";
 import "./HomePage.css";
-
+import { Link } from "react-router-dom";
 
 export const HomePage = () => {
 
@@ -24,7 +24,7 @@ export const HomePage = () => {
         <>
         <Navbar />
         <div className="title">
-            <h1>Shop By Category!</h1>
+            <h1>Shop By Category! </h1>
             </div>
             <div className="category-grid-container">
                 <div className="category-grid">

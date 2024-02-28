@@ -1,7 +1,6 @@
 import { SignIn } from "@clerk/clerk-react";
 import { useState} from 'react'
-import '../Authentication/modal.css'
-
+import '../Authentication/Modal.css'
 
 function SignInComponent () {
 
@@ -14,7 +13,7 @@ function SignInComponent () {
     return (
         <div> 
             <button onClick={toggleModal} className="button-modal"> 
-            Placeholder button
+            Log in 
             </button>
                 {modal && (
                     <div className ="modal">

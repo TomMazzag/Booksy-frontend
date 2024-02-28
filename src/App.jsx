@@ -1,20 +1,27 @@
-// src/App.jsx
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
-// import { useState } from 'react'
-// import reactLogo from './assets/react.svg'
-// import viteLogo from '/vite.svg'
-// import './App.css'
-// import Navbar from './Components/Home/NavBar'
 import { HomePage } from "./pages/Home/HomePage"
+import { SignupPage } from "./pages/Home/SignupPage";
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <HomePage />,
+  },
+  {
+    path: "/sign-up",
+    element: <SignupPage />
+  }
+]);
+
 
 function App() {
-  // const [count, setCount] = useState(0)
 
   return (
     <>
-    <HomePage />
+    <RouterProvider router={router} />
     </>
   )
-}
+};
 
-export default App
+export default App;
