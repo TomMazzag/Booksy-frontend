@@ -1,8 +1,8 @@
 // src/Home/HomePage.jsx
 
-import Navbar from "../Components/Home/NavBar.jsx";
-import CategoryCard from "../Components/Home/CategoryCard.jsx";
-import Footer from "../Components/Home/Footer.jsx";
+import Navbar from "../../components/Home/NavBar.jsx";
+import CategoryCard from "../../components/Home/CategoryCard.jsx";
+import Footer from "../../components/Home/Footer.jsx";
 import "./HomePage.css";
 
 

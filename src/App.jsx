@@ -5,7 +5,7 @@
 // import viteLogo from '/vite.svg'
 // import './App.css'
 // import Navbar from './Components/Home/NavBar'
-import { HomePage } from "./Home/HomePage"
+import { HomePage } from "./pages/Home/HomePage"
 
 function App() {
   // const [count, setCount] = useState(0)
