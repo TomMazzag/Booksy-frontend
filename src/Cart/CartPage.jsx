@@ -2,18 +2,21 @@
     
     import React from 'react';
     import './CartPage.css'; 
+    import Navbar from '../Components/Home/NavBar';
+    import Footer from '../Components/Home/Footer';
+    
 
-    const CartPage = () => {
+    export const CartPage = () => {
     return (
         <>
-
+            <Navbar />
         {/* Main Content Area */}
         <main className="cart-container">
             {/* Left Column: Cart Items */}
             <section className="cart-items">
             {/* Single Cart Item */}
             <article className="cart-item">
-                <img src="./assets/react.svg" alt="Item Image" />
+                <img src="./assets/book.jpeg" alt="Item Image" />
                 <div className="item-details">
                 <h3>Item Title</h3>
                 <p>Price: $9.99</p>
@@ -51,10 +54,11 @@
             </form>
             </aside>
         </main>
+        <Footer />
 
         
         </>
     );
     };
 
-    export default CartPage;
+    
