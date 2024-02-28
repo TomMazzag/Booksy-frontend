@@ -12,18 +12,18 @@
 .navbar-logo {
     display: flex;
     align-items: center;
-    color: #000000;
+    color: #F4F2DE;
     font-size: 35px;
-    font-weight: bold;
+    font-weight: lighter;
     cursor: pointer;
-    margin-left: auto;
+    margin-left: 10px;
 }
 
 .navbar-categories {
     display: flex;
     align-items: center;
     color: #000000;
-    font-size: 20px;
+    font-size: 15px;
     font-weight: bold;
     cursor: pointer;
     margin-left: auto;
@@ -39,7 +39,7 @@
     padding: 5px;
     border-radius: 5px;
     border: 1px solid #ccc;
-    width: 250px;
+    width: 850px;
     height: 18px;
 }
 
@@ -47,7 +47,7 @@
     display: flex;
     align-items: center;
     color: #000000;
-    font-size: 20px;
+    font-size: 15px;
     font-weight: bold;
     margin-left: auto;
 }
@@ -65,3 +65,41 @@
 .navbar-categories div:hover {
     text-decoration: underline;
 }
+
+
+
+
+    
+    
+   
+    
+    .icon-container {
+        position: relative;
+        display: inline-block;
+        cursor: pointer;
+        }
+        
+        .icon-heart {
+            /* Add your styling for the heart icon here */
+            font-size: 24px; /* Example size, adjust as needed */
+        }
+        
+        .tooltip {
+            visibility: hidden;
+            width: auto;
+            background-color: blue;
+            color: white;
+            text-align: center;
+            border-radius: 6px;
+            padding: 5px;
+            position: absolute;
+            z-index: 1;
+            bottom: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            white-space: nowrap;
+        }
+        
+        .icon-container:hover .tooltip {
+            visibility: visible;
+        }

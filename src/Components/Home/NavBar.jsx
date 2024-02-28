@@ -19,9 +19,10 @@ import "../Home/NavBar.css";
         <div className="navbar-actions">
             {/* Replace the placeholders with actual paths to your icons or components */}
             <div className="sign-in">Sign In</div>
-            <div className="profile">Profile</div>
+            <div className="profile">👤</div>
             <div className="heart">♥</div>
-            <div className="basket">Shopping Cart</div>
+            <div className="navbar-icon">🛒<span className="cart-count">1</span></div>
+
         </div>
         </nav>
     );

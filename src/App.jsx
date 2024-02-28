@@ -5,16 +5,19 @@
 // import viteLogo from '/vite.svg'
 // import './App.css'
 // import Navbar from './Components/Home/NavBar'
+
 import { HomePage } from "./Home/HomePage"
+// import { CartPage } from "./Cart/CartPage.jsx"
 
 function App() {
   // const [count, setCount] = useState(0)
 
   return (
     <>
-    <HomePage />
+    <HomePage/>
     </>
   )
 }
 
 export default App
+
