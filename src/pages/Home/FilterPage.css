@@ -1,7 +1,8 @@
 .categories-container {
+    /* background-color: white; */
     display: flex; /* Use flexbox layout */
     flex-direction: column; /* Stack items vertically */
-    align-items: flex-start; /* Align items to the start of the container (left side) */
+    align-items:flex-start; /* Align items to the start of the container (left side) */
     margin-left: 20px; /* Add some left margin for spacing */
     padding: 10px; /* Add padding inside the container */
     gap: 10px;
