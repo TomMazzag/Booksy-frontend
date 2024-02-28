@@ -4,15 +4,15 @@
 
 
 import { HomePage } from "./Home/HomePage"
-// import { CartPage } from "./Cart/CartPage.jsx"
+import { CartPage } from "./Cart/CartPage.jsx"
 
 function App() {
   
 
   return (
     <>
-    <HomePage/>
-    {/* <CartPage/> */}
+    {/* <HomePage/> */}
+    <CartPage/>
     </>
   )
 }

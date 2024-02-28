@@ -4,6 +4,7 @@
     import './CartPage.css'; 
     import Navbar from '../Components/Home/NavBar';
     import Footer from '../Components/Home/Footer';
+    import bookImage from '../assets/book.jpeg';
     
 
     export const CartPage = () => {
@@ -16,9 +17,9 @@
             <section className="cart-items">
             {/* Single Cart Item */}
             <article className="cart-item">
-                <img src="./assets/book.jpeg" alt="Item Image" />
+                <img src={bookImage} alt="Book Image" />
                 <div className="item-details">
-                <h3>Item Title</h3>
+                <h3>Maurice and Maralyn: A Whale, a Shipwreck, a Love Story (Hardback)</h3>
                 <p>Price: $9.99</p>
                 <label htmlFor="quantity">Quantity:</label>
                 <input type="number" id="quantity" name="quantity" min="1" defaultValue="1" />
