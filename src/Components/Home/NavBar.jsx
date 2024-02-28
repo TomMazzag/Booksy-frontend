@@ -13,28 +13,6 @@ import "../Home/NavBar.css";
     if (isSignedIn) {
         return ( 
             <nav className="navbar">
-            <div className="navbar-logo">
-                <div className="logo"> Booksy </div>
-            </div>
-            <div className="navbar-categories">
-                <div className="categories"> Categories </div>
-            </div>
-            <div className="navbar-search">
-                <input type="text" placeholder="Search Books" />
-                {/* Add search icon if necessary */}
-            </div>
-            <div className="navbar-actions">
-                {/* Will display dynamically only if logged in */}
-                <p>Hello {user.firstName} </p>
-                <div className="heart">♥</div>
-                <UserButton />
-                <div className="basket">Shopping Cart</div>
-            </div>
-            </nav>
-        )}
-        else {
-            return (
-                <nav className="navbar">
                 <div className="navbar-logo">
                     <div className="logo"> Booksy </div>
                 </div>
@@ -46,12 +24,33 @@ import "../Home/NavBar.css";
                     {/* Add search icon if necessary */}
                 </div>
                 <div className="navbar-actions">
-                    {/* Replace the placeholders with actual paths to your icons or components */}
-                    <SignInComponent />
                     {/* Will display dynamically only if logged in */}
+                    <p>Hello {user.firstName} </p>
                     <div className="heart">♥</div>
+                    <UserButton />
                     <div className="basket">Shopping Cart</div>
                 </div>
+            </nav>
+        )}
+        else {
+            return (
+                <nav className="navbar">
+                    <div className="navbar-logo">
+                        <div className="logo"> Booksy </div>
+                    </div>
+                    <div className="navbar-categories">
+                        <div className="categories"> Categories </div>
+                    </div>
+                    <div className="navbar-search">
+                        <input type="text" placeholder="Search Books" />
+                        {/* Add search icon if necessary */}
+                    </div>
+                    <div className="navbar-actions">
+                        {/* Replace the placeholders with actual paths to your icons or components */}
+                        <SignInComponent />
+                        <div className="heart">♥</div>
+                        <div className="basket">Shopping Cart</div>
+                    </div>
                 </nav>
             )}
     };

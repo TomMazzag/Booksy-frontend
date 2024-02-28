@@ -13,7 +13,7 @@ function SignInComponent () {
     return (
         <div> 
             <h4 onClick={toggleModal} className="button-modal"> 
-            Log in 
+            Account
             </h4>
                 {modal && (
                     <div className ="modal">
