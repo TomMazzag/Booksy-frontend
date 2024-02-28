@@ -36,10 +36,11 @@ body.active-modal {
 
 .close-modal {
     position: absolute;
-    top: 30px;
+    top: 20px;
     right: 35px;
     padding: 5px 7px;
     background-color: rgb(255, 255, 255);
+    font-size: 15px;
 }
 
 .cl-formButtonPrimary {
