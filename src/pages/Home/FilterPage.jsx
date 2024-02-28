@@ -9,17 +9,18 @@ import { SortBy } from "../../components/Home/Filter/Sort.jsx";
 import "../../components/Home/Footer.css";
 import "./FilterPage.css"
 import { getAllBooks } from "../../services/Filters.js";
+
 export const FilterPage = () => {
 
 
     const categories = [
-        // "Young Adult",
+        "Young Adult",
         "Romance",
         "Action",
         "History",
-        // "Non-fiction",
+        "Non-fiction",
         "Thriller",
-        // "LGBTQIA+",
+        "LGBTQIA+",
         "Mystery",
         "Autobiography"
     ];
@@ -40,6 +41,8 @@ export const FilterPage = () => {
 
 
 
+
+
     return (
         <>
         <Navbar />
@@ -53,6 +56,9 @@ export const FilterPage = () => {
                     <CheckBox key={ index } categories={ category }/>
                     ))}
         </div>
+        </div>
+        <div> 
+        
         </div>
         <button onClick={clickButton}>Click me </button>
         <Footer />
