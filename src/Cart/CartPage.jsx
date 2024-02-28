@@ -1,3 +1,5 @@
+    //CartPage Component
+    
     import React from 'react';
     import './CartPage.css'; 
 
@@ -11,7 +13,7 @@
             <section className="cart-items">
             {/* Single Cart Item */}
             <article className="cart-item">
-                <img src="image-placeholder.png" alt="Item Image" />
+                <img src="./assets/react.svg" alt="Item Image" />
                 <div className="item-details">
                 <h3>Item Title</h3>
                 <p>Price: $9.99</p>
