@@ -40,12 +40,6 @@ import "../Home/NavBar.css";
                             <p className="logo"> Booksy </p>
                         </div>
                         <div className="navbar-middle">
-                            {/* <select name="categories" id="cars">
-                                <option value="Categories">Categories</option>
-                                <option value="saab">Saab</option>
-                                <option value="opel">Opel</option>
-                                <option value="audi">Audi</option>
-                            </select> */}
                             <input type="text" placeholder="Search Books" />
                         </div>
                         <div className="navbar-actions">

@@ -53,11 +53,10 @@ nav p {
     color: #000000;
     font-size: 20px;
     font-weight: bold;
-    gap: 10px;
+    gap: 15px;
 }
 
 .navbar-actions p {
-    margin-left: 10px;
     cursor: pointer;
     font-size: larger;
     font-weight: 500;
@@ -72,12 +71,28 @@ nav p {
     text-decoration: underline;
 }
 
-@media (min-width: 1081px) {
+@media (min-width: 1300px) {
     .navbar-content {
         width: 80%;
     }
 
     nav {
         padding: 20px 0px;
+    }
+}
+
+@media (max-width: 1050px) {
+    .navbar-actions p {
+        cursor: pointer;
+        font-size: medium;
+        font-weight: 500;
+    }
+
+    nav {
+        padding: 15px 5px;
+    }
+
+    .navbar-actions {
+        gap: 5px;
     }
 }
