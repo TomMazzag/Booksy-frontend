@@ -1,27 +1,33 @@
 import './App.css';
-import BookPage from './pages/Book/BookPage';
-import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
+// import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { HomePage } from "./pages/Home/HomePage"
+import { SignupPage } from "./pages/Home/SignupPage";
+import { BookPage } from './pages/Book/BookPage';
 
-function Home() {
-  return (
-    <>
-      <h1>Welcome to Booksy homepage!</h1>
-      <div className="card">
-        <Link to="/book">Go to Book Page</Link>
-      </div>
-    </>
-  );
-}
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <HomePage />,
+  },
+  {
+    path: "/sign-up",
+    element: <SignupPage />
+  },
+  {
+    path: "/book",
+    element: <BookPage />
+  }
+]);
+
 
 function App() {
+
   return (
-    <Router>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/book" element={<BookPage />} />
-      </Routes>
-    </Router>
-  );
-}
+    <>
+    <RouterProvider router={router} />
+    </>
+  )
+};
 
 export default App;
