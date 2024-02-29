@@ -1,0 +1,31 @@
+/* src/components/Home/BookCard.css */
+
+.book-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    margin: 10px;
+    background-color: #fff;
+    border-radius: 8px;
+}
+
+.book-card img {
+    width: 180px; /* Adjust the width as needed */
+    height: 250px; /* Adjust the height as needed */
+    object-fit: cover; /* This will ensure the image covers the area, maintaining aspect ratio without distortion */
+    border-radius: 4px; /* Optional: adds rounded corners to the images */
+    margin-bottom: 10px;
+}
+
+.book-card h3 {
+    margin: 10px 0;
+    font-size: 18px;
+}
+
+.book-card p {
+    color: #666;
+    font-size: 16px;
+}
