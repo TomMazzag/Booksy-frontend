@@ -1,14 +1,10 @@
-// src/App.jsx
-
-// import { useState } from 'react'
-// import reactLogo from './assets/react.svg'
-// import viteLogo from '/vite.svg'
-// import './App.css'
-// import Navbar from './Components/Home/NavBar'
+import './App.css';
+// import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { FilterPage } from "./pages/Home/FilterPage"
 import { HomePage } from "./pages/Home/HomePage"
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
-
+import { SignupPage } from "./pages/Home/SignupPage";
+import BookPage from './pages/Book/BookPage';
 
 const router = createBrowserRouter([
   {
@@ -16,18 +12,23 @@ const router = createBrowserRouter([
     element: <HomePage />,
   },
   {
-    path: "/FilterPage",
-    element: <FilterPage />,
+    path: "/sign-up",
+    element: <SignupPage />
   },
+  {
+    path: "/books/:bookId",
+    element: <BookPage />
+  }
 ]);
 
 
-const App = () => {
+function App() {
+
   return (
     <>
-      {/* Provide the router to your app */}
-      <RouterProvider router={router} />
+    <RouterProvider router={router} />
     </>
-  );
+  )
 };
+
 export default App;
