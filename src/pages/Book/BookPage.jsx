@@ -16,7 +16,6 @@ const BookPage = () => {
     const [isLoading, setIsLoading] = useState(false);
     const [error, setError] = useState(null);
     const [showFullSynopsis, setShowFullSynopsis] = useState(false);
-    const [liked, setLiked] = useState(false)
 
     useEffect(() => {
         const fetchBook = async () => {
@@ -52,12 +51,6 @@ const BookPage = () => {
         }
         return `${synopsis.substring(0, 400)}...`;
     };
-
-    const handleLike = async ()=>{
-        setLiked(!liked)
-        console.log(`Like when clicked: ${liked}`);
-
-    }
 
     return (
         <>
