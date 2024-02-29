@@ -52,7 +52,7 @@
         padding: 0.5rem;
         margin-right: 0.5rem;
         border: none;
-        background-color: #007bff;
+        background-color: #A1CCD1;
         color: white;
         cursor: pointer;
     }
@@ -79,28 +79,26 @@
         cursor: pointer;
     }
     
-    .payment-summary input[type="radio"] {
-        display: none; /* Hide the default radio button */
-    }
     
     .payment-summary input[type="radio"] + img {
-        height: 30px; /* Set the height for all payment logos */
+        height: 40px; /* Set the height for all payment logos */
         margin-right: 10px; /* Add some space between the radio button and the logo */
     }
     
     .payment-summary p {
         margin-bottom: 1rem;
+        margin-top: 1rem;
     }
     
     /* Custom styles for when the radio button is checked */
     .payment-summary input[type="radio"]:checked + img {
-        border: 2px solid blue; /* Example style, replace with your own */
+        border: 2px ; /* Example style, replace with your own */
         border-radius: 5px; /* Optional: add border-radius if you want rounded corners */
     }
     
     /* Style to show selection effect */
     .payment-summary input[type="radio"]:checked + img {
-        box-shadow: 0 0 0 2px blue; /* Adding an outline effect on selection */
+        box-shadow: 0 0 0 2px #A1CCD1; /* Adding an outline effect on selection */
     }
 
 
@@ -109,7 +107,8 @@
     .checkout-button {
         padding: 1rem;
         border: none;
-        background-color: black;
+        font-size: medium;
+        background-color: #A1CCD1;
         color: white;
         cursor: pointer;
     }
