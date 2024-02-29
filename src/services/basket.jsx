@@ -1,6 +1,6 @@
 // basketService.js
 
-const backendUrl = "https://booksy-backend.onrender.com"; 
+const backendUrl = "127.0.0.1:3000"; 
 
 export const addToBasket = async (bookId, quantity) => {
     try {
@@ -69,6 +69,7 @@ export const removeFromBasket = async (userId, itemId) => {
 
 
 export const getBasket = async (userId) => {
+    console.log("userId", userId);
     try {
         const response = await fetch(`${backendUrl}/basket/${userId}`);
         if (!response.ok) {

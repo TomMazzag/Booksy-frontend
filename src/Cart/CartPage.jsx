@@ -10,11 +10,28 @@
     import visaMastercardLogo from '../assets/Cardspay.png'; 
     import paypalLogo from '../assets/Paypal.png'; 
     import gpayLogo from '../assets/Gpay.png'; 
-    // import { getBasket, updateItemQuantity, removeFromBasket } from '../services/basketService';
-
+    import { getBasket, updateItemQuantity, removeFromBasket } from '../services/basket';
+    import { useState, useEffect } from 'react';
 
 
     export const CartPage = () => {
+            const [basketItems, setBasketItems] = useState([]);
+    
+        useEffect(() => {
+            // Fetch basket items when the component mounts
+            const fetchBasketItems = async () => {
+                try {
+                    const userId = '65e07035deb88a4a513164ed'; // Replace with the actual user ID
+                    const basketData = await getBasket(userId);
+                    console.log(basketData);
+                    setBasketItems(basketData.items); // Assuming the response data has an 'items' property
+                } catch (error) {
+                    console.error('Error fetching basket items:', error.message);
+                }
+            };
+    
+            fetchBasketItems();
+        }, []); // Empty dependency array ensures the effect runs only once
     return (
         <>
         <Navbar />
