@@ -3,6 +3,8 @@ import SignInComponent from "../Authentication/LogInModal";
 import { useUser } from "@clerk/clerk-react";
 import { UserButton } from "@clerk/clerk-react";
 import "../Home/NavBar.css";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faBars } from '@fortawesome/free-solid-svg-icons'
 
 
     const Navbar = () => {
@@ -37,7 +39,7 @@ import "../Home/NavBar.css";
                 <nav>
                     <div className="navbar-content">
                         <div className="navbar-logo">
-                            <p className="logo"> Booksy </p>
+                            <p> Booksy </p>
                         </div>
                         <div className="navbar-middle">
                             <input type="text" placeholder="Search Books" />
@@ -46,6 +48,14 @@ import "../Home/NavBar.css";
                             <SignInComponent />
                             <p className="heart">♥</p>
                             <p className="basket">Shopping Cart</p>
+                        </div>
+                        <div className="mobile-menu">
+                            <FontAwesomeIcon icon={faBars} />
+                            <ul className="mobile-menu-options">
+                                <li><SignInComponent /></li>
+                                <li><p className="heart">♥</p></li>
+                                <li><p className="basket">Shopping Cart</p></li>
+                            </ul>
                         </div>
                     </div>
                 </nav>
