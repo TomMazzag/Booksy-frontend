@@ -6,8 +6,7 @@ import CategoryCard from "../../components/Home/CategoryCard.jsx";
 import BookCard from "../../components/Home/BookCard.jsx";
 import Footer from "../../components/Home/Footer.jsx";
 import "./HomePage.css";
-import { Link } from "react-router-dom";
-import { getBookById, getAllBooks } from "../../services/books";
+import { getAllBooks } from "../../services/books";
 
 export const HomePage = () => {
 
@@ -29,10 +28,9 @@ export const HomePage = () => {
         const fetchBooks = async () => {
             try {
                 const booksData = await getAllBooks();
-                setBooks(booksData); // Update this line to set the books state
+                setBooks(booksData);
             } catch (error) {
                 console.error("Error fetching books:", error);
-                // Optionally, handle error, e.g., setting an error state to display an error message
             }
         };
     

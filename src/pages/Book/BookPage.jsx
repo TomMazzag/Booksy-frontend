@@ -1,87 +1,88 @@
-import React from 'react';
+// src/components/Home/BookCard.jsx
+
+import React, { useEffect, useState } from 'react';
+import { useParams, Link } from 'react-router-dom';
+import Navbar from "../../components/Home/NavBar.jsx";
+import Footer from "../../components/Home/Footer.jsx";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHeart, faShoppingBasket, faStar } from '@fortawesome/free-solid-svg-icons';
-import { useNavigate } from 'react-router-dom';
-import { Link } from 'react-router-dom';
 import './BookPage.css';
+import { getBookById } from '../../services/books'; 
 
 const BookPage = () => {
-    const navigate = useNavigate();
+    const { bookId } = useParams(); // Use useParams to get the bookId from the URL
+    const [book, setBook] = useState(null); // State to hold the fetched book details
+    const [isLoading, setIsLoading] = useState(false);
+    const [error, setError] = useState(null);
+    const [showFullSynopsis, setShowFullSynopsis] = useState(false);
+
+    useEffect(() => {
+        const fetchBook = async () => {
+            setIsLoading(true);
+            try {
+                const fetchedBook = await getBookById(bookId);
+                setBook(fetchedBook.book);
+                console.log(fetchedBook.book)
+                setError(null); // Reset error state in case of successful fetch
+            } catch (err) {
+                setError('Failed to fetch book details.');
+                console.error(err);
+            } finally {
+                setIsLoading(false);
+            }
+        };
+
+        fetchBook();
+    }, [bookId]); // Rerun the effect if bookId changes
+
+    const toggleSynopsisVisibility = () => {
+        setShowFullSynopsis(!showFullSynopsis); // Toggle between showing full or partial synopsis
+    };
+
+    if (isLoading) return <div>Loading...</div>;
+    if (error) return <div>{error}</div>;
+    if (!book) return <div>No book found</div>; // Or any other error handling
+
+    // Function to render synopsis based on showFullSynopsis state
+    const renderSynopsis = (synopsis) => {
+        if (showFullSynopsis || synopsis.length <= 400) {
+            return synopsis;
+        }
+        return `${synopsis.substring(0, 400)}...`;
+    };
 
     return (
         <>
-        {/* Top Navbar */}
-        <nav className="navbar navbar-expand-lg navbar-light bg-light">
-            <a className="navbar-brand" href="/">BookStore</a>
-            <div className="collapse navbar-collapse" id="navbarNav">
-            <ul className="navbar-nav">
-                <li className="nav-item">Categories</li>
-                <li className="nav-item">
-                <input type="search" placeholder="Search books..." className="form-control" />
-                </li>
-                <li className="nav-item">Sign In</li>
-                <li className="nav-item">Profile</li>
-                <li className="nav-item">
-                <button className="btn btn-outline-danger">
-                    <FontAwesomeIcon icon={faHeart} />
-                </button>
-                </li>
-                <li className="nav-item">
-                <FontAwesomeIcon icon={faShoppingBasket} />
-                </li>
-            </ul>
-            </div>
-        </nav>
+            <Navbar />
+            <Link to="/" className='go_back_button'> &lt;&lt; Back to Homepage</Link>
+            <div className="container mt-4 centered-content">
+                <div className="row">
+                    <div className="col-md-4">
+                        <img src={book.image_url || 'https://www.peeters-leuven.be/covers/no_cover.gif'} alt="Book Image" className="img-fluid" />
+                    </div>
 
-        {/* Book Content */}
-        {/* Go back button */}
-        <Link to="/" className='go_back_button'>Go Back</Link>
-        <div className="container mt-4 centered-content">
-            <div className="row">
-            {/* Book Image */}
-            <div className="col-md-4">
-                <img src="public/foundation1.jpg" alt="Book" className="img-fluid" />
+                    <div className="col-md-5">
+                        <h2>{book.title}</h2>
+                        <p>Author: {book.author}</p>
+                        <p>Rating: <FontAwesomeIcon icon={faStar} /> 4.5</p>
+                        <p>Price: ${book.price?.$numberDecimal || 'N/A'}</p>
+                        <p>Status: In Stock</p>
+                        <button className="btn btn-outline-danger">
+                            <FontAwesomeIcon icon={faHeart} /> Add to Favourites
+                        </button>
+                    </div>
+                </div>
+                <div className="synopsis">
+                    <h3>Synopsis</h3>
+                    <p>{renderSynopsis(book.synopsis)}</p>
+                    {(book.synopsis.length > 400 || showFullSynopsis) && (
+                        <button onClick={toggleSynopsisVisibility} className="btn btn-outline-secondary">
+                            {showFullSynopsis ? 'Hide' : 'See More'}
+                        </button>
+                    )}
+                </div>
             </div>
-
-            {/* Book Details */}
-            <div className="col-md-5">
-                <h2>Book Title</h2>
-                <p>Author: Author Name</p>
-                <p>Rating: <FontAwesomeIcon icon={faStar} /> 4.5</p>
-                <p>Price: $Price</p>
-                <p>Status: In Stock</p>
-                <button className="btn btn-outline-danger">
-                <FontAwesomeIcon icon={faHeart} /> Add to Favourites
-                </button>
-            </div>
-            </div>
-
-            {/* Book Description */}
-            <div className="row">
-            <div className="col-md-10 offset-md-1 mt-4">
-                <p>There are only a few series in the world of science fiction that enjoy such respect and enduring popularity as Isaac Asimov’s Foundation series. In fact, the only series that I can properly compare it to is Frank Herbert’s Dune series. There are many similarities, which I will go into in due time. For now, I’ll just say that I come to this series as a new reader (I have read it in my teenage years but have forgotten almost everything about it) and I am curious as to why the Hugo Awards chose this series for their one-time award for Best All-Time Series in the History of Forever. It seems like an odd choice and I am sceptical. These Foundation novels are very short novels, especially the first trilogy, with hardly any room for development of characters and plot.</p>
-            </div>
-            </div>
-
-            {/* Reviews */}
-            <div className="row">
-            <div className="col-md-10 offset-md-1 mt-4">
-                <h4>Reviews</h4>
-                {/* Add review components or divs here */}
-            </div>
-            </div>
-        </div>
-
-        {/* Bottom Navbar */}
-        <nav className="navbar fixed-bottom navbar-light bg-light">
-            <a href="/download" className="nav-link">Download the App</a>
-            <a href="/shop" className="nav-link">Shop</a>
-            <a href="/about" className="nav-link">About</a>
-            <a href="/help" className="nav-link">Help</a>
-            <div className="social-links">
-            {/* Social links icons */}
-            </div>
-        </nav>
+            <Footer />
         </>
     );
 };

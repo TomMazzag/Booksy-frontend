@@ -1,4 +1,5 @@
 // src/components/Home/BookCard.jsx
+
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import "./BookCard.css"
@@ -11,7 +12,6 @@ const BookCard = ({ book }) => {
 
     const handleClick = () => {
         navigate(`/books/${book._id}`);
-        // If you're using a different route or method to pass the _id, adjust accordingly
     };
 
     return (
