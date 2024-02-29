@@ -99,3 +99,14 @@
     color: #666;
     margin: 0;
 }
+
+@media (max-width: 760px) {
+    .footer-section {
+        width: 50%;
+        font-weight: medium;
+    }
+
+    .footer-section h5 {
+        font-weight: medium;
+    }
+}

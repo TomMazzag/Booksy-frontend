@@ -129,4 +129,8 @@ nav p {
     .mobile-menu {
         display: block;
     }
+
+    .navbar-middle {
+        display: none;
+    }
 }
