@@ -8,6 +8,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHeart, faShoppingBasket, faStar } from '@fortawesome/free-solid-svg-icons';
 import './BookPage.css';
 import { getBookById } from '../../services/books'; 
+import LikeButton from '../../components/LikeButton/LikeButton.jsx';
 
 const BookPage = () => {
     const { bookId } = useParams(); // Use useParams to get the bookId from the URL
@@ -15,6 +16,7 @@ const BookPage = () => {
     const [isLoading, setIsLoading] = useState(false);
     const [error, setError] = useState(null);
     const [showFullSynopsis, setShowFullSynopsis] = useState(false);
+    const [liked, setLiked] = useState(false)
 
     useEffect(() => {
         const fetchBook = async () => {
@@ -51,6 +53,12 @@ const BookPage = () => {
         return `${synopsis.substring(0, 400)}...`;
     };
 
+    const handleLike = async ()=>{
+        setLiked(!liked)
+        console.log(`Like when clicked: ${liked}`);
+
+    }
+
     return (
         <>
             <Navbar />
@@ -67,9 +75,7 @@ const BookPage = () => {
                         <p>Rating: <FontAwesomeIcon icon={faStar} /> 4.5</p>
                         <p>Price: ${book.price?.$numberDecimal || 'N/A'}</p>
                         <p>Status: In Stock</p>
-                        <button className="btn btn-outline-danger">
-                            <FontAwesomeIcon icon={faHeart} /> Add to Favourites
-                        </button>
+                        <LikeButton />
                     </div>
                 </div>
                 <div className="synopsis">
