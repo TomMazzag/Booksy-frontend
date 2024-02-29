@@ -3,6 +3,8 @@ import SignInComponent from "../Authentication/LogInModal";
 import { useUser } from "@clerk/clerk-react";
 import { UserButton } from "@clerk/clerk-react";
 import "../Home/NavBar.css";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faBars } from '@fortawesome/free-solid-svg-icons'
 
 
     const Navbar = () => {
@@ -12,7 +14,7 @@ import "../Home/NavBar.css";
 
     if (isSignedIn) {
         return ( 
-            <nav className="navbar">
+            <nav>
                 <div className="navbar-logo">
                     <div className="logo"> Booksy </div>
                 </div>
@@ -34,22 +36,27 @@ import "../Home/NavBar.css";
         )}
         else {
             return (
-                <nav className="navbar">
-                    <div className="navbar-logo">
-                        <div className="logo"> Booksy </div>
-                    </div>
-                    <div className="navbar-categories">
-                        <div className="categories"> Categories </div>
-                    </div>
-                    <div className="navbar-search">
-                        <input type="text" placeholder="Search Books" />
-                        {/* Add search icon if necessary */}
-                    </div>
-                    <div className="navbar-actions">
-                        {/* Replace the placeholders with actual paths to your icons or components */}
-                        <SignInComponent />
-                        <div className="heart">♥</div>
-                        <div className="basket">Shopping Cart</div>
+                <nav>
+                    <div className="navbar-content">
+                        <div className="navbar-logo">
+                            <p> Booksy </p>
+                        </div>
+                        <div className="navbar-middle">
+                            <input type="text" placeholder="Search Books" />
+                        </div>
+                        <div className="navbar-actions">
+                            <SignInComponent />
+                            <p className="heart">♥</p>
+                            <p className="basket">Shopping Cart</p>
+                        </div>
+                        <div className="mobile-menu">
+                            <FontAwesomeIcon icon={faBars} />
+                            <ul className="mobile-menu-options">
+                                <li><SignInComponent /></li>
+                                <li><p className="heart">♥</p></li>
+                                <li><p className="basket">Shopping Cart</p></li>
+                            </ul>
+                        </div>
                     </div>
                 </nav>
             )}
