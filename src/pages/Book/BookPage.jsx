@@ -65,7 +65,7 @@ const BookPage = () => {
                         <h2>{book.title}</h2>
                         <p>Author: {book.author}</p>
                         <p>Rating: <FontAwesomeIcon icon={faStar} /> 4.5</p>
-                        <p>Price: ${book.price?.$numberDecimal || 'N/A'}</p>
+                        <p>Price: £{book.price?.$numberDecimal || 'N/A'}</p>
                         <p>Status: In Stock</p>
                         <div className="button-group">
                             <button className="btn btn-outline-danger">
