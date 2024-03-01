@@ -1,7 +1,8 @@
 import { faHeart} from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import './../Home/BookCard.css';
-import { useEffect, useState, useParams } from 'react';
+import { useEffect, useState} from 'react';
+import { useParams } from 'react-router-dom';
 import Popup from 'reactjs-popup';
 import { useUser } from "@clerk/clerk-react";
 import { updateUserLikedList } from '../../services/users';
@@ -19,11 +20,12 @@ const LikeButton = () => {
 
         if (liked) {
             updateUserLikedList(user.id, bookId, "like")
+            console.log("Sent like to DB")
         }
         else {
             updateUserLikedList(user.id, bookId, "unlike")
+            console.log("Sent unlike to DB")
         }
-
         }
 
         return (
