@@ -78,3 +78,17 @@ text-align: left; /* Align text to the left */
 .synopsis button:hover {
     background-color: #7C9D96; /* Darker background on hover */
 }
+
+.button-group {
+    display: flex;
+    justify-content: start;
+    gap: 10px; /* Space between buttons */
+}
+
+.btn-outline-primary {
+    color: #007bff; /* Bootstrap primary color, adjust as needed */
+}
+
+.fa-shopping-basket {
+    color: #007bff; /* Match the button color or choose as per your design */
+}
