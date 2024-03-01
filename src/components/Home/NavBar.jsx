@@ -47,7 +47,7 @@ import { faBars } from '@fortawesome/free-solid-svg-icons'
                         <div className="navbar-actions">
                             <SignInComponent />
                             <p className="heart">♥</p>
-                            <p className="basket">Shopping Cart</p>
+                            <div className="navbar-icon">🛒<span className="cart-count">1</span></div>
                         </div>
                         <div className="mobile-menu">
                             <FontAwesomeIcon icon={faBars} />

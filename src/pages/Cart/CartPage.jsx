@@ -18,7 +18,9 @@
 
     export const CartPage = () => {
             const [basketItems, setBasketItems] = useState([]);
-    
+        
+            const [updatebasketItems, setUpdateBasketItems] = useState(false);
+
         useEffect(() => {
             // Fetch basket items when the component mounts
             const fetchBasketItems = async () => {
@@ -26,7 +28,7 @@
                     const userId = '65e07035deb88a4a513164ed'; // Replace with the actual user ID
                     const basketData = await getBasket(userId);
                     setBasketItems(basketData.basket.items);
-                    
+                    setUpdateBasketItems(false);
 
                      // Assuming the response data has an 'items' property
                 } catch (error) {
@@ -35,7 +37,7 @@
             };
     
             fetchBasketItems();
-        }, []); // Empty dependency array ensures the effect runs only once
+        }, [updatebasketItems]); // Empty dependency array ensures the effect runs only once
     return (
         <>
         <Navbar />
@@ -43,7 +45,7 @@
         <main className="cart-container">
             {/* Left Column: Cart Items */}
             {basketItems.map((item,index) => (
-                <CartItem key={index} book={item} />
+                <CartItem key={index} book={item} setUpdateBasketItems= {setUpdateBasketItems}/>
             ))}
 
             

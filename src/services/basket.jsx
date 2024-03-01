@@ -2,17 +2,17 @@
 
 const backendUrl = "http://127.0.0.1:3000"; 
 
-export const addToBasket = async (bookId, quantity) => {
+export const addToBasket = async (item, userId) => {
     try {
         const requestOptions = {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
             },
-            body: JSON.stringify({ bookId, quantity })
+            body: JSON.stringify({ item })
         };
 
-        const response = await fetch(`${backendUrl}/basket/add`, requestOptions);
+        const response = await fetch(`${backendUrl}/basket/${userId}/add`, requestOptions);
         if (!response.ok) {
             throw new Error(`Error adding item to basket: ${response.statusText}`);
         }
@@ -54,7 +54,7 @@ export const removeFromBasket = async (userId, itemId) => {
             method: "DELETE"
         };
 
-        const response = await fetch(`${backendUrl}/basket/remove/${userId}/${itemId}`, requestOptions);
+        const response = await fetch(`${backendUrl}/basket/${userId}/remove/${itemId}`, requestOptions);
         if (!response.ok) {
             throw new Error(`Error removing item from basket: ${response.statusText}`);
         }
