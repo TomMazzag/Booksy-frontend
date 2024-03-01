@@ -1,0 +1,40 @@
+.filter-book-card {
+    background-color: #fff;
+    display: flex;
+    padding: 10px 20px;
+    align-items: center;
+    margin: 20px 0px;
+    border-radius: 30px;
+    width: 100%;
+}
+
+.filter-book-card h3 {
+}
+
+.filter-price {
+    width:100%; 
+}
+
+.filter-book-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    text-align: start;
+    padding: 20px;
+    flex-grow: 1;
+}
+
+.filter-book-para {
+    display: flex;
+    
+}
+
+.filter-price {
+    align-self: flex-end;
+    text-align: end;
+    margin: 0px;
+}
+
+.filter-description {
+    margin: 0px;
+}

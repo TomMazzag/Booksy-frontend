@@ -1,0 +1,24 @@
+
+.select-dropdown {
+    appearance: none; /* Remove default styling */
+    padding: 10px 20px; /* Add padding */
+    font-size: 16px; /* Set font size */
+    border: 1px solid #ccc; /* Add border */
+    border-radius: 4px; /* Add border radius for rounded corners */
+    background-color: #fff; /* White background */
+    color: #333; /* Text color */
+    cursor: pointer; /* Add cursor on hover */
+    float: right;
+    box-shadow: 0 0 2px rgb(204, 204, 204);
+    margin-right: 30px;
+    width: auto;
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+}
+
+/* Style for hover and focus states */
+.select-dropdown:hover,
+.select-dropdown:focus {
+    border-color: #999; /* Change border color on hover/focus */
+}
