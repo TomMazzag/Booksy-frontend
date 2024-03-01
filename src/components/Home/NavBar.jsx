@@ -5,6 +5,7 @@ import { UserButton } from "@clerk/clerk-react";
 import "../Home/NavBar.css";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars } from '@fortawesome/free-solid-svg-icons'
+import { useState } from "react";
 
 
     const Navbar = () => {
@@ -42,7 +43,10 @@ import { faBars } from '@fortawesome/free-solid-svg-icons'
                             <p> Booksy </p>
                         </div>
                         <div className="navbar-middle">
-                            <input type="text" placeholder="Search Books" />
+                            <input type="text" placeholder="Search Books"
+                            
+                            
+                            />
                         </div>
                         <div className="navbar-actions">
                             <SignInComponent />

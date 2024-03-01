@@ -43,3 +43,60 @@ export const getAllBooks = async () => {
         throw error; // Allows for catching and handling the error in the component
     }
 };
+
+export const getBooksByTitle = async ( title ) => {
+        const requestOptions = {
+        method: "GET",
+        headers: {}
+        };
+    
+        const response = await fetch(
+        `${backend_url}/books/search/${title}`
+        ,requestOptions
+        );
+    
+        if (response.status !== 200) {
+        throw new Error("Unable to fetch books");
+        }
+    
+        const data = await response.json();
+        return data;
+    };
+
+    export const getBooksByAuthor = async ( author ) => {
+        const requestOptions = {
+        method: "GET",
+        headers: {}
+        };
+    
+        const response = await fetch(
+        `${backend_url}/books/search/${author}`
+        ,requestOptions
+        );
+    
+        if (response.status !== 200) {
+        throw new Error("Unable to fetch books");
+        }
+    
+        const data = await response.json();
+        return data;
+    };
+
+    // export const getBookByIsbn = async ( isbn ) => {
+    //     const requestOptions = {
+    //     method: "GET",
+    //     headers: {}
+    //     };
+    
+    //     const response = await fetch(
+    //     `${backend_url}/books/search/${isbn}`
+    //     ,requestOptions
+    //     );
+    
+    //     if (response.status !== 200) {
+    //     throw new Error("Unable to fetch books");
+    //     }
+    
+    //     const data = await response.json();
+    //     return data;
+    // };
