@@ -1,10 +1,10 @@
 // src/Home/HomePage.jsx
 
 import React, { useEffect, useState } from 'react';
-import Navbar from "../../components/Home/NavBar.jsx";
-import CategoryCard from "../../components/Home/CategoryCard.jsx";
-import BookCard from "../../components/Home/BookCard.jsx";
-import Footer from "../../components/Home/Footer.jsx";
+import Navbar from "../../Components/Home/NavBar.jsx";
+import CategoryCard from "../../Components/Home/CategoryCard.jsx";
+import BookCard from "../../Components/Home/BookCard.jsx";
+import Footer from "../../Components/Home/Footer.jsx";
 import "./HomePage.css";
 import { getAllBooks } from "../../services/books";
 
@@ -71,6 +71,3 @@ export const HomePage = () => {
 // TODO: Code which allows the category cards to become a button, navigate to 
 // relevant page: 
 
-// // <Link key={index} to={`/category/${category}`}>
-// <CategoryCard category={category} />
-// </Link>

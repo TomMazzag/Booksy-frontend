@@ -1,3 +1,10 @@
+.categories-box {
+    display: flex;
+    width: 100%;
+}
+
+
+
 .categories-container {
     /* background-color: white; */
     display: flex; /* Use flexbox layout */

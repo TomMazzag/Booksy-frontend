@@ -2,8 +2,8 @@
 
 import React, { useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
-import Navbar from "../../components/Home/NavBar.jsx";
-import Footer from "../../components/Home/Footer.jsx";
+import Navbar from '../../Components/Home/NavBar.jsx';
+import Footer from "../../Components/Home/Footer.jsx";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHeart, faShoppingBasket, faStar } from '@fortawesome/free-solid-svg-icons';
 import './BookPage.css';
@@ -65,7 +65,7 @@ const BookPage = () => {
                         <h2>{book.title}</h2>
                         <p>Author: {book.author}</p>
                         <p>Rating: <FontAwesomeIcon icon={faStar} /> 4.5</p>
-                        <p>Price: ${book.price?.$numberDecimal || 'N/A'}</p>
+                        <p>Price: £{book.price?.$numberDecimal || 'N/A'}</p>
                         <p>Status: In Stock</p>
                         <button className="btn btn-outline-danger">
                             <FontAwesomeIcon icon={faHeart} /> Add to Favourites
