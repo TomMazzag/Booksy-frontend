@@ -6,6 +6,7 @@ import "../Home/NavBar.css";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars } from '@fortawesome/free-solid-svg-icons'
 import { useState } from "react";
+import { SearchBar } from "./SearchBar";
 
 
     const Navbar = () => {
@@ -42,12 +43,13 @@ import { useState } from "react";
                         <div className="navbar-logo">
                             <p> Booksy </p>
                         </div>
-                        <div className="navbar-middle">
+                        {/* <div className="navbar-middle">
                             <input type="text" placeholder="Search Books"
                             
                             
                             />
-                        </div>
+                        </div> */}
+                        <SearchBar />
                         <div className="navbar-actions">
                             <SignInComponent />
                             <p className="heart">♥</p>
