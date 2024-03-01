@@ -22,3 +22,21 @@ export const updateUserLikedList = async (user_id, bookId, status) => {
         }
 }
 
+export const checkLikedBook = async (user_id, bookId) => {
+    const requestOptions = {
+        method: "GET",
+    };
+
+    const response = await fetch(`${backend_url}/users/liked` + 
+    new URLSearchParams({user_id: user_id, bookId: bookId}.toString()) ,requestOptions );
+
+    if (response.status !== 200) {
+        return response
+    }
+
+    const data = await response.json();
+    console.log(data)
+    return data
+
+}
+

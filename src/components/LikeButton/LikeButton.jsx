@@ -26,6 +26,7 @@ const LikeButton = () => {
             updateUserLikedList(user.id, bookId, "unlike")
             console.log("Sent unlike to DB")
         }
+        
         }
 
         return (
