@@ -1,6 +1,6 @@
 // basketService.js
 
-const backendUrl = "127.0.0.1:3000"; 
+const backendUrl = "http://127.0.0.1:3000"; 
 
 export const addToBasket = async (bookId, quantity) => {
     try {
@@ -70,6 +70,7 @@ export const removeFromBasket = async (userId, itemId) => {
 
 export const getBasket = async (userId) => {
     console.log("userId", userId);
+    console.log(`${backendUrl}/basket/${userId}`);
     try {
         const response = await fetch(`${backendUrl}/basket/${userId}`);
         if (!response.ok) {

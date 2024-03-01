@@ -1,6 +1,6 @@
 // src/Components/Home/NavBar.jsx
 
-import "../Home/NavBar.css";
+import "./NavBar.css";
 
 
     const Navbar = () => {
