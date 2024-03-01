@@ -19,7 +19,7 @@ const FilterBookCard = ({ book }) => {
         if (synopsis.length <= 200) {
             return synopsis;
         }
-        console.log(synopsis)
+        console.log(`Book: ${book.title} --- Synopsis: ${synopsis}`)
         return `${synopsis.substring(0, 200)}...`;
     };
     
