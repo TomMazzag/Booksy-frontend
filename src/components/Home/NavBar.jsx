@@ -7,7 +7,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars } from '@fortawesome/free-solid-svg-icons'
 import { useState } from "react";
 
-
     const Navbar = () => {
 
     // You can use this function to get the user's first, last and fullName if needed

@@ -102,11 +102,17 @@
 
 @media (max-width: 760px) {
     .footer-section {
+        padding-top: 20px;
         width: 50%;
-        font-weight: medium;
     }
 
     .footer-section h5 {
-        font-weight: medium;
+        font-size: x-large;
+        font-weight: 600;
+    }
+
+    .footer-section ul li {
+        font-size: larger;
+        font-weight: 300;
     }
 }

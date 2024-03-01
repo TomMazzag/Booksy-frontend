@@ -10,6 +10,7 @@ body.active-modal {
 }
 
 .modal, .overlay {
+    display: block;
     width: 100vw;
     height: 100vh;
     top: 0;
@@ -17,6 +18,7 @@ body.active-modal {
     right: 0;
     bottom: 0;
     position: fixed;
+    z-index: 2;
 }
 
 .overlay {
@@ -30,7 +32,7 @@ body.active-modal {
     transform: translate(-50%, -50%);
     line-height: 1.4;
     padding: 14px 28px;
-    max-width: 600px;
+    max-width: 450px;
     min-width: 300px;
 }
 
