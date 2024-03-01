@@ -1,12 +1,20 @@
 /* NavBar.css */
 
-.navbar {
+nav {
     background-color: #A1CCD1;
     color: #fff;
-    padding: 20px;
+    padding: 20px 30px;
+}
+
+.navbar-content {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin: auto;
+}
+
+nav p {
+    margin: 0;
 }
 
 .navbar-logo {
@@ -16,31 +24,26 @@
     font-size: 35px;
     font-weight: bold;
     cursor: pointer;
-    margin-left: auto;
 }
 
-.navbar-categories {
+.navbar-middle {
+    width: auto;
     display: flex;
     align-items: center;
+    gap: 10px;
     color: #000000;
-    font-size: 20px;
-    font-weight: bold;
-    cursor: pointer;
-    margin-left: auto;
+    width: 30%;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
-.navbar-search {
-    margin-left: auto; /* Push search input to the right */
-    width: auto;
-    
-}
-
-.navbar-search input[type="text"] {
+.navbar-middle input[type="text"] {
     padding: 5px;
     border-radius: 5px;
     border: 1px solid #ccc;
-    width: 250px;
-    height: 18px;
+    width: 100%;
+    font-size: large;
 }
 
 .navbar-actions {
@@ -49,19 +52,95 @@
     color: #000000;
     font-size: 20px;
     font-weight: bold;
-    margin-left: auto;
+    gap: 15px;
 }
 
-.navbar-actions div {
-    margin-left: 10px;
+.navbar-actions p {
     cursor: pointer;
+    font-size: larger;
+    font-weight: 500;
 }
 
 /* Styles for navigation buttons */
-.navbar-actions div:hover {
+.navbar-actions p:hover {
     text-decoration: underline;
 }
 
-.navbar-categories div:hover {
+.navbar-categories p:hover {
     text-decoration: underline;
+}
+
+.mobile-menu {
+    display: none;
+    cursor: pointer;
+}
+
+.open .mobile-menu-options {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-direction: flex-start;
+}
+
+.mobile-menu-options {
+    padding: 0;
+    padding-top: 5px;
+    display: block;
+    position: absolute;
+    top: 82px;
+    left: 0;
+    width: 100%;
+    height: 120px;
+    background-color: #A1CCD1;
+    list-style: none;
+    cursor: pointer;
+    border-top: 1px solid black;
+}
+
+.mobile-menu-options li {
+    margin: 5px;
+    font-size: large;
+}
+
+@media (min-width: 1300px) {
+    .navbar-content {
+        width: 80%;
+    }
+
+    nav {
+        padding: 20px 0px;
+    }
+}
+
+@media (max-width: 1050px) {
+    .navbar-actions p {
+        cursor: pointer;
+        font-size: medium;
+        font-weight: 500;
+    }
+
+    nav {
+        padding: 15px 5px;
+    }
+
+    .navbar-actions {
+        gap: 5px;
+    }
+}
+
+@media (max-width: 760px) {
+    .navbar-actions p {
+        display: none;
+    }
+    .mobile-menu {
+        display: block;
+    }
+
+    .navbar-middle {
+        display: none;
+    }
+
+    .navbar-content {
+        padding: 0px 10px;
+    }
 }

@@ -67,9 +67,14 @@ const BookPage = () => {
                         <p>Rating: <FontAwesomeIcon icon={faStar} /> 4.5</p>
                         <p>Price: £{book.price?.$numberDecimal || 'N/A'}</p>
                         <p>Status: In Stock</p>
-                        <button className="btn btn-outline-danger">
-                            <FontAwesomeIcon icon={faHeart} /> Add to Favourites
-                        </button>
+                        <div className="button-group">
+                            <button className="btn btn-outline-danger">
+                                <FontAwesomeIcon icon={faHeart} /> Add to Favourites
+                            </button>
+                            <button className="btn btn-outline-primary">
+                                <FontAwesomeIcon icon={faShoppingBasket} /> Add to Basket
+                            </button>
+                        </div>
                     </div>
                 </div>
                 <div className="synopsis">

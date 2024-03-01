@@ -8,28 +8,27 @@ function SignInComponent () {
 
     const toggleModal = () => {
         setModal(!modal)
+        console.log(modal)
     }
 
     return (
         <div> 
-            <h4 onClick={toggleModal} className="button-modal"> 
+            <p onClick={toggleModal} className="button-modal"> 
             Account
-            </h4>
+            </p>
                 {modal && (
                     <div className ="modal">
                         <div className="overlay">
                             <div className="modal-content">
-                            <p>
                                 <SignIn />
-                            </p>
-                        <p className="close-modal" onClick={toggleModal}>
-                        Back
-                        </p>
+                                <p className="close-modal" onClick={toggleModal}>
+                                Back
+                                </p>
+                            </div>
                         </div>
                     </div>
-                </div>
                 )}
-    </div>
+        </div>
     )
 }
 
