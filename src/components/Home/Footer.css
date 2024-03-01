@@ -99,3 +99,20 @@
     color: #666;
     margin: 0;
 }
+
+@media (max-width: 760px) {
+    .footer-section {
+        padding-top: 20px;
+        width: 50%;
+    }
+
+    .footer-section h5 {
+        font-size: x-large;
+        font-weight: 600;
+    }
+
+    .footer-section ul li {
+        font-size: larger;
+        font-weight: 300;
+    }
+}

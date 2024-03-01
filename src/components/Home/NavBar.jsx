@@ -7,12 +7,17 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars } from '@fortawesome/free-solid-svg-icons'
 import { Link } from "react-router-dom";
 
-
+import { useState } from "react";
 
     const Navbar = () => {
 
     // You can use this function to get the user's first, last and fullName if needed
     const { isSignedIn, user } = useUser();
+    const [openMenu, setOpenMenu] = useState(false)
+
+    const toggleMenu = () => {
+        setOpenMenu(!openMenu)
+    }
 
     if (isSignedIn) {
         return ( 
@@ -54,12 +59,12 @@ import { Link } from "react-router-dom";
                             <p className="basket">Shopping Cart</p>
                         </div>
                         <div className="mobile-menu">
-                            <FontAwesomeIcon icon={faBars} />
-                            <ul className="mobile-menu-options">
+                            <FontAwesomeIcon icon={faBars} onClick={toggleMenu}/>
+                            {openMenu ? (<ul className="mobile-menu-options">
                                 <li><SignInComponent /></li>
                                 <li><p className="heart">♥</p></li>
                                 <li><p className="basket">Shopping Cart</p></li>
-                            </ul>
+                            </ul>) : null}
                         </div>
                     </div>
                 </nav>

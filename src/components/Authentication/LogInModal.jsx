@@ -8,6 +8,7 @@ function SignInComponent () {
 
     const toggleModal = () => {
         setModal(!modal)
+        console.log(modal)
     }
 
     return (
@@ -19,17 +20,15 @@ function SignInComponent () {
                     <div className ="modal">
                         <div className="overlay">
                             <div className="modal-content">
-                            <p>
                                 <SignIn />
-                            </p>
-                        <p className="close-modal" onClick={toggleModal}>
-                        Back
-                        </p>
+                                <p className="close-modal" onClick={toggleModal}>
+                                Back
+                                </p>
+                            </div>
                         </div>
                     </div>
-                </div>
                 )}
-    </div>
+        </div>
     )
 }
 
