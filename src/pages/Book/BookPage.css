@@ -1,0 +1,94 @@
+/* src/pages/Book/BookPage.css */
+
+.nav-item {
+    margin-right: 20px;
+}
+
+.btn-outline-danger {
+    color: red;
+}
+
+.fa-heart {
+    color: red;
+}
+
+/* Ensure the .centered-content class affects only direct children for layout purposes */
+.centered-content > .row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 20px; /* Adjust spacing as needed */
+}
+
+/* This will make the book description take full width */
+.centered-content > .row:nth-child(2),
+.centered-content > .row:nth-child(3) {
+flex-basis: 100%;
+}
+
+/* Ensure the image and details are aligned side by side */
+.centered-content > .row > .col-md-4 {
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
+.centered-content > .row > .col-md-5 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+/* Adjust the book description and reviews rows to center their content */
+.centered-content > .row > .col-md-10.offset-md-1 {
+display: flex;
+justify-content: center;
+text-align: left; /* Align text to the left */
+}
+
+.go_back_button {
+    position: absolute;
+    top: 35%;
+    left: 15%;
+}
+
+.synopsis {
+    text-align: left; /* Align the header and text to the left */
+    margin: 20px 0; /* Add some margin around the section */
+    padding: 20px; /* Add padding inside the box */
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1); /* Slightly shadowed box */
+    border-radius: 8px; /* Rounded edges */
+    background-color: #E9B384; /* Optional: Change the background color if needed */
+}
+
+/* Style for the "See More" and "Hide" buttons */
+.synopsis button {
+    cursor: pointer; /* Make the cursor turn into a pointer */
+    padding: 10px 20px; /* Adjust padding for better button size */
+    margin-top: 10px; /* Margin on top to separate from text */
+    background-color: #A1CCD1; /* Light background color for the button */
+    border: 1px solid #ccc; /* Slight border for the button */
+    border-radius: 4px; /* Rounded corners for the button */
+    color: #333; /* Button text color */
+    font-size: 14px; /* Adjust font size as needed */
+    transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.synopsis button:hover {
+    background-color: #7C9D96; /* Darker background on hover */
+}
+
+.button-group {
+    display: flex;
+    justify-content: start;
+    gap: 10px; /* Space between buttons */
+}
+
+.btn-outline-primary {
+    color: #007bff; /* Bootstrap primary color, adjust as needed */
+}
+
+.fa-shopping-basket {
+    color: #007bff; /* Match the button color or choose as per your design */
+}
