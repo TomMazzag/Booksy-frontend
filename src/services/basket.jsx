@@ -69,8 +69,7 @@ export const removeFromBasket = async (userId, itemId) => {
 
 
 export const getBasket = async (userId) => {
-    console.log("userId", userId);
-    console.log(`${backendUrl}/basket/${userId}`);
+
     try {
         const response = await fetch(`${backendUrl}/basket/${userId}`);
         if (!response.ok) {

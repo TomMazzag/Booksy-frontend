@@ -3,15 +3,17 @@
 
     import React from 'react';
     import './CartPage.css';
-    import Navbar from '../components/Home/NavBar';
-    import Footer from '../components/Home/Footer';
-    import bookImage from '../assets/book.jpeg';
-    import applePayLogo from '../assets/Applepay.png'; 
-    import visaMastercardLogo from '../assets/Cardspay.png'; 
-    import paypalLogo from '../assets/Paypal.png'; 
-    import gpayLogo from '../assets/Gpay.png'; 
-    import { getBasket, updateItemQuantity, removeFromBasket } from '../services/basket';
+    import Navbar from '../../components/Home/NavBar';
+    import Footer from '../../components/Home/Footer';
+    import bookImage from '../../assets/book.jpeg';
+    import applePayLogo from '../../assets/Applepay.png'; 
+    import visaMastercardLogo from '../../assets/Cardspay.png'; 
+    import paypalLogo from '../../assets/Paypal.png'; 
+    import gpayLogo from '../../assets/Gpay.png'; 
+    import { getBasket, updateItemQuantity, removeFromBasket } from '../../services/basket';
     import { useState, useEffect } from 'react';
+    import { getBookById } from '../../services/books';
+    import CartItem from '../../components/Cart/CartItem';
 
 
     export const CartPage = () => {
@@ -23,8 +25,10 @@
                 try {
                     const userId = '65e07035deb88a4a513164ed'; // Replace with the actual user ID
                     const basketData = await getBasket(userId);
-                    console.log(basketData);
-                    setBasketItems(basketData.items); // Assuming the response data has an 'items' property
+                    setBasketItems(basketData.basket.items);
+                    
+
+                     // Assuming the response data has an 'items' property
                 } catch (error) {
                     console.error('Error fetching basket items:', error.message);
                 }
@@ -38,24 +42,9 @@
         {/* Main Content Area */}
         <main className="cart-container">
             {/* Left Column: Cart Items */}
-            <section className="cart-items">
-            {/* Single Cart Item */}
-            <article className="cart-item">
-                <img src={bookImage} alt="Book Image" />
-                <div className="item-details">
-                <h3>Maurice and Maralyn: A Whale, a Shipwreck, a Love Story (Hardback)</h3>
-                <p>Price: $9.99</p>
-                <label htmlFor="quantity">Quantity:</label>
-                <input type="number" id="quantity" name="quantity" min="1" defaultValue="1" />
-                <button className="save-for-later">Save for later</button>
-                <button className="remove-item">Remove</button>
-                </div>
-                <div className="delivery-info">
-                <p>Delivery: $2.60</p>
-                <p>Estimated delivery: 29 Feb - 06 Mar</p>
-                </div>
-            </article>
-            </section>
+            {basketItems.map((item,index) => (
+                <CartItem key={index} book={item} />
+            ))}
 
             
 
