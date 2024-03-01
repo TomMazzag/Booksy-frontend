@@ -5,11 +5,11 @@ import { UserButton } from "@clerk/clerk-react";
 import "../Home/NavBar.css";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars } from '@fortawesome/free-solid-svg-icons'
+import { useNavigate } from 'react-router-dom';
 
+const Navbar = () => {
+    const navigate = useNavigate();
 
-    const Navbar = () => {
-
-    // You can use this function to get the user's first, last and fullName if needed
     const { isSignedIn, user } = useUser();
 
     if (isSignedIn) {
@@ -28,7 +28,7 @@ import { faBars } from '@fortawesome/free-solid-svg-icons'
                 <div className="navbar-actions">
                     {/* Will display dynamically only if logged in */}
                     <p>Hello {user.firstName} </p>
-                    <div className="heart">♥</div>
+                    <button className="heart" onClick={() => navigate('/favourites')}>♥</button>
                     <UserButton />
                     <div className="basket">Shopping Cart</div>
                 </div>
@@ -46,14 +46,14 @@ import { faBars } from '@fortawesome/free-solid-svg-icons'
                         </div>
                         <div className="navbar-actions">
                             <SignInComponent />
-                            <p className="heart">♥</p>
+                            <button className="heart" onClick={() => navigate('/favourites')}>♥</button>
                             <p className="basket">Shopping Cart</p>
                         </div>
                         <div className="mobile-menu">
                             <FontAwesomeIcon icon={faBars} />
                             <ul className="mobile-menu-options">
                                 <li><SignInComponent /></li>
-                                <li><p className="heart">♥</p></li>
+                                <li><button className="heart" onClick={() => navigate('/favourites')}>♥</button></li>
                                 <li><p className="basket">Shopping Cart</p></li>
                             </ul>
                         </div>
@@ -63,50 +63,3 @@ import { faBars } from '@fortawesome/free-solid-svg-icons'
     };
 
     export default Navbar;
-
-
-
-
-
-
-// const Navbar = () => {
-//     const navigate = useNavigate();
-//     const id = window.localStorage.getItem("id")
-
-//     const profilePage = () => {
-//         navigate(`/profile/${id}`);
-//     };
-
-//     const home = () => {
-//         navigate("/posts");
-//     };
-
-//     const shoppingBasket = () => {
-//         navigate("/basket");
-//     };
-
-//     const favouriteBooks = () => {
-//         navigate(`/favourites/${id}`);
-//     };
-
-//     const signIn = () => {
-//         navigate("/signIn");
-//     };
-
-//     return (
-//         <nav>
-//             <div onClick={home}>
-//                 <p>Booksy</p>
-//             </div>
-//             <div>
-//                 <button onClick={home}>Home</button>
-//                 <button onClick={profilePage}>Profile</button>
-//                 <button onClick={shoppingBasket}>Shopping Basket</button>
-//                 <button onClick={favouriteBooks}>Favourite Books</button>
-//                 <button onClick={signIn}>Sign In</button>
-//             </div>
-//         </nav>
-//     );
-// };
-
-// export default Navbar;
