@@ -5,6 +5,8 @@ import { UserButton } from "@clerk/clerk-react";
 import "../Home/NavBar.css";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars } from '@fortawesome/free-solid-svg-icons'
+import { Link } from "react-router-dom";
+
 
 
     const Navbar = () => {
@@ -16,7 +18,9 @@ import { faBars } from '@fortawesome/free-solid-svg-icons'
         return ( 
             <nav>
                 <div className="navbar-logo">
-                    <div className="logo"> Booksy </div>
+                    <div className="logo">
+                        <Link to= '/'>Booksy</Link>
+                    </div>
                 </div>
                 <div className="navbar-categories">
                     <div className="categories"> Categories </div>
@@ -39,7 +43,7 @@ import { faBars } from '@fortawesome/free-solid-svg-icons'
                 <nav>
                     <div className="navbar-content">
                         <div className="navbar-logo">
-                            <p> Booksy </p>
+                        <Link to= '/'>Booksy</Link>
                         </div>
                         <div className="navbar-middle">
                             <input type="text" placeholder="Search Books" />

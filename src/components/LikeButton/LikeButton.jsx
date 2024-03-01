@@ -6,13 +6,21 @@ import { useParams } from 'react-router-dom';
 import Popup from 'reactjs-popup';
 import { useUser } from "@clerk/clerk-react";
 import { updateUserLikedList } from '../../services/users';
-
+import { checkLikedBook } from '../../services/users';
 
 const LikeButton = () => {
 
     const { bookId } = useParams();
     const { isSignedIn, user } = useUser();
-    const [liked, setLiked] = useState(false)
+    const [liked, setLiked] = useState(liked)
+
+    // need a function to check if it is liked
+
+    if (checkLikedBook) {
+        liked == true
+    } else {
+        liked == false
+    }
 
     const handleLike = async () => {
         setLiked(!liked)
@@ -26,7 +34,7 @@ const LikeButton = () => {
             updateUserLikedList(user.id, bookId, "unlike")
             console.log("Sent unlike to DB")
         }
-        
+
         }
 
         return (

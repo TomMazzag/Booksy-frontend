@@ -36,7 +36,7 @@ export const checkLikedBook = async (user_id, bookId) => {
 
     const data = await response.json();
     console.log(data)
-    return data
+    return data.state
 
 }
 
