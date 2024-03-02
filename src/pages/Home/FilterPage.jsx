@@ -42,13 +42,15 @@ export const FilterPage = () => {
 
 
     useEffect(() => {
-        getAllBooksByCategory(checkedCategories)   // fetches all books that are checked
-            .then((books) => {
-                setBooks(books.books);
-            })
-            .catch(error => {
-                console.log("Failed to fetch books:", error);
-            });
+        if (checkedCategories.length > 0) {
+            getAllBooksByCategory(checkedCategories)   // fetches all books that are checked
+                .then((booksData) => {
+                    setBooks(booksData.books);
+                })
+                .catch(error => {
+                    console.log("Failed to fetch books:", error);
+                });
+        }
     }, [checkedCategories]);
 
 

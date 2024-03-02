@@ -2,8 +2,8 @@ import { useState } from "react";
 
 
 export const CheckBox = ({ categories, selected, setAddCategory, setRemoveCategory }) => {
-    const handleChange = (event) => {
-        if (event.target.checked) {
+    const handleChange = (e) => {
+        if (e.target.checked) {
             setAddCategory(categories);
         } else {
             setRemoveCategory(categories);
