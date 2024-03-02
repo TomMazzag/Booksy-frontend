@@ -24,7 +24,7 @@ import { useState } from "react";
             <nav>
                 <div className="navbar-logo">
                     <div className="logo">
-                        <Link to= '/'>Booksy</Link>
+                        <Link className= "logo" to= '/'>Booksy</Link>
                     </div>
                 </div>
                 <div className="navbar-categories">

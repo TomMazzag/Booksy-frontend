@@ -22,7 +22,7 @@ function SignInComponent () {
                             <div className="modal-content">
                                 <SignIn />
                                 <p className="close-modal" onClick={toggleModal}>
-                                Back
+                                X
                                 </p>
                             </div>
                         </div>

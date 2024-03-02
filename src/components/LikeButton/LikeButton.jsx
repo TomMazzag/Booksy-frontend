@@ -12,64 +12,70 @@ const LikeButton = () => {
 
     const { bookId } = useParams();
     const { isSignedIn, user } = useUser();
-    const [liked, setLiked] = useState(liked)
+    const [liked, setLiked] = useState(false)
 
-    // need a function to check if it is liked
+    useEffect(() => {
+        const fetchData = async () => {
+            if (isSignedIn) {
+                try {
+                    const result = await checkLikedBook(user.id, bookId);
+                    setLiked(result.liked);
+                } catch (error) {
+                    console.error('Error fetching liked status:', error);
+                }
+            }
+        };
 
-    if (checkLikedBook) {
-        liked == true
-    } else {
-        liked == false
-    }
+        fetchData();
+    }, [isSignedIn, user.id, bookId]);
 
-    const handleLike = async () => {
-        setLiked(!liked)
-        console.log(`Like when clicked: ${liked}`)
+    useEffect(() => {
+        const handleLike = async () => {
+            console.log(`Like when clicked: ${liked}`);
 
-        if (liked) {
-            updateUserLikedList(user.id, bookId, "like")
-            console.log("Sent like to DB")
-        }
+            if (isSignedIn) {
+                if (liked) {
+                    updateUserLikedList(user.id, bookId, "unlike");
+                    console.log("Sent unlike to DB");
+                } else {
+                    updateUserLikedList(user.id, bookId, "like");
+                    console.log("Sent like to DB");
+                }
+            }
+        };
+
+        handleLike(); // Call handleLike when liked state changes
+    }, [liked, isSignedIn, user.id, bookId]);
+
+    const handleButtonClick = () => {
+        setLiked(!liked); // Toggle liked state
+    };
+
+    
+        if (isSignedIn) {
+            return (
+                <div>
+                    <button className="btn btn-outline-danger" onClick={handleButtonClick}>
+                        <FontAwesomeIcon icon={faHeart} /> 
+                        {liked?"":" Save for later"}
+                    </button>
+                </div>
+            )}
         else {
-            updateUserLikedList(user.id, bookId, "unlike")
-            console.log("Sent unlike to DB")
-        }
-
-        }
-
-        return (
-            <div>
-                <button className="btn btn-outline-danger" onClick={handleLike}>
-                    <FontAwesomeIcon icon={faHeart} /> 
-                    {liked? "":" Save for later"}
-                </button>
+            return (
+                <div>
+                    <Popup trigger={(
+                    <button className="btn btn-outline-danger" onClick={handleButtonClick}>
+                        <FontAwesomeIcon icon={faHeart} /> 
+                        {liked ? "" : " Save for later"}
+                        </button>
+                        )} position="right center">
+                        {/* {"You need to be logged in to make an account"} */}
+                    <div>You must be logged in to save books</div>
+                </Popup>
             </div>
-        )}
+            )}
     
-    // if (isSignedIn) {
-    //     return (
-    //         <div>
-    //             <button className="btn btn-outline-danger" onClick={handleLike}>
-    //                 <FontAwesomeIcon icon={faHeart} /> 
-    //                 {liked?"":" Save for later"}
-    //             </button>
-    //         </div>
-    //     )}
-    // else {
-    //     return (
-    //         <div>
-    //             <Popup trigger={(
-    //             <button className="btn btn-outline-danger" onClick={handleLike}>
-    //                 <FontAwesomeIcon icon={faHeart} /> 
-    //                 {liked ? "" : " Save for later"}
-    //                 </button>
-    //                 )} position="right center">
-    //                 {/* {"You need to be logged in to make an account"} */}
-    //             <div>You must be logged in to create a wishlist.</div>
-    //         </Popup>
-    //     </div>
-    //     )}
-    
+    };
 
-
-export default LikeButton
+export default LikeButton;
