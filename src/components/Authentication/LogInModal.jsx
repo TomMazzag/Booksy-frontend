@@ -1,11 +1,13 @@
-import { SignIn } from "@clerk/clerk-react";
+import { SignIn, useAuth } from "@clerk/clerk-react";
 import { useState} from 'react'
 import '../Authentication/Modal.css'
 
 function SignInComponent () {
 
-    const [modal, setModal] = useState(false)
+    const [modal, setModal] = useState(false);
+    // const [modalSignUp, setModalSignUp] = useState(false);
 
+    
     const toggleModal = () => {
         setModal(!modal)
         console.log(modal)

@@ -4,7 +4,7 @@ import './../Home/BookCard.css';
 import { useEffect, useState} from 'react';
 import { useParams } from 'react-router-dom';
 import Popup from 'reactjs-popup';
-import { useUser } from "@clerk/clerk-react";
+import { useUser} from "@clerk/clerk-react";
 import { updateUserLikedList } from '../../services/users';
 import { checkLikedBook } from '../../services/users';
 
@@ -25,37 +25,38 @@ const LikeButton = () => {
                 }
             }
         };
-
         fetchData();
-    }, [isSignedIn, user.id, bookId]);
+    }, []);
 
-    useEffect(() => {
-        const handleLike = async () => {
-            console.log(`Like when clicked: ${liked}`);
-
-            if (isSignedIn) {
-                if (liked) {
-                    updateUserLikedList(user.id, bookId, "unlike");
-                    console.log("Sent unlike to DB");
-                } else {
-                    updateUserLikedList(user.id, bookId, "like");
-                    console.log("Sent like to DB");
-                }
+    const handleLike = async () => {
+        setLiked(!liked);
+        console.log(`Like when clicked: ${liked}`);
+    
+        if (isSignedIn) {
+            if (liked) {
+                updateUserLikedList(user.id, bookId, "unlike");
+                console.log("Sent unlike to DB");
+            } else {
+                updateUserLikedList(user.id, bookId, "like");
+                console.log("Sent like to DB");
             }
-        };
-
-        handleLike(); // Call handleLike when liked state changes
-    }, [liked, isSignedIn, user.id, bookId]);
+        }
+    };
+    
+    useEffect(() => {
+        handleLike(); 
+    }, []);
+    
 
     const handleButtonClick = () => {
-        setLiked(!liked); // Toggle liked state
+        setLiked(!liked); 
     };
 
     
         if (isSignedIn) {
             return (
                 <div>
-                    <button className="btn btn-outline-danger" onClick={handleButtonClick}>
+                    <button className="btn btn-outline-danger" onClick={handleLike}>
                         <FontAwesomeIcon icon={faHeart} /> 
                         {liked?"":" Save for later"}
                     </button>
@@ -67,11 +68,11 @@ const LikeButton = () => {
                     <Popup trigger={(
                     <button className="btn btn-outline-danger" onClick={handleButtonClick}>
                         <FontAwesomeIcon icon={faHeart} /> 
-                        {liked ? "" : " Save for later"}
+                        {liked ? " Save for later" : ""}
                         </button>
                         )} position="right center">
                         {/* {"You need to be logged in to make an account"} */}
-                    <div>You must be logged in to save books</div>
+                    <div>Please log in to save books!</div>
                 </Popup>
             </div>
             )}
