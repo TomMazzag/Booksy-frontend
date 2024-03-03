@@ -13,8 +13,8 @@
 }
 
 .book-card img {
-    width: 180px; /* Adjust the width as needed */
-    height: 250px; /* Adjust the height as needed */
+    width: 150px; /* Adjust the width as needed */
+    height: auto; /* Adjust the height as needed */
     object-fit: cover; /* This will ensure the image covers the area, maintaining aspect ratio without distortion */
     border-radius: 4px; /* Optional: adds rounded corners to the images */
     margin-bottom: 10px;
@@ -28,6 +28,14 @@
 .book-card p {
     color: #666;
     font-size: 16px;
+}
+
+.book-card-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 20px;
+    justify-content: center;
+    width: 80%;
 }
 
 @media (max-width: 760px) {

@@ -11,11 +11,13 @@ export const CheckBox = ({ categories, selected, setAddCategory, setRemoveCatego
     };
 
     return (
-        <label className="category-item">
+        <div className="filter-item">
+            <label className="category-item">
             {categories}
+            </label>
             <input type="checkbox" onChange={handleChange} checked={selected} />
-            <span className="checkmark"></span>
-        </label>
+        </div>
+            
     );
 };
 

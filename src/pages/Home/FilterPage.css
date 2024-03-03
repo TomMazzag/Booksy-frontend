@@ -13,12 +13,13 @@
     margin-left: 20px; /* Add some left margin for spacing */
     padding: 10px; /* Add padding inside the container */
     gap: 10px;
+    flex: 0 0 200px;
 }
 
 
 .category-item {
-    margin-bottom: 50px; /* spacing between categories */
     cursor: pointer;
+    margin: 0;
 }
 
 .category-item:hover {
@@ -34,4 +35,24 @@
     justify-content: center;
     align-items: center;
     height: 20vh;
+}
+
+.category-item input {
+    align-self: flex-end;
+}
+
+.filter-item {
+    display: flex;
+    padding: 10px 5px;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.filtered-books-container {
+    padding: 10px 20px;
+    flex-grow: 1;
+}
+
+.filtered-books {
+    width: 100%;
 }

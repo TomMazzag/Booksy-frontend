@@ -84,11 +84,14 @@ export const FilterPage = () => {
                         />
                     ))}
                 </div>
-                <div className="filtered-books">
+                <div className="filtered-books-container">
                     <h1>Filtered books</h1>
-                    {books.map((book, index) => (
-                        <FilterBookCard key={index} book={book} />
-                    ))}
+                    <div className='filtered-books'>
+                        {books.map((book, index) => (
+                            <FilterBookCard key={index} book={book} />
+                        ))}
+                    </div>
+                    
                 </div>
             </div>
             <Footer />
