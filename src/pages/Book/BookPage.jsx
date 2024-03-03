@@ -39,7 +39,13 @@ const BookPage = () => {
         setShowFullSynopsis(!showFullSynopsis); // Toggle between showing full or partial synopsis
     };
 
-    if (isLoading) return <div>Loading...</div>;
+    if (isLoading) return (
+        <>
+            <Navbar />
+            <div>Loading...</div>
+            <Footer />
+        </>
+    );
     if (error) return <div>{error}</div>;
     if (!book) return <div>No book found</div>; // Or any other error handling
 

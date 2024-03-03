@@ -33,7 +33,7 @@ export const FilterPage = () => {
         "LGBTQIA+",
         "Mystery",
         "Autobiography"
-    ];
+    ].sort();
 
 
     useEffect(() => {

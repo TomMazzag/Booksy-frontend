@@ -52,7 +52,7 @@ import { useState } from "react";
                         <div className="navbar-actions">
                             <SignInComponent />
                             <p className="heart">♥</p>
-                            <p className="basket">Shopping Cart</p>
+                            <p className="basket">Cart</p>
                         </div>
                         <div className="mobile-menu">
                             <FontAwesomeIcon icon={faBars} onClick={toggleMenu}/>
