@@ -25,22 +25,27 @@ const Navbar = () => {
     if (isSignedIn) {
         return ( 
             <nav>
-                <div className="navbar-logo">
-                    <div className="logo"> Booksy </div>
-                </div>
-                <div className="navbar-categories">
-                    <div className="categories"> Categories </div>
-                </div>
-                <div className="navbar-search">
-                    <input type="text" placeholder="Search Books" />
-                    {/* Add search icon if necessary */}
-                </div>
-                <div className="navbar-actions">
-                    {/* Will display dynamically only if logged in */}
-                    <p>Hello {user.firstName} </p>
-                    <div className="heart">♥</div>
-                    <UserButton />
-                    <div className="basket">Shopping Cart</div>
+                <div className="navbar-content">
+                    <div className="navbar-logo">
+                        <p onClick={navigateHomePage}> Booksy </p>
+                    </div>
+                    <div className="navbar-middle">
+                        <input type="text" placeholder="Search Books" />
+                    </div>
+                    <div className="navbar-actions">
+                        <p>Hello {user.firstName} </p>
+                        <p className="heart">♥</p>
+                        <UserButton />
+                        <p className="basket">Cart</p>
+                    </div>
+                    <div className="mobile-menu">
+                        <FontAwesomeIcon icon={faBars} onClick={toggleMenu}/>
+                        {openMenu ? (<ul className="mobile-menu-options">
+                            <li>Hello {user.firstName}</li>
+                            <li><p className="heart">Favourites</p></li>
+                            <li><p className="basket">Shopping Cart</p></li>
+                        </ul>) : null}
+                    </div>
                 </div>
             </nav>
         )
