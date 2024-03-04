@@ -1,4 +1,4 @@
-import SignUpComponent from "../../components/Authentication/signUpModal";
+import SignUpComponent from "../../components/Authentication/SignUpModal";
 
 
 export const SignupPage = () => {

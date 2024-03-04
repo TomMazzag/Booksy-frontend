@@ -7,9 +7,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
 import { Link } from "react-router-dom";
 
-import { Link } from 'react-router-dom'; // Make sure this is imported
-import SignUpComponent from "../Authentication/signUpModal";
-
 const Navbar = () => {
     const { isSignedIn, user } = useUser();
 
