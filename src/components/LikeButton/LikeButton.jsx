@@ -4,7 +4,7 @@ import './../Home/BookCard.css';
 import { useEffect, useState} from 'react';
 import { useParams } from 'react-router-dom';
 import Popup from 'reactjs-popup';
-import { useUser} from "@clerk/clerk-react";
+import { useUser } from "@clerk/clerk-react";
 import { updateUserLikedList } from '../../services/users';
 import { checkLikedBook } from '../../services/users';
 
@@ -13,31 +13,33 @@ const LikeButton = () => {
     const { bookId } = useParams();
     const { isSignedIn, user } = useUser();
     const [liked, setLiked] = useState(false);
-    const [refreshKey, setRefreshKey] = useState(0);
+    // const [refreshKey, setRefreshKey] = useState(0);
 
     const handleButtonClick = () => {
         setLiked(!liked); 
     };
 
-    useEffect(() => {
-        const fetchData = async () => {
-            if (user && liked !== undefined) { 
-                try {
-                    const result = await checkLikedBook(user.id, bookId);
-                    setLiked(result);
-                } catch (error) {
-                    console.error('Error fetching liked status:', error);
-                }
+    const fetchData = async () => {
+        console.log("Step 1")
+        console.log(user)
+        console.log(liked)
+        if (user && liked !== undefined) { 
+            console.log("I am the user:", user)
+            console.log("Step 2")
+            try {
+                const result = await checkLikedBook(user.id, bookId);
+                console.log("I am the result:", result)
+                setLiked(result);
+            } catch (error) {
+                console.error('Error fetching liked status:', error);
             }
         }
-        fetchData()
-        }
-    , []);
+    }
 
-    // triggers a refresh whenever the page is reloaded
-    const refreshData = () => {
-        setRefreshKey(prevKey => prevKey + 1);
-    };
+    useEffect(() => { 
+        console.log("I am liked:", liked)
+        fetchData();
+    }, [user]);
 
     const handleLike = async () => {
         setLiked(!liked);
@@ -53,7 +55,6 @@ const LikeButton = () => {
         }
     };
     
-    
         if (isSignedIn) {
             return (
                 <div>
@@ -61,7 +62,6 @@ const LikeButton = () => {
                         <FontAwesomeIcon icon={faHeart} /> 
                         {liked ? "": " Save for later"}
                     </button>
-                    < refreshData />
                 </div>
             )}
         else {

@@ -32,14 +32,12 @@ export const checkLikedBook = async (user_id, bookId) => {
     const URL = new URLSearchParams({ user_id: String(user_id), bookId: String(bookId) });
 
     const response = await fetch(`${backend_url}/users/liked/?` + URL ,requestOptions);
-    console.log("I am the response:", response)
 
     if (response.status !== 200) {
         return response
     }
 
     const data = await response.json();
-    console.log(data)
     console.log(data.state)
     return data.state
 }
