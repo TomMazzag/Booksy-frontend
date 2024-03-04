@@ -7,6 +7,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars } from '@fortawesome/free-solid-svg-icons'
 import { useState } from "react";
 import { SearchBar } from "./SearchBar";
+import bookData from '../../assets/books.json'
+
 
 
     const Navbar = () => {
@@ -49,7 +51,7 @@ import { SearchBar } from "./SearchBar";
                             
                             />
                         </div> */}
-                        <SearchBar />
+                        <SearchBar placeholder="Search for books..." />
                         <div className="navbar-actions">
                             <SignInComponent />
                             <p className="heart">♥</p>
