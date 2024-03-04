@@ -2,13 +2,14 @@
 
 import React, { useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
-import Navbar from "../../components/Home/NavBar.jsx";
+import Navbar from '../../components/Home/NavBar.jsx';
 import Footer from "../../components/Home/Footer.jsx";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHeart, faShoppingBasket, faStar } from '@fortawesome/free-solid-svg-icons';
 import './BookPage.css';
 import { getBookById } from '../../services/books'; 
 import LikeButton from '../../components/LikeButton/LikeButton.jsx';
+import { addToBasket } from '../../services/basket';
 
 const BookPage = () => {
     const { bookId } = useParams(); // Use useParams to get the bookId from the URL
@@ -16,6 +17,12 @@ const BookPage = () => {
     const [isLoading, setIsLoading] = useState(false);
     const [error, setError] = useState(null);
     const [showFullSynopsis, setShowFullSynopsis] = useState(false);
+    
+
+    const addItemToBasket = () => {
+        addToBasket(book._id, '65e07035deb88a4a513164ed');
+        console.log(book._id);
+    }
 
     useEffect(() => {
         const fetchBook = async () => {

@@ -2,12 +2,13 @@
 
 
     .footer {
-        background-color: #f8f8f8;
+        background-color: #A1CCD1;
         padding: 20px 0;
         color: #333;
+        padding: 2px 0;
         margin-top: 60px;
     }
-    
+
     .footer-content {
         display: flex;
         justify-content: space-around;
@@ -20,12 +21,14 @@
     .footer-section {
         margin: 10px 0;
     }
+
     
     .footer-section h5 {
         color: #000;
-        margin-bottom: 10px;
+        margin-bottom: 5px;
         font-size: medium;
     }
+
 
     .footer-section h5:hover {
         text-decoration: underline;
@@ -58,6 +61,7 @@
         margin: 0;
     }
     
+
 .footer {
     background-color: #A1CCD1;
     padding: 20px 0;
@@ -116,3 +120,4 @@
         font-weight: 300;
     }
 }
+
