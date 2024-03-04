@@ -11,8 +11,8 @@ import { getUserById } from '../../services/users.jsx';
 
 export const FavouritesPage = () => {
     const [books, setBooks] = useState([]);
-    const { user } = useUser();
     const [userData, setuserData] = useState([]);
+    const { isSignedIn, user } = useUser();
 
     useEffect(() => {
         const fetchUserData = async () => {
@@ -47,20 +47,22 @@ export const FavouritesPage = () => {
         <>
             <Navbar />
             <div className="title">
-                <h1>Your Favourite books</h1>
+                <h1>Your Favourite Books</h1>
             </div>
             <div className="category-grid-container">
                 <div className="category-grid">
-                {userData && userData.saved_items ? (
+                    {isSignedIn && userData && userData.saved_items ? (
                         books.filter(book => userData.saved_items.includes(book._id)).map(book => (
                             <BookCard key={book._id} book={book} />
                         ))
-                    ) : (
+                    ) : isSignedIn ? (
                         <p>No favourite books added to your list.</p>
+                    ) : (
+                        <p>Don't lose your faves! Sign in or create an account.</p>
                     )}
                 </div>
             </div>
             <Footer />
         </>
     );
-}
+};
