@@ -64,7 +64,7 @@ const LikeButton = () => {
                     <Popup trigger={(
                     <button className="btn btn-outline-danger" onClick={handleButtonClick}>
                         <FontAwesomeIcon icon={faHeart} /> 
-                        {liked ? " Save for later" : ""}
+                        {liked ? "" : " Save for later"}
                         </button>
                         )} position="right center">
                         {/* {"You need to be logged in to make an account"} */}
