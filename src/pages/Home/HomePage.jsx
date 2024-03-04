@@ -11,15 +11,15 @@ import { getAllBooks } from "../../services/books";
 export const HomePage = () => {
 
     const categories = [
-        "Young Adult",
-        "Romance",
-        "Action",
-        "History",
-        "Non-fiction",
-        "Thriller",
-        "LGBTQIA+",
-        "Mystery",
-        "Autobiography"
+        {name: "Action", image: "http://books.google.com/books/content?id=I12oPwAACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api"},
+        {name: "Autobiography", image: "http://books.google.com/books/content?id=HjyvEAAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"},
+        {name: "History", image: "http://books.google.com/books/content?id=qb-BEAAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"},
+        {name: "LGBTQIA+", image: "http://books.google.com/books/content?id=1I1xDwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"},
+        {name: "Mystery", image: "http://books.google.com/books/content?id=0cH0AAAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"},
+        {name: "Non-fiction", image: "http://books.google.com/books/content?id=XwLFDBmVO20C&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"},
+        {name: "Romance", image: "http://books.google.com/books/content?id=oqmBpk1EzvAC&printsec=frontcover&img=1&zoom=1&source=gbs_api"},
+        {name: "Thriller", image: "http://books.google.com/books/content?id=XA87EAAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"},
+        {name: "Young Adult", image: "http://books.google.com/books/content?id=jaOHDwAAQBAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api"},
     ];
 
     const [books, setBooks] = useState([]);
@@ -37,6 +37,17 @@ export const HomePage = () => {
         fetchBooks();
     }, []);
 
+    const [isHovering, setIsHovering] = useState(false);
+    
+    const handleMouseEnter = () => {
+        setIsHovering(true);
+    };
+    
+    const handleMouseLeave = () => {
+    setIsHovering(false);
+        };
+    
+
     return (
         <>
         <Navbar />
@@ -52,14 +63,20 @@ export const HomePage = () => {
             </div>
 
             <div className="title">
-                <h1>Or See Our Book Selection</h1>
+                <h1>Or see a selection of our favourites </h1>
             </div>
-            <div className="category-grid-container">
-                <div className="category-grid">
+            <div
+                className={`book-list-container ${isHovering ? 'paused' : ''}`}
+                onMouseEnter={handleMouseEnter}
+                onMouseLeave={handleMouseLeave}
+            >
+            <div className="category-grid-container-selection">
+                <div className="category-grid-selection">
                     {books.map((book) => (
                         <BookCard key={book._id} book={book} />
                     ))}
                 </div>
+            </div>
             </div>
             <Footer />
         </>
