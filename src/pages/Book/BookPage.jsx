@@ -9,6 +9,8 @@ import { faHeart, faShoppingBasket, faStar } from '@fortawesome/free-solid-svg-i
 import './BookPage.css';
 import { getBookById } from '../../services/books'; 
 import { addToBasket } from '../../services/basket';
+import ReviewBox from '../../components/Review/LeaveReview.jsx';
+import AllReviews from '../../components/Review/AllReviews.jsx';
 
 const BookPage = () => {
     const { bookId } = useParams(); // Use useParams to get the bookId from the URL
@@ -92,6 +94,19 @@ const BookPage = () => {
                             {showFullSynopsis ? 'Hide' : 'See More'}
                         </button>
                     )}
+                </div>
+                <div className='reviews-section'>
+                    <div className='reviews-section-headers'>
+                        <h2>Reviews</h2>
+                        {1 == 2 ? (
+                            <ReviewBox /> 
+                        ) : 
+                            <button onClick={toggleSynopsisVisibility} className="btn btn-outline-secondary">
+                                Sign in to leave a review
+                            </button>
+                        }  
+                    </div>
+                    <AllReviews />
                 </div>
             </div>
             <Footer />
