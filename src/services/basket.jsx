@@ -1,6 +1,7 @@
 // basketService.js
 
-const backendUrl = "http://127.0.0.1:3000"; 
+const backend_url = "https://booksy-backend.onrender.com";
+// const backendUrl = "http://127.0.0.1:3000"; 
 
 export const addToBasket = async (item, userId) => {
     try {

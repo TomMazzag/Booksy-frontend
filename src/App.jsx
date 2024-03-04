@@ -4,6 +4,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { FilterPage } from "./pages/Home/FilterPage"
 import { HomePage } from "./pages/Home/HomePage"
 import { SignupPage } from "./pages/Home/SignupPage";
+import { FavouritesPage } from './pages/Favourites/FavouritesPage';
 import BookPage from './pages/Book/BookPage';
 import CartPage from './pages/Cart/CartPage';
 
@@ -27,6 +28,10 @@ const router = createBrowserRouter([
   {
     path: "/basket",
     element: <CartPage />
+  },
+  {
+    path: "/favourites",
+    element: <FavouritesPage />
   }
   
 ]);
