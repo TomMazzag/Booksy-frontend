@@ -43,6 +43,7 @@ const Navbar = () => {
                         {/* Wrap the logo with Link to navigate to "/" */}
                         <Link to="/" className="logo"> Booksy </Link>
                     </div>
+
                     <div className="navbar-middle">
                         <input type="text" placeholder="Search Books" />
                     </div>
@@ -68,3 +69,4 @@ const Navbar = () => {
 };
 
 export default Navbar;
+

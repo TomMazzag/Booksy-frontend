@@ -8,7 +8,8 @@ import Footer from "../../components/Home/Footer.jsx";
 import { CheckBox } from "../../components/Filter/CheckBox.jsx";
 import { SortBy } from "../../components/Filter/Sort.jsx";
 import FilterBookCard from "../../components/Filter/FilterBookCard.jsx";
-import { getAllBooksByCategory, getAllBooksByPrice } from "../../services/filters.jsx";
+import { getAllBooksByCategory } from "../../services/filters.jsx";
+
 
 
 import "../../components/Home/Footer.css";
@@ -42,26 +43,45 @@ export const FilterPage = () => {
 
 
     useEffect(() => {
-        getAllBooksByCategory(checkedCategories)   // fetches all books that are checked
-            .then((books) => {
-                setBooks(books.books);
-            })
-            .catch(error => {
-                console.log("Failed to fetch books:", error);
-            });
+        if (checkedCategories.length > 0) {
+            getAllBooksByCategory(checkedCategories)   // fetches all books that are checked
+                .then((booksData) => {
+                    setBooks(booksData.books);
+                })
+                .catch(error => {
+                    console.log("Failed to fetch books:", error);
+                });
+        }
     }, [checkedCategories]);
 
 
-    const handleCategoryChange = (category) => {      // 
+    const updateBooksByCategories = (categories) => {
+        if (categories.length > 0) {
+            getAllBooksByCategory(categories)
+                .then((booksData) => {
+                    setBooks(booksData.books);
+                })
+                .catch(error => {
+                    console.log("Failed to fetch books:", error);
+                });
+        } else {
+            setBooks([]);
+        }
+    };
+    
+    const handleCategoryChange = (category) => {
         setCheckedCategories(prevCategories => {
             if (prevCategories.includes(category)) {
-                return prevCategories.filter(cat => cat !== category);
+                const updatedCategories = prevCategories.filter(cat => cat !== category);
+                updateBooksByCategories(updatedCategories);
+                return updatedCategories;
             } else {
-                return [...prevCategories, category];
+                const updatedCategories = [...prevCategories, category];
+                updateBooksByCategories(updatedCategories);
+                return updatedCategories;
             }
         });
     };
-
 
 
     return (
