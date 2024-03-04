@@ -56,3 +56,15 @@
 .filtered-books {
     width: 100%;
 }
+
+@media (max-width: 760px) {
+    .categories-box {
+        flex-direction: column;
+    }
+
+    .categories-container {
+        gap: 0px;
+        margin-left: 0;
+        padding: 20px;
+    }
+}

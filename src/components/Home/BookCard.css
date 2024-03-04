@@ -60,4 +60,18 @@
         margin-bottom: 10px; /* Add space between category text and image */
         font-size: 1em;
     }
+
+    .book-card-grid {
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+    }
+
+    .book-card-grid .book-card img{
+        height: 200px;
+    }
+
+    .title {
+        height: 15vh!important;
+    }
 }
