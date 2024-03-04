@@ -32,7 +32,7 @@
     border-radius: 30px; /* Rounded corners */
     padding: 30px; /* Padding around the card content */
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Shadow effect */
-    transition: box-shadow 0.3s ease; 
+    transition: box-shadow 0.8s ease; 
 
     display: flex;
     flex-direction: column; /* Stack items vertically */
@@ -45,7 +45,7 @@
 }
 
 .category-card img {
-    width: 100%; /* Make the image fill the width of the card */
+    width: auto; /* Make the image fill the width of the card */
     height: auto; /* Maintain aspect ratio */
 }
 

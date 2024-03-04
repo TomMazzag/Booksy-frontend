@@ -5,6 +5,7 @@ import { FilterPage } from "./pages/Home/FilterPage"
 import { HomePage } from "./pages/Home/HomePage"
 import { SignupPage } from "./pages/Home/SignupPage";
 import BookPage from './pages/Book/BookPage';
+import CartPage from './pages/Cart/CartPage';
 
 const router = createBrowserRouter([
   {
@@ -22,7 +23,12 @@ const router = createBrowserRouter([
   {
     path: "/books/:bookId",
     element: <BookPage />
+  },
+  {
+    path: "/basket",
+    element: <CartPage />
   }
+  
 ]);
 
 
@@ -30,7 +36,8 @@ function App() {
 
   return (
     <>
-    <RouterProvider router={router} />
+    <RouterProvider router={router}/>
+    {/* <CartPage/> */}
     </>
   )
 };
