@@ -63,3 +63,37 @@
         color: white;
         cursor: pointer;
     }
+
+
+    /* Responsive Styles */
+@media (max-width: 768px) {
+    .payment-summary {
+        width: 100%; /* Full width on smaller screens */
+        margin-top: 2rem; /* Add some space between the items list and payment summary on smaller screens */
+    }
+
+    /* Adjust label and image sizes for smaller screens */
+    .payment-summary label {
+        font-size: smaller; /* Smaller font size for labels */
+    }
+
+    .payment-summary input[type="radio"] + img {
+        height: 30px; /* Smaller images for payment logos */
+    }
+}
+
+@media (max-width: 480px) {
+    /* Further adjustments for very small screens */
+    .payment-summary form {
+        padding: 0.5rem; /* Reduce padding */
+    }
+
+    .payment-summary label {
+        flex-direction: column; /* Stack label text and image vertically */
+    }
+
+    .checkout-button {
+        padding: 0.8rem; /* Reduce button padding */
+        font-size: small; /* Reduce button font size */
+    }
+}
