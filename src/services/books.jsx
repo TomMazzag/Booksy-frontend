@@ -72,10 +72,7 @@ export const getBooksByTitle = async ( title ) => {
         headers: {}
         };
     
-        const response = await fetch(
-        `${backend_url}/books/search/${author}`
-        ,requestOptions
-        );
+        const response = await fetch(`${backend_url}/books/search/${author}` ,requestOptions);
     
         if (response.status !== 200) {
         throw new Error("Unable to fetch books");
