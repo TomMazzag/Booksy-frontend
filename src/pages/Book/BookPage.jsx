@@ -76,6 +76,9 @@ const BookPage = () => {
                         <p>Price: £{book.price?.$numberDecimal || 'N/A'}</p>
                         <p>Status: In Stock</p>
                         <LikeButton />
+                        <button className="btn btn-outline-primary" onClick = {addItemToBasket}  > 
+                                <FontAwesomeIcon icon={faShoppingBasket} /> Add to Basket
+                        </button>
                     </div>
                 </div>
                 <div className="synopsis">
@@ -85,6 +88,7 @@ const BookPage = () => {
                         <button onClick={toggleSynopsisVisibility} className="btn btn-outline-secondary">
                             {showFullSynopsis ? 'Hide' : 'See More'}
                         </button>
+                        
                     )}
                 </div>
             </div>
