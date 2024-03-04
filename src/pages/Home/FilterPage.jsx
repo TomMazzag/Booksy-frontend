@@ -5,9 +5,9 @@ import React, { useEffect, useState } from 'react';
 import { useParams, Link, useLocation } from 'react-router-dom';
 import Navbar from "../../components/Home/NavBar.jsx";
 import Footer from "../../components/Home/Footer.jsx";
-import { CheckBox } from "../../components/Home/Filter/CheckBox.jsx";
-import { SortBy } from "../../components/Home/Filter/Sort.jsx";
-import FilterBookCard from "../../components/FilterBookCard.jsx";
+import { CheckBox } from "../../components/Filter/CheckBox.jsx";
+import { SortBy } from "../../components/Filter/Sort.jsx";
+import FilterBookCard from "../../components/Filter/FilterBookCard.jsx";
 import { getAllBooksByCategory } from "../../services/filters.jsx";
 
 
