@@ -20,12 +20,7 @@ const LikeButton = () => {
     };
 
     const fetchData = async () => {
-        console.log("Step 1")
-        console.log(user)
-        console.log(liked)
         if (user && liked !== undefined) { 
-            console.log("I am the user:", user)
-            console.log("Step 2")
             try {
                 const result = await checkLikedBook(user.id, bookId);
                 console.log("I am the result:", result)
@@ -37,7 +32,6 @@ const LikeButton = () => {
     }
 
     useEffect(() => { 
-        console.log("I am liked:", liked)
         fetchData();
     }, [user]);
 
