@@ -63,7 +63,7 @@ const Navbar = () => {
                         <FontAwesomeIcon icon={faBars} onClick={toggleMenu}/>
                         {openMenu ? (<ul className="mobile-menu-options">
                             <li><SignInComponent /></li>
-                            <li><p className="heart">♥</p></li>
+                            <li><p className="heart">Favourites</p></li>
                             <li><p className="basket">Shopping Cart</p></li>
                         </ul>) : null}
                     </div>
