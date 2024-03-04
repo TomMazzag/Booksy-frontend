@@ -100,17 +100,23 @@ nav p {
 }
 
 .mobile-menu-options {
+    padding: 0;
     padding-top: 5px;
     display: block;
     position: absolute;
     top: 82px;
     left: 0;
     width: 100%;
-    height: 90px;
+    height: 120px;
     background-color: #A1CCD1;
     list-style: none;
     cursor: pointer;
     border-top: 1px solid black;
+}
+
+.mobile-menu-options li {
+    margin: 5px;
+    font-size: large;
 }
 
 @media (min-width: 1300px) {
@@ -145,5 +151,13 @@ nav p {
     }
     .mobile-menu {
         display: block;
+    }
+
+    .navbar-middle {
+        display: none;
+    }
+
+    .navbar-content {
+        padding: 0px 10px;
     }
 }

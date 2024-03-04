@@ -71,6 +71,3 @@ export const HomePage = () => {
 // TODO: Code which allows the category cards to become a button, navigate to 
 // relevant page: 
 
-// // <Link key={index} to={`/category/${category}`}>
-// <CategoryCard category={category} />
-// </Link>
