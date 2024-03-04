@@ -8,6 +8,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHeart, faShoppingBasket, faStar } from '@fortawesome/free-solid-svg-icons';
 import './BookPage.css';
 import { getBookById } from '../../services/books'; 
+import LikeButton from '../../components/LikeButton/LikeButton.jsx';
 import { addToBasket } from '../../services/basket';
 
 const BookPage = () => {
@@ -79,14 +80,10 @@ const BookPage = () => {
                         <p>Rating: <FontAwesomeIcon icon={faStar} /> 4.5</p>
                         <p>Price: £{book.price?.$numberDecimal || 'N/A'}</p>
                         <p>Status: In Stock</p>
-                        <div className="button-group">
-                            <button className="btn btn-outline-danger">
-                                <FontAwesomeIcon icon={faHeart} /> Add to Favourites
-                            </button>
-                            <button className="btn btn-outline-primary" onClick = {addItemToBasket}  > 
+                        <LikeButton />
+                        <button className="btn btn-outline-primary" onClick = {addItemToBasket}  > 
                                 <FontAwesomeIcon icon={faShoppingBasket} /> Add to Basket
-                            </button>
-                        </div>
+                        </button>
                     </div>
                 </div>
                 <div className="synopsis">
@@ -96,6 +93,7 @@ const BookPage = () => {
                         <button onClick={toggleSynopsisVisibility} className="btn btn-outline-secondary">
                             {showFullSynopsis ? 'Hide' : 'See More'}
                         </button>
+                        
                     )}
                 </div>
             </div>

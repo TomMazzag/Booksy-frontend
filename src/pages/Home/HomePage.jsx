@@ -37,6 +37,17 @@ export const HomePage = () => {
         fetchBooks();
     }, []);
 
+    const [isHovering, setIsHovering] = useState(false);
+    
+    const handleMouseEnter = () => {
+        setIsHovering(true);
+    };
+    
+    const handleMouseLeave = () => {
+    setIsHovering(false);
+        };
+    
+
     return (
         <>
         <Navbar />
@@ -52,14 +63,20 @@ export const HomePage = () => {
             </div>
 
             <div className="title">
-                <h1>Or See Our Book Selection</h1>
+                <h1>Or see a selection of our favourites </h1>
             </div>
-            <div className="category-grid-container">
-                <div className="book-card-grid">
+            <div
+                className={`book-list-container ${isHovering ? 'paused' : ''}`}
+                onMouseEnter={handleMouseEnter}
+                onMouseLeave={handleMouseLeave}
+            >
+            <div className="category-grid-container-selection">
+                <div className="category-grid-selection">
                     {books.map((book) => (
                         <BookCard key={book._id} book={book} />
                     ))}
                 </div>
+            </div>
             </div>
             <Footer />
         </>

@@ -4,6 +4,7 @@ import { useUser } from "@clerk/clerk-react";
 import { UserButton } from "@clerk/clerk-react";
 import "../Home/NavBar.css";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { Link } from "react-router-dom";
 import { faBars } from '@fortawesome/free-solid-svg-icons'
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
