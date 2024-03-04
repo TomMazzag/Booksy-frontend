@@ -13,7 +13,6 @@ const Navbar = () => {
     const navigate = useNavigate();
     const { isSignedIn, user } = useUser();
     const [openMenu, setOpenMenu] = useState(false)
-    const navigate = useNavigate()
 
     const toggleMenu = () => {
         setOpenMenu(!openMenu)
@@ -35,8 +34,8 @@ const Navbar = () => {
                     </div>
                     <div className="navbar-actions">
                         <p>Hello {user.firstName} </p>
-//                         <p className="heart">♥</p>
-                        <button className="heart" onClick={() => navigate('/favourites')}>♥</button>
+{/* //                         <p className="heart">♥</p> */}
+                        <p className="heart" onClick={() => navigate('/favourites')}>♥</p>
                         <UserButton />
                         <p className="basket">Cart</p>
                     </div>
@@ -44,8 +43,8 @@ const Navbar = () => {
                         <FontAwesomeIcon icon={faBars} onClick={toggleMenu}/>
                         {openMenu ? (<ul className="mobile-menu-options">
                             <li>Hello {user.firstName}</li>
-//                             <li><p className="heart">Favourites</p></li>
-                            <li><button className="heart" onClick={() => navigate('/favourites')}>Favourites</button></li>
+{/* //                             <li><p className="heart">Favourites</p></li> */}
+                            <li><p className="heart" onClick={() => navigate('/favourites')}>Favourites</p></li>
                             <li><p className="basket">Shopping Cart</p></li>
                         </ul>) : null}
                     </div>
@@ -64,8 +63,8 @@ const Navbar = () => {
                     </div>
                     <div className="navbar-actions">
                         <SignInComponent />
-//                         <p className="heart">♥</p>
-                        <button className="heart" onClick={() => navigate('/favourites')}>♥</button>
+{/* //                         <p className="heart">♥</p> */}
+                        <p className="heart" onClick={() => navigate('/favourites')}>♥</p>
                         <p className="basket">Cart</p>
                     </div>
                     <div className="mobile-menu">
