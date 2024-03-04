@@ -67,7 +67,6 @@ const BookPage = () => {
     return (
         <>
             <Navbar />
-            <Link to="/" className='go_back_button'> &lt;&lt; Back to Homepage</Link>
             <div className="container mt-4 centered-content">
                 <div className="row">
                     <div className="col-md-4">
