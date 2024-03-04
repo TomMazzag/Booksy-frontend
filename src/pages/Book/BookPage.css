@@ -49,8 +49,8 @@ text-align: left; /* Align text to the left */
 
 .go_back_button {
     position: absolute;
-    top: 35%;
-    left: 15%;
+    top: 110px;
+    left: 10%;
 }
 
 .synopsis {

@@ -36,7 +36,7 @@ export const getAllBooks = async () => {
         }
 
         const data = await response.json();
-        console.log("Data received:", data);
+        //console.log("Data received:", data);
         return data.books; // Ensure your API response structure includes a 'books' array
     } catch (error) {
         console.error("Fetch error:", error.message);

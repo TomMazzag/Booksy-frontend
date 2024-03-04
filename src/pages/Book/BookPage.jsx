@@ -46,7 +46,13 @@ const BookPage = () => {
         setShowFullSynopsis(!showFullSynopsis); // Toggle between showing full or partial synopsis
     };
 
-    if (isLoading) return <div>Loading...</div>;
+    if (isLoading) return (
+        <>
+            <Navbar />
+            <div>Loading...</div>
+            <Footer />
+        </>
+    );
     if (error) return <div>{error}</div>;
     if (!book) return <div>No book found</div>; // Or any other error handling
 
@@ -61,7 +67,6 @@ const BookPage = () => {
     return (
         <>
             <Navbar />
-            <Link to="/" className='go_back_button'> &lt;&lt; Back to Homepage</Link>
             <div className="container mt-4 centered-content">
                 <div className="row">
                     <div className="col-md-4">
