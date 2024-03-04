@@ -1,0 +1,13 @@
+.reviews-container {
+    margin-top: 20px;
+}
+
+.single-review {
+    background-color: antiquewhite;
+    padding: 10px;
+    width: 30%;
+}
+
+.single-review p {
+    margin: 0;
+}

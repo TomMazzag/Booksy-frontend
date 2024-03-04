@@ -106,7 +106,7 @@ const BookPage = () => {
                             </button>
                         }  
                     </div>
-                    <AllReviews />
+                    <AllReviews book_id={book._id}/>
                 </div>
             </div>
             <Footer />

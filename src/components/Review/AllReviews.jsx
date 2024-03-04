@@ -1,20 +1,29 @@
 import { useEffect, useState } from "react"
+import { getAllReviewsForBook } from "../../services/reviews"
+import "./Reviews.css"
 
 const AllReviews = ({book_id}) => {
 
     const [reviewsList, setReviewsList] = useState([])
 
-    useEffect
+    useEffect(() => {
+        getAllReviewsForBook(book_id)
+        .then((response) => {
+            setReviewsList(response.reviews)
+        })
+    }, [])
 
     return (
         <div className="reviews-container">
-            <div className="single-review">
-                <h5 className="review-title">Test</h5>
-                <p className="review-content">Review desc</p>
-                <p className="review-rating">5 start</p>
-                <p className="review-user">User</p>
-                <p>Date</p>
-            </div>
+            {reviewsList.map((review, index) => (
+                <div className="single-review" key={index}>
+                    <h5 className="review-title">{review.title}</h5>
+                    <p className="review-content">{review.content}</p>
+                    <p className="review-rating">{review.rating} start</p>
+                    <p className="review-user">{review.user_id.first_name}</p>
+                    <p>Date</p>
+                </div>
+            ))}
         </div>
     )
 }
