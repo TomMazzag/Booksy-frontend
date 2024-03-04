@@ -19,9 +19,9 @@ function SignInComponent () {
                     <div className ="modal">
                         <div className="overlay">
                             <div className="modal-content">
-                            <p>
+                            <div>
                                 <SignIn />
-                            </p>
+                            </div>
                         <p className="close-modal" onClick={toggleModal}>
                         Back
                         </p>

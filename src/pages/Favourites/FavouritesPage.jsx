@@ -5,9 +5,9 @@ import { useUser } from '@clerk/clerk-react';
 import Navbar from "../../components/Home/NavBar.jsx";
 import BookCard from "../../components/Home/BookCard.jsx";
 import Footer from "../../components/Home/Footer.jsx";
-import "./HomePage.css";
-import { getAllBooks } from "../../services/books";
-import { getUserById } from '../../services/users';
+import "../Home/HomePage.css";
+import { getAllBooks } from "../../services/books.jsx";
+import { getUserById } from '../../services/users.jsx';
 
 export const FavouritesPage = () => {
     const [books, setBooks] = useState([]);
@@ -51,9 +51,13 @@ export const FavouritesPage = () => {
             </div>
             <div className="category-grid-container">
                 <div className="category-grid">
-                    {books.filter(book => userData.saved_items.includes(book._id)).map(book => (
-                        <BookCard key={book._id} book={book} />
-                    ))}
+                {userData && userData.saved_items ? (
+                        books.filter(book => userData.saved_items.includes(book._id)).map(book => (
+                            <BookCard key={book._id} book={book} />
+                        ))
+                    ) : (
+                        <p>No favourite books added to your list.</p>
+                    )}
                 </div>
             </div>
             <Footer />
