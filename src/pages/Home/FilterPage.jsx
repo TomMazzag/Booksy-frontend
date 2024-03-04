@@ -69,15 +69,12 @@ export const FilterPage = () => {
     };
     
     const handleCategoryChange = (category) => {
-        // Toggle category selection
         setCheckedCategories(prevCategories => {
             if (prevCategories.includes(category)) {
-                // If category is already checked, remove it
                 const updatedCategories = prevCategories.filter(cat => cat !== category);
                 updateBooksByCategories(updatedCategories);
                 return updatedCategories;
             } else {
-                // If category is not checked, add it
                 const updatedCategories = [...prevCategories, category];
                 updateBooksByCategories(updatedCategories);
                 return updatedCategories;
