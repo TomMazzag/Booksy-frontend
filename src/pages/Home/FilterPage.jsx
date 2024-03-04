@@ -11,6 +11,7 @@ import FilterBookCard from "../../components/Filter/FilterBookCard.jsx";
 import { getAllBooksByCategory } from "../../services/filters.jsx";
 
 
+
 import "../../components/Home/Footer.css";
 import "./FilterPage.css"
 
