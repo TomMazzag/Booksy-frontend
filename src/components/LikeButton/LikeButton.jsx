@@ -12,54 +12,56 @@ const LikeButton = () => {
 
     const { bookId } = useParams();
     const { isSignedIn, user } = useUser();
-    const [liked, setLiked] = useState(false)
-
-    useEffect(() => {
-        const fetchData = async () => {
-            if (isSignedIn) {
-                try {
-                    const result = await checkLikedBook(user.id, bookId);
-                    setLiked(result.liked);
-                } catch (error) {
-                    console.error('Error fetching liked status:', error);
-                }
-            }
-        };
-        fetchData();
-    }, []);
-
-    const handleLike = async () => {
-        setLiked(!liked);
-        console.log(`Like when clicked: ${liked}`);
-    
-        if (isSignedIn) {
-            if (liked) {
-                updateUserLikedList(user.id, bookId, "unlike");
-                console.log("Sent unlike to DB");
-            } else {
-                updateUserLikedList(user.id, bookId, "like");
-                console.log("Sent like to DB");
-            }
-        }
-    };
-    
-    useEffect(() => {
-        handleLike(); 
-    }, []);
-    
+    const [liked, setLiked] = useState(false);
+    const [refreshKey, setRefreshKey] = useState(0);
 
     const handleButtonClick = () => {
         setLiked(!liked); 
     };
 
+    useEffect(() => {
+        const fetchData = async () => {
+            if (user && liked !== undefined) { 
+                try {
+                    const result = await checkLikedBook(user.id, bookId);
+                    setLiked(result);
+                } catch (error) {
+                    console.error('Error fetching liked status:', error);
+                }
+            }
+        }
+        fetchData()
+        }
+    , []);
+
+    // triggers a refresh whenever the page is reloaded
+    const refreshData = () => {
+        setRefreshKey(prevKey => prevKey + 1);
+    };
+
+    const handleLike = async () => {
+        setLiked(!liked);
+        console.log(`Like when clicked: ${liked}`);
+        if (user && liked !== undefined) {
+            if (liked) {
+                await updateUserLikedList(user.id, bookId, "unlike");
+                console.log("Sent unlike to DB");
+            } else {
+                await updateUserLikedList(user.id, bookId, "like");
+                console.log("Sent like to DB");
+            }
+        }
+    };
+    
     
         if (isSignedIn) {
             return (
                 <div>
                     <button className="btn btn-outline-danger" onClick={handleLike}>
                         <FontAwesomeIcon icon={faHeart} /> 
-                        {liked?"":" Save for later"}
+                        {liked ? "": " Save for later"}
                     </button>
+                    < refreshData />
                 </div>
             )}
         else {

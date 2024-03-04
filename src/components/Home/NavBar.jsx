@@ -8,6 +8,7 @@ import { faBars } from '@fortawesome/free-solid-svg-icons'
 import { Link } from "react-router-dom";
 
 import { useState } from "react";
+import SignUpComponent from "../Authentication/signUpModal";
 
     const Navbar = () => {
 
@@ -55,6 +56,7 @@ import { useState } from "react";
                         </div>
                         <div className="navbar-actions">
                             <SignInComponent />
+                            <SignUpComponent />
                             <p className="heart">♥</p>
                             <p className="basket">Shopping Cart</p>
                         </div>
@@ -62,6 +64,7 @@ import { useState } from "react";
                             <FontAwesomeIcon icon={faBars} onClick={toggleMenu}/>
                             {openMenu ? (<ul className="mobile-menu-options">
                                 <li><SignInComponent /></li>
+                                <li><SignUpComponent /></li>
                                 <li><p className="heart">♥</p></li>
                                 <li><p className="basket">Shopping Cart</p></li>
                             </ul>) : null}

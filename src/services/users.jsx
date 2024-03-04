@@ -1,4 +1,5 @@
-const backend_url = "https://booksy-backend.onrender.com";
+// const backend_url = "https://booksy-backend.onrender.com";
+const backend_url = 'http://localhost:3000';
 
 export const updateUserLikedList = async (user_id, bookId, status) => {
 
@@ -22,13 +23,16 @@ export const updateUserLikedList = async (user_id, bookId, status) => {
         }
 }
 
+
 export const checkLikedBook = async (user_id, bookId) => {
     const requestOptions = {
         method: "GET",
     };
 
-    const response = await fetch(`${backend_url}/users/liked` + 
-    new URLSearchParams({user_id: user_id, bookId: bookId}.toString()) ,requestOptions );
+    const URL = new URLSearchParams({ user_id: String(user_id), bookId: String(bookId) });
+
+    const response = await fetch(`${backend_url}/users/liked/?` + URL ,requestOptions);
+    console.log("I am the response:", response)
 
     if (response.status !== 200) {
         return response
@@ -36,7 +40,7 @@ export const checkLikedBook = async (user_id, bookId) => {
 
     const data = await response.json();
     console.log(data)
+    console.log(data.state)
     return data.state
-
 }
 
