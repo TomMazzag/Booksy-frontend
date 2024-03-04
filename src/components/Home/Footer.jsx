@@ -1,6 +1,6 @@
 // src/Components/Home/Footer.jsx
 
-import "../Home/Footer.css";
+import "./Footer.css";
 
     const Footer = () => {
     return (
