@@ -1,5 +1,5 @@
 import { SignUp } from "@clerk/clerk-react";
-import '../Authentication/Modal.css'
+import './Modal.css'
 
 function SignUpComponent () {
 

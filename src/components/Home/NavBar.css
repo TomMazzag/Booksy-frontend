@@ -20,10 +20,27 @@ nav p {
 .navbar-logo {
     display: flex;
     align-items: center;
-    color: #000000;
-    font-size: 35px;
-    font-weight: bold;
+    color: #F4F2DE;
+    font-size: 40px;
+    font-weight: lighter;
     cursor: pointer;
+}
+
+/* Target the <a> tag inside .navbar-logo more specifically and enforce no text decoration */
+.navbar-logo a, .navbar-logo a:hover, .navbar-logo a:visited, .navbar-logo a:active {
+    color: #F4F2DE; /* Keep the logo color consistent */
+    text-decoration: none; /* Remove underline */
+}
+
+/* Ensure color does not change on hover */
+.navbar-logo a:hover {
+    color: #F4F2DE; /* Maintain the same color on hover */
+    background-color: transparent; /* Prevent any background color change */
+}
+
+
+.navbar-logo a:hover {
+    text-decoration: none; /* Ensure underline doesn't appear on hover */
 }
 
 .navbar-middle {
@@ -83,17 +100,23 @@ nav p {
 }
 
 .mobile-menu-options {
+    padding: 0;
     padding-top: 5px;
     display: block;
     position: absolute;
     top: 82px;
     left: 0;
     width: 100%;
-    height: 90px;
+    height: 120px;
     background-color: #A1CCD1;
     list-style: none;
     cursor: pointer;
     border-top: 1px solid black;
+}
+
+.mobile-menu-options li {
+    margin: 5px;
+    font-size: large;
 }
 
 @media (min-width: 1300px) {
@@ -128,5 +151,13 @@ nav p {
     }
     .mobile-menu {
         display: block;
+    }
+
+    .navbar-middle {
+        display: none;
+    }
+
+    .navbar-content {
+        padding: 0px 10px;
     }
 }

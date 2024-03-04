@@ -1,8 +1,10 @@
 // src/Components/Home/CategoryCard.jsx
 
+import { useNavigate } from 'react-router-dom';
 import "./CategoryCard.css"
-
 const CategoryCard = ({ category }) => {
+    const navigate = useNavigate();
+
 
     let images = ["http://books.google.com/books/content?id=s1gVAAAAYAAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api", 
     "http://books.google.com/books/content?id=80pje6QWDEYC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
@@ -12,9 +14,12 @@ const CategoryCard = ({ category }) => {
 
     const randomIndex = Math.floor(Math.random() * images.length);
 
+    const handleClick = () => {
+        navigate('/filter', { state: { selected: category } });
+    };
     
 return (
-    <div className="category-card">
+    <div className="category-card" onClick={handleClick} style={{ cursor: 'pointer' }}>
     <h3>{category}</h3>
     <img src={images[randomIndex]} alt={category} />
     </div>
