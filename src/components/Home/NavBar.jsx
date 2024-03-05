@@ -33,7 +33,7 @@ const Navbar = () => {
                         <input type="text" placeholder="Search Books" />
                     </div>
                     <div className="navbar-actions">
-                        <p>Hello {user.firstName} </p>
+                        <Link to="/account" className="account-link">Hello {user.firstName}</Link>
 {/* //                         <p className="heart">♥</p> */}
                         <p className="heart" onClick={() => navigate('/favourites')}>♥</p>
                         <UserButton />
@@ -42,7 +42,7 @@ const Navbar = () => {
                     <div className="mobile-menu">
                         <FontAwesomeIcon icon={faBars} onClick={toggleMenu}/>
                         {openMenu ? (<ul className="mobile-menu-options">
-                            <li>Hello {user.firstName}</li>
+                            <li><Link to="/account" className="account-link">Hello {user.firstName}</Link></li>
 {/* //                             <li><p className="heart">Favourites</p></li> */}
                             <li><p className="heart" onClick={() => navigate('/favourites')}>Favourites</p></li>
                             <li><p className="basket">Shopping Cart</p></li>

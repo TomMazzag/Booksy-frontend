@@ -5,6 +5,7 @@ import { FilterPage } from "./pages/Home/FilterPage"
 import { HomePage } from "./pages/Home/HomePage"
 import { SignupPage } from "./pages/Home/SignupPage";
 import { FavouritesPage } from './pages/Favourites/FavouritesPage';
+import { AccountPage } from './pages/Account/AccountPage';
 import BookPage from './pages/Book/BookPage';
 import CartPage from './pages/Cart/CartPage';
 
@@ -32,6 +33,10 @@ const router = createBrowserRouter([
   {
     path: "/favourites",
     element: <FavouritesPage />
+  },
+  {
+    path: "/account",
+    element: <AccountPage />
   }
   
 ]);
