@@ -41,8 +41,7 @@ function App() {
 
   return (
     <>
-    <RouterProvider router={router}/>
-    {/* <CartPage/> */}
+      <RouterProvider router={router}/>
     </>
   )
 };

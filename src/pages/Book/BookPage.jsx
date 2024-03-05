@@ -12,6 +12,8 @@ import LikeButton from '../../components/LikeButton/LikeButton.jsx';
 import { addToBasket } from '../../services/basket';
 import ReviewBox from '../../components/Review/LeaveReview.jsx';
 import AllReviews from '../../components/Review/AllReviews.jsx';
+import { useUser } from '@clerk/clerk-react';
+import SignInComponent from '../../components/Authentication/LogInModal.jsx';
 
 const BookPage = () => {
     const { bookId } = useParams(); // Use useParams to get the bookId from the URL
@@ -19,7 +21,7 @@ const BookPage = () => {
     const [isLoading, setIsLoading] = useState(false);
     const [error, setError] = useState(null);
     const [showFullSynopsis, setShowFullSynopsis] = useState(false);
-    
+    const { isSignedIn } = useUser()
 
     const addItemToBasket = () => {
         addToBasket(book._id, '65e07035deb88a4a513164ed');
@@ -32,7 +34,7 @@ const BookPage = () => {
             try {
                 const fetchedBook = await getBookById(bookId);
                 setBook(fetchedBook.book);
-                console.log(fetchedBook.book)
+                // console.log(fetchedBook.book)
                 setError(null); // Reset error state in case of successful fetch
             } catch (err) {
                 setError('Failed to fetch book details.');
@@ -101,15 +103,13 @@ const BookPage = () => {
                 <div className='reviews-section'>
                     <div className='reviews-section-headers'>
                         <h2>Reviews</h2>
-                        {1 == 2 ? (
-                            <ReviewBox /> 
-                        ) : 
-                            <button onClick={toggleSynopsisVisibility} className="btn btn-outline-secondary">
-                                Sign in to leave a review
-                            </button>
-                        }  
+                        {!isSignedIn && <button className="btn btn-outline-secondary">
+                            <SignInComponent text="Sign in to leave a review"/>
+                        </button> 
+                        }
                     </div>
                     <AllReviews book_id={book._id}/>
+                    {isSignedIn && <ReviewBox />}  
                 </div>
             </div>
             <Footer />

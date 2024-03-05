@@ -2,7 +2,7 @@ import { SignIn, useAuth } from "@clerk/clerk-react";
 import { useState} from 'react'
 import '../Authentication/Modal.css'
 
-function SignInComponent () {
+function SignInComponent ({text}) {
 
     const [modal, setModal] = useState(false);
     // const [modalSignUp, setModalSignUp] = useState(false);
@@ -16,7 +16,7 @@ function SignInComponent () {
     return (
         <div> 
             <div onClick={toggleModal} className="button-modal"> 
-            Account
+            {text ? text : "Account"}
             </div>
                 {modal && (
                     <div className ="modal">
