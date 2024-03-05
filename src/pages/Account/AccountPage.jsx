@@ -38,7 +38,7 @@ export const AccountPage = () => {
                         <h2>Your delivery address</h2>
                         {/* Placeholder for delivery address */}
                         {user.address ? <p>{user.address}</p> : <p>No delivery address added.</p>}
-                        <button onClick={() => {/* Placeholder for future functionality */}}>Add new address</button>
+                        <button className="add-new-address-btn" onClick={() => {/* Placeholder for future functionality */}}>Add new address</button>
                     </div>
                 );
                 case 'Email Preferences':

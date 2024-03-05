@@ -33,3 +33,22 @@
     flex-direction: column;
     text-align: left;
 }
+
+.add-new-address-btn {
+    cursor: pointer;
+    padding: 10px 20px;
+    margin-top: 10px;
+    background-color: #A1CCD1; /* Light background color, similar to .synopsis button */
+    border: 1px solid #ccc; /* Slight border, similar to .synopsis button */
+    border-radius: 4px; /* Rounded corners, similar to .synopsis button */
+    color: #333; /* Button text color, similar to .synopsis button */
+    font-size: 14px; /* Adjust font size as needed */
+    transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+    text-align: center;
+    display: inline-block; /* To allow setting margins and padding */
+    text-decoration: none; /* Remove underline from text */
+}
+
+.add-new-address-btn:hover {
+    background-color: #7C9D96; /* Darker background on hover, similar to .synopsis button */
+}
