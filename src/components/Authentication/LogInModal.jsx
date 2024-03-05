@@ -1,13 +1,14 @@
 import { SignIn, useAuth } from "@clerk/clerk-react";
-import { useState} from 'react'
+import { useState } from 'react'
 import '../Authentication/Modal.css'
+import { useLocation } from "react-router-dom";
 
 function SignInComponent () {
 
     const [modal, setModal] = useState(false);
-    // const [modalSignUp, setModalSignUp] = useState(false);
+    let location = useLocation()
+    console.log(location)
 
-    
     const toggleModal = () => {
         setModal(!modal)
         console.log(modal)
@@ -22,7 +23,9 @@ function SignInComponent () {
                     <div className ="modal">
                         <div className="overlay">
                             <div className="modal-content">
-                                <SignIn />
+                                <SignIn 
+                                afterSignInUrl={location.pathname}
+                                />
                                 <p className="close-modal" onClick={toggleModal}>
                                 X
                                 </p>
