@@ -59,22 +59,24 @@ import visaMastercardLogo from '../../assets/Cardspay.png';
 import paypalLogo from '../../assets/Paypal.png';
 import gpayLogo from '../../assets/Gpay.png';
 import './PaymentSummary.css';
+import { initiateOrderAndCheckout } from '../../services/orderService';
 
     const PaymentSummary = ({ totalPrice, cartItems }) => {
     const handleCheckout = () => {
-        initiateStripeCheckout(cartItems); // Trigger Stripe Checkout with the current cart items
+        initiateOrderAndCheckout(cartItems); // Trigger Stripe Checkout with the current cart items
     };
+
 
     return (
         <aside className="payment-summary">
-        <h4>How you will Pay</h4>
+        <h5>Payment Summary</h5>
         {/* Display payment method logos if desired */}
-        <div className="payment-methods">
+        {/* <div className="payment-methods">
             <img src={applePayLogo} alt="Apple Pay" />
             <img src={visaMastercardLogo} alt="Visa/Mastercard" />
             <img src={paypalLogo} alt="PayPal" />
             <img src={gpayLogo} alt="Google Pay" />
-        </div>
+        </div> */}
 
         {/* Payment summary details */}
         <p>Item(s) total: £{totalPrice.toFixed(2)}</p>
