@@ -29,3 +29,8 @@
     color: #666;
     font-size: 16px;
 }
+
+.book-card:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Increased shadow on hover */
+    transform: translateY(-2px); /* Move the card up slightly on hover */
+}

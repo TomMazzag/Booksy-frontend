@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { getBooksBySearchQueryTitleOrAuthor } from '../../services/books';
+import { getBooksBySearchQueryTitleOrAuthorOrISBN } from '../../services/books';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import { useNavigate } from 'react-router-dom';
@@ -14,7 +14,7 @@ export const SearchBar = ({ placeholder }) => {
     useEffect(() => {
         const getBooksFromDatabase = async () => {
             try {
-                const result = await getBooksBySearchQueryTitleOrAuthor(searchQuery);
+                const result = await getBooksBySearchQueryTitleOrAuthorOrISBN(searchQuery);
                 setSearchResults(result.book);
                 console.log("Searching for books..." ,searchResults)
             } catch (error) {
@@ -33,7 +33,7 @@ export const SearchBar = ({ placeholder }) => {
     const handleSearch = async () => {
         if (searchQuery.trim().length >= 1) {
             try {
-                const result = await getBooksBySearchQueryTitleOrAuthor(searchQuery);
+                const result = await getBooksBySearchQueryTitleOrAuthorOrISBN(searchQuery);
                 console.log("Fetched books:", result);
                 setSearchResults(result.book);
 

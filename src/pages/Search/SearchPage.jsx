@@ -43,7 +43,7 @@ export const SearchPage = () => {
                     ) : error ? (
                         <p>{error}</p>
                     ) : (
-                        <div className="book-cards">
+                        <div className="search-page-book-cards">
                             {bookList.map((book, index) => (
                                 <BookCard key={index} book={book} />
                             ))}
