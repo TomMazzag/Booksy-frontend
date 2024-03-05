@@ -82,7 +82,7 @@ export const SearchBar = ({ placeholder }) => {
                     {searchResults.map((book, key) => (
                         <div key={key}>
                             <a className='book-item' onClick={() => handleClick(book._id)}>
-                                <p>Title: {book.title}</p>
+                                <p>Book: {book.title}</p>
                             </a>
                             <a className='book-author' onClick={() => handleAuthorClick(book.author)}>
                                 <p>Author: {book.author}</p>

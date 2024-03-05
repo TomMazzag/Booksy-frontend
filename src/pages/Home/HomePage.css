@@ -18,4 +18,5 @@ body {
     font-size: 2.5em; /* Adjust font size as needed */
     font-family: "Guardian-EgypTT", "Charter", "Charter Bitstream", "Cambria", "Noto Serif Light", "Droid Serif", "Georgia", "serif";
     letter-spacing: .46515px;
+    font-style: italic;
 }

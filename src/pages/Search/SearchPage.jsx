@@ -4,6 +4,7 @@ import { getAllBooks } from '../../services/books';
 import Navbar from '../../components/Home/NavBar';
 import Footer from '../../components/Home/Footer';
 import BookCard from '../../components/Home/BookCard';
+import './SearchPage.css'
 
 export const SearchPage = () => {
     const { author } = useParams();
@@ -33,7 +34,7 @@ export const SearchPage = () => {
         <>
             <Navbar />
             <div className="search-page-title">
-                <h1>Books by { author }</h1>
+                <h1>Search results: Books by { author }</h1>
             </div>
             <div className="search-page-results-container">
                 <div className="search-page-results-list">

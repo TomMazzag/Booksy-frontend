@@ -9,12 +9,13 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 70vh; /* Set the height to one-third of the viewport height */
+    height: 25vh; 
 }
 
 .search-page-title h1 {
-    font-size: 5.5em; /* Adjust font size as needed */
+    font-size: 2.5em; /* Adjust font size as needed */
     font-family: "Guardian-EgypTT", "Charter", "Charter Bitstream", "Cambria", "Noto Serif Light", "Droid Serif", "Georgia", "serif";
     letter-spacing: .46515px;
-    height: vh;
+    height: 10vh;
+    font-style: italic;
 }
