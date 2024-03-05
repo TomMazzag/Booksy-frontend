@@ -8,23 +8,18 @@ export const SortBy = ({ books, setBooks }) => {
 
     const sortAlphabetically = () => {
         const sortAlpha = [...books].sort((a, b) => a.title.localeCompare(b.title));
-        
         setBooks(sortAlpha)
-        
-        console.log("newlist", sortAlpha)
     }
 
     const sortReverseAlphabetically = () => {
         const newList = [...books].sort((a, b) => a.title.localeCompare(b.title));
         const reverseAlpha = newList.reverse();
         setBooks(reverseAlpha)
-        console.log(reverseAlpha)
     }
 
     const sortHighToLow = () => {
         const newList = [...books].sort((a, b) =>  parseFloat(b.price.$numberDecimal) - parseFloat(a.price.$numberDecimal));
         setBooks(newList)
-        
     }
 
     const sortLowToHigh = () => {
