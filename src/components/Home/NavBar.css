@@ -99,6 +99,15 @@ nav p {
     flex-direction: flex-start;
 }
 
+@keyframes slideIn {
+    from {
+      height: 0px;
+    }
+    to {
+      height: 120px;
+    }
+}
+
 .mobile-menu-options {
     padding: 0;
     padding-top: 5px;
@@ -111,12 +120,40 @@ nav p {
     background-color: #A1CCD1;
     list-style: none;
     cursor: pointer;
-    border-top: 1px solid black;
+    border-top: 2px solid rgba(116, 116, 116, 0.435);
+    z-index: 1;
+    animation: slideIn 0.5s ease;
+}
+
+@keyframes slideInText {
+    from {
+      opacity: 0; /* Start with opacity 0 */
+      transform: translateY(-20px); /* Optionally, add a vertical translation for additional effect */
+    }
+    to {
+      opacity: 1; /* Fully reveal the text */
+      transform: translateY(0); /* Optionally, reset vertical translation */
+    }
 }
 
 .mobile-menu-options li {
     margin: 5px;
-    font-size: large;
+    font-size: larger;
+    animation: slideInText 0.5s ease forwards;
+    opacity: 0; /* Initially hide the text */
+    font-weight: 550;
+}
+
+.mobile-menu-options li:nth-child(1) {
+    animation-delay: 0.2s;  
+}
+
+.mobile-menu-options li:nth-child(2) {
+    animation-delay: 0.4s;
+}
+
+.mobile-menu-options li:nth-child(3) {
+    animation-delay: 0.6s;
 }
 
 @media (min-width: 1300px) {
