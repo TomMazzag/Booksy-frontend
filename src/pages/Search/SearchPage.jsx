@@ -1,35 +1,24 @@
-import Navbar from "../../components/Home/NavBar"
-import Footer from "../../components/Home/Footer"
-import { useState, useEffect } from "react"
-import { useParams, Link } from 'react-router-dom';
-import { getAllBooks, getBooksByAuthor } from "../../services/books"
-import './SearchPage.css'
+import React, { useState, useEffect } from 'react';
+import { useParams } from 'react-router-dom';
+import { getAllBooks } from '../../services/books';
+import Navbar from '../../components/Home/NavBar';
+import Footer from '../../components/Home/Footer';
+import BookCard from '../../components/Home/BookCard';
 
-
-export const SearchPage = ( books ) => {
-    const { author } = useParams(); // Use useParams to get the bookId from the URL
-    const [bookList, setBookList] = useState(null); // State to hold the fetched book details
+export const SearchPage = () => {
+    const { author } = useParams();
+    const [bookList, setBookList] = useState([]);
     const [isLoading, setIsLoading] = useState(false);
     const [error, setError] = useState(null);
 
-
-    const location = useLocation();
-    const { selected } = location.state;
-
-
     useEffect(() => {
-        const fetchBook = async () => {
+        const fetchBooks = async () => {
             setIsLoading(true);
             try {
-                const fetchedBook = await getAllBooks();
-                console.log("fetched books: ", fetchedBook)
-                setBookList(fetchedBook);
-                const listOfAuthors = fetchedBook.map((book) => book.author)
-                console.log("Author list: ", listOfAuthors)
-
-
-    
-                setError(null); // Reset error state in case of successful fetch
+                const fetchedBooks = await getAllBooks();
+                const booksByAuthor = fetchedBooks.filter(book => book.author === author);
+                setBookList(booksByAuthor);
+                setError(null);
             } catch (err) {
                 setError('Failed to fetch book details.');
                 console.error(err);
@@ -37,28 +26,33 @@ export const SearchPage = ( books ) => {
                 setIsLoading(false);
             }
         };
-        fetchBook();
-    }, [author])
+        fetchBooks();
+    }, [author]);
 
     return (
         <>
-        <Navbar />
-        <div className="search-page-title">
-            <h1>This is the search page</h1>
-        </div>
-
-        <div className="search-page-results-container">
-
-            <div className="search-page-results-list">
-                <ul>{}</ul>
-        
-
-
+            <Navbar />
+            <div className="search-page-title">
+                <h1>Books by { author }</h1>
             </div>
-        </div>
-
-
-        <Footer />
+            <div className="search-page-results-container">
+                <div className="search-page-results-list">
+                    {isLoading ? (
+                        <p>Loading...</p>
+                    ) : error ? (
+                        <p>{error}</p>
+                    ) : (
+                        <div className="book-cards">
+                            {bookList.map((book, index) => (
+                                <BookCard key={index} book={book} />
+                            ))}
+                        </div>
+                    )}
+                </div>
+            </div>
+            <Footer />
         </>
-    )
-}
+    );
+};
+
+

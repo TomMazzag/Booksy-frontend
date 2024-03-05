@@ -1,5 +1,12 @@
+.search {
+    position: absolute; /* Set position to fixed */
+    margin-left: 200px;
+}
+
+
 .search-inputs {
     display: flex;
+    margin-bottom: 20px; /* Add some spacing between search inputs and results */
 }
 
 .search input {
@@ -10,64 +17,54 @@
     padding: 15px;
     height: 50px;
     width: 500px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add a subtle shadow to the input */
+    margin-top: 15px;
 }
 
 .search-icon {
-    height: 100px;
-    width: 200px;
+    height: 50px; /* Adjust height to match input height */
+    width: 50px; /* Adjust width to match input height */
     display: flex;
     place-items: center;
-    position: absolute;
+    position: relative; /* Change position to relative */
     color: black;
-    margin-left: 460px;
-    margin-top: -25px;
+    cursor: pointer; /* Add pointer cursor */
+    margin-left: -55px; /* Adjust to move closer to the input */
+    margin-top: 15px;
 }
 
 .search-icon button {
     border: none;
-    background-color: white;
+    background-color: transparent; /* Make the button background transparent */
 }
 
 .search-results {
-    display: flex;
-    margin-top: 5px;
-    width: 450px;
-    height: 200px;
-    background-color: rgb(255, 255, 255);
-    box-shadow: black;
-    overflow: hidden;
+    position: absolute; /* Set position to absolute */
+    top: calc(100% + 10px); /* Position it below the search input with some spacing */
+    /* left: 0; Align it to the left edge of the navbar */
+    width: 100%; /* Ensure full width */
+    max-height: 200px; /* Limit the height of results */
     overflow-y: auto;
-    /* flex-direction: column; */
+    border-radius: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add a subtle shadow to the results */
+    background-color: white;
+    z-index: 999; /* Set a high z-index to ensure it's on top of other content */
 }
 
-.search-results::-webkit-scrollbar {
-    display: none;
-}
 
-.search-results .book-item {
-    width: 100%;
-    height: 100px;
-    display: flex;
-    align-items: center;
+.search-results .book-item,
+.search-results .book-author {
+    padding: 10px 20px; /* Add padding to improve spacing */
     color: black;
-    align-items: center;
-}
-
-a:hover {
-    background-color: lightgray;
+    cursor: pointer;
 }
 
 a {
     text-decoration: none;
 }
 
-.book-item p {
-    margin-left: 10px;
-}
 input:focus {
     outline: none;
 }
 
-#clear-button {
-    cursor: pointer;
-}
+

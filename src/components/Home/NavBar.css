@@ -4,6 +4,7 @@ nav {
     background-color: #A1CCD1;
     color: #fff;
     padding: 20px 30px;
+    height: 120px;
 }
 
 .navbar-content {
@@ -11,6 +12,7 @@ nav {
     justify-content: space-between;
     align-items: center;
     margin: auto;
+    height: 120px;
 }
 
 nav p {

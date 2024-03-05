@@ -46,15 +46,15 @@ export const getBookById = async (bookId) => {
 };
 
 
-export const getBooksByTitle = async ( title ) => {
+export const getBooksBySearchQueryTitleOrAuthor = async ( title ) => {
         const requestOptions = {
         method: "GET",
         headers: {}
         };
         
-        console.log(`request to ${backend_url}/books/search/${title}`)
+        console.log(`request to ${backend_url}/books/search/title/${title}`)
 
-        const response = await fetch(`${backend_url}/books/search/${title}` , requestOptions);
+        const response = await fetch(`${backend_url}/books/search/title/${title}` , requestOptions);
     
         if (!response.ok) {
         throw new Error("Unable to fetch books");
@@ -66,24 +66,24 @@ export const getBooksByTitle = async ( title ) => {
     };
 
 
-    export const getBooksByAuthor = async ( author ) => {
-        const requestOptions = {
-        method: "GET",
-        headers: {}
-        };
+    // export const getBooksByAuthor = async ( author ) => {
+    //     const requestOptions = {
+    //     method: "GET",
+    //     headers: {}
+    //     };
 
-        console.log(` author request to ${backend_url}/books/search/author/${author}`)
+    //     console.log(` author request to ${backend_url}/books/search/author/${author}`)
     
-        const response = await fetch(`${backend_url}/books/search/author/${author}` ,requestOptions);
+    //     const response = await fetch(`${backend_url}/books/search/author/${author}` ,requestOptions);
     
-        if (!response.ok) {
-        throw new Error("Unable to fetch books");
-        }
+    //     if (!response.ok) {
+    //     throw new Error("Unable to fetch books");
+    //     }
         
-        const data = await response.json();
-        console.log("Book details by author received:", data)
-        return data;
-    };
+    //     const data = await response.json();
+    //     console.log("Book details by author received:", data)
+    //     return data;
+    // };
 
     // export const getBookByIsbn = async ( isbn ) => {
     //     const requestOptions = {

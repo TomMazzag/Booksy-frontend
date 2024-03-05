@@ -21,7 +21,12 @@ const router = createBrowserRouter([
   },
 
   {
-    path: '/books/search/:author',
+    path: '/books/search/author/:author',
+    element: <SearchPage />
+  },
+
+  {
+    path: '/books/search/title/:title',
     element: <SearchPage />
   },
 ]);
