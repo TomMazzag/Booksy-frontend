@@ -11,7 +11,6 @@ import FilterBookCard from "../../components/Filter/FilterBookCard.jsx";
 import { getAllBooksByCategory } from "../../services/filters.jsx";
 
 
-
 import "../../components/Home/Footer.css";
 import "./FilterPage.css"
 
@@ -46,7 +45,8 @@ export const FilterPage = () => {
         if (checkedCategories.length > 0) {
             getAllBooksByCategory(checkedCategories)   // fetches all books that are checked
                 .then((booksData) => {
-                    setBooks(booksData.books);
+                    const newList = booksData.books
+                    sortAlphabetically(newList);
                 })
                 .catch(error => {
                     console.log("Failed to fetch books:", error);
@@ -59,7 +59,8 @@ export const FilterPage = () => {
         if (categories.length > 0) {
             getAllBooksByCategory(categories)
                 .then((booksData) => {
-                    setBooks(booksData.books);
+                const newList = booksData.books
+                sortAlphabetically(newList);
                 })
                 .catch(error => {
                     console.log("Failed to fetch books:", error);
@@ -68,6 +69,11 @@ export const FilterPage = () => {
             setBooks([]);
         }
     };
+
+    const sortAlphabetically = (newList) => {
+        const sortAlpha = [...newList.books].sort((a, b) => a.title.localeCompare(b.title));
+        setBooks(sortAlpha)
+    }
     
     const handleCategoryChange = (category) => {
         setCheckedCategories(prevCategories => {
@@ -83,13 +89,13 @@ export const FilterPage = () => {
         });
     };
 
-
+    console.log("some books:", books)
     return (
         <>
 
             <Navbar />
             <div className="filter-page-title"> Filter Books </div>
-            <SortBy />
+            <SortBy books={books}/>
             <div className="categories-box">
                 <div className="categories-container">
                     <h3 className="categories-title">Categories List:</h3>
