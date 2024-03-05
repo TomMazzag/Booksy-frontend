@@ -10,6 +10,7 @@ import './BookPage.css';
 import { getBookById } from '../../services/books'; 
 import LikeButton from '../../components/LikeButton/LikeButton.jsx';
 import { addToBasket } from '../../services/basket';
+import { useUser } from '@clerk/clerk-react';
 
 const BookPage = () => {
     const { bookId } = useParams(); // Use useParams to get the bookId from the URL
@@ -17,11 +18,12 @@ const BookPage = () => {
     const [isLoading, setIsLoading] = useState(false);
     const [error, setError] = useState(null);
     const [showFullSynopsis, setShowFullSynopsis] = useState(false);
+    const { user } = useUser();
     
-
-    const addItemToBasket = () => {
-        addToBasket(book._id, '65e07035deb88a4a513164ed');
-        console.log(book._id);
+    const addItemToBasket = async () => {
+        console.log("bookdID", bookId);
+        console.log("userid:", user.id)
+        await addToBasket(bookId, user.id);
     }
 
     useEffect(() => {
