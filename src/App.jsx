@@ -21,7 +21,7 @@ const router = createBrowserRouter([
   },
 
   {
-    path: '/books/search',
+    path: '/books/search/:author',
     element: <SearchPage />
   },
 ]);

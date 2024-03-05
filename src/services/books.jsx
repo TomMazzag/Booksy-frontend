@@ -71,14 +71,17 @@ export const getBooksByTitle = async ( title ) => {
         method: "GET",
         headers: {}
         };
+
+        console.log(` author request to ${backend_url}/books/search/author/${author}`)
     
-        const response = await fetch(`${backend_url}/books/search/${author}` ,requestOptions);
+        const response = await fetch(`${backend_url}/books/search/author/${author}` ,requestOptions);
     
-        if (response.status !== 200) {
+        if (!response.ok) {
         throw new Error("Unable to fetch books");
         }
-    
+        
         const data = await response.json();
+        console.log("Book details by author received:", data)
         return data;
     };
 
