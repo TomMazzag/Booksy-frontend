@@ -2,51 +2,50 @@ import FilterBookCard from "./FilterBookCard";
 import "./Sort.css"
 import { useState } from 'react';
 
-export const SortBy = ({ books }) => {
+export const SortBy = ({ books, setBooks }) => {
 
-    const [sortedBooks, setSortedBooks] = useState([]);
     const [selectedOption, setSelectedOption] = useState('');
 
     const sortAlphabetically = () => {
         const sortAlpha = [...books].sort((a, b) => a.title.localeCompare(b.title));
-        setSortedBooks(sortAlpha)
+        
+        setBooks(sortAlpha)
+        
         console.log("newlist", sortAlpha)
     }
 
     const sortReverseAlphabetically = () => {
         const newList = [...books].sort((a, b) => a.title.localeCompare(b.title));
         const reverseAlpha = newList.reverse();
-        setSortedBooks(reverseAlpha)
+        setBooks(reverseAlpha)
         console.log(reverseAlpha)
     }
 
     const sortHighToLow = () => {
         const newList = [...books].sort((a, b) =>  parseFloat(b.price.$numberDecimal) - parseFloat(a.price.$numberDecimal));
-        console.log(newList)
-        setSortedBooks(newList)
+        setBooks(newList)
+        
     }
 
     const sortLowToHigh = () => {
         const newList = [...books].sort((a,b) => parseFloat(a.price.$numberDecimal) - parseFloat(b.price.$numberDecimal));
-        setSortedBooks(newList)
+        setBooks(newList)
     }
 
     const handleSortChange = (event) => {
         const selectedValue = event.target.value;
         setSelectedOption(selectedValue);
-        console.log(selectedValue)
 
         if (selectedValue === 'A - Z') {
-            sortAlphabetically();
+            sortAlphabetically()
         } if (selectedValue === 'Z - A') {
-            sortReverseAlphabetically();
+            sortReverseAlphabetically()
         } if (selectedValue === 'Price (Low to high)') {
-            sortLowToHigh();
+            sortLowToHigh()
         } else if (selectedValue === 'Price (High to low)') {
-            sortHighToLow() }
+            sortHighToLow()
+        }
     };
-    console.log("sortedBooks:", sortedBooks)
-
 
     return (
         <>
@@ -58,16 +57,6 @@ export const SortBy = ({ books }) => {
                 <option value="Price (Low to high)">Price (Low to high)</option>
                 </select>
             </div>
-            <div className="filtered-books-container"> 
-                    {/* <h1>Filtered books</h1> */}
-                    <div className='filtered-books'>
-                        {sortedBooks.map((book, index) => (
-                            <FilterBookCard key={index} book={book} />
-                        ))}
-                    </div>
-                    
-                </div>
-
         </>
     )
 }
