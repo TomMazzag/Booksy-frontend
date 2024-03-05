@@ -37,7 +37,7 @@ const Navbar = () => {
 {/* //                         <p className="heart">♥</p> */}
                         <p className="heart" onClick={() => navigate('/favourites')}>♥</p>
                         <UserButton />
-                        <p className="basket">Cart</p>
+                        <p className="basket" onClick={() => navigate('/basket')}>Basket</p>
                     </div>
                     <div className="mobile-menu">
                         <FontAwesomeIcon icon={faBars} onClick={toggleMenu}/>

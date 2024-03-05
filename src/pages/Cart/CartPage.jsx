@@ -11,53 +11,58 @@
     import { getBasket } from '../../services/basket';
     import CartItem from './CartItem';
     import PaymentSummary from './PaymentSummary';
-    
+    import { useUser } from '@clerk/clerk-react';
+
     export const CartPage = () => {
         const [basketItems, setBasketItems] = useState([]);
         const [totalPrice, setTotalPrice] = useState(0);
+        const { user } = useUser();
     
         useEffect(() => {
             const fetchBasketItems = async () => {
                 try {
-                    const userId = '65e07035deb88a4a513164ed'; // Replace with the actual user ID
+                    const userId = user.id; // Replace with the actual user ID
                     const basketData = await getBasket(userId);
-                    const itemsWithQuantity = basketData.basket.items.map(item => ({
-                        ...item,
-                        quantity: 1 // Initialize quantity if not present
-                    }));
-                    setBasketItems(itemsWithQuantity);
-                    calculateTotal(itemsWithQuantity);
+                    console.log("basketdata:", basketData)
+                    // const itemsWithQuantity = basketData.basket.items.map(item => ({
+                    //     ...item,
+                    //     quantity: 1 // Initialize quantity if not present
+                    // }));
+                    setBasketItems(basketData.basket.items);
+                    // calculateTotal(itemsWithQuantity);
                 } catch (error) {
                     console.error('Error fetching basket items:', error.message);
                 }
             };
-    
             fetchBasketItems();
         }, []);
+        console.log("basketItems", basketItems)
     
         const handleQuantityChange = (bookId, newQuantity) => {
             const parsedQuantity = parseInt(newQuantity, 10); // Parse the new quantity as an integer
             setBasketItems(currentItems => {
+                console.log("currentItems:", currentItems)
                 return currentItems.map(item => {
                     if (item._id === bookId) {
                         return { ...item, quantity: parsedQuantity }; // Update the quantity of the relevant item
                     }
+                    console.log("line 50 item", item)
                     return item;
                 });
             });
         };
     
-        useEffect(() => {
-            // Recalculate total when basketItems changes
-            calculateTotal(basketItems);
-        }, [basketItems]);
+        // useEffect(() => {
+        //     // Recalculate total when basketItems changes
+        //     calculateTotal(basketItems);
+        // }, [basketItems]);
     
-        const calculateTotal = (items) => {
-            const total = items.reduce((acc, item) => {
-                return acc + (parseFloat(item.price.$numberDecimal) * (item.quantity || 1));
-            }, 0);
-            setTotalPrice(total);
-        };
+        // const calculateTotal = (items) => {
+        //     const total = items.reduce((acc, item) => {
+        //         return acc + (parseFloat(item.price) * (item.quantity || 1));
+        //     }, 0);
+        //     setTotalPrice(total);
+        // };
     
         return (
             <>
