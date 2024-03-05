@@ -18,3 +18,24 @@ export const getAllReviewsForBook = async (book_id) => {
     const data = await response.json();
     return data
 };
+
+export const sendNewReview = async (review) => {
+    try {
+        const requestOptions = {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(review)
+        };
+
+        const response = await fetch(`${BACKEND_URL}/reviews/create`, requestOptions);
+        if (!response.ok) {
+            throw new Error(`Error adding review: ${response.statusText}`);
+        }
+        
+    } catch (error) {
+        console.error("Add review error:", error.message);
+        throw error;
+    }
+}

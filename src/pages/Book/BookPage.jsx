@@ -22,6 +22,7 @@ const BookPage = () => {
     const [error, setError] = useState(null);
     const [showFullSynopsis, setShowFullSynopsis] = useState(false);
     const { isSignedIn } = useUser()
+    const [newReview, setNewReview] = useState(false)
 
     const addItemToBasket = () => {
         addToBasket(book._id, '65e07035deb88a4a513164ed');
@@ -108,8 +109,8 @@ const BookPage = () => {
                         </button> 
                         }
                     </div>
-                    <AllReviews book_id={book._id}/>
-                    {isSignedIn && <ReviewBox />}  
+                    <AllReviews book_id={bookId} newReview={newReview} setNewReview={setNewReview}/>
+                    {isSignedIn && <ReviewBox book_id={bookId} setNewReview={setNewReview}/>}  
                 </div>
             </div>
             <Footer />

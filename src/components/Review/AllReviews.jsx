@@ -4,7 +4,7 @@ import "./Reviews.css"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar } from '@fortawesome/free-solid-svg-icons';
 
-const AllReviews = ({book_id}) => {
+const AllReviews = ({book_id, newReview, setNewReview}) => {
 
     const [reviewsList, setReviewsList] = useState([])
 
@@ -39,8 +39,9 @@ const AllReviews = ({book_id}) => {
         getAllReviewsForBook(book_id)
         .then((response) => {
             setReviewsList(response.reviews)
+            setNewReview(false)
         })
-    }, [])
+    }, [newReview])
 
     return (
         <div className="reviews-container">
@@ -52,7 +53,7 @@ const AllReviews = ({book_id}) => {
                     <div className="review-rating">
                         {addRating(review.rating)}
                     </div>
-                    <p className="review-user">{review.user_id.first_name} {review.user_id.last_name}</p>
+                    <p className="review-user">{review.first_name} {review.last_name}</p>
                     <p className="review-date">{formatDate(review.createdAt)}</p>
                 </div>
             ))}

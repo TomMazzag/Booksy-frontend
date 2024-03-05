@@ -90,4 +90,10 @@
     border: 1px solid gray;
     padding: 5px;
     border-radius: 10px;
+    cursor: pointer;
+}
+
+.share-review.disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
 }
