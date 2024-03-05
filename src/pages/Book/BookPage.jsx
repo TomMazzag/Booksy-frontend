@@ -7,9 +7,9 @@ import Footer from "../../components/Home/Footer.jsx";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHeart, faShoppingBasket, faStar } from '@fortawesome/free-solid-svg-icons';
 import './BookPage.css';
-import { getBookById } from '../../services/books'; 
+import { getBookById } from '../../services/books.jsx'; 
 import LikeButton from '../../components/LikeButton/LikeButton.jsx';
-import { addToBasket } from '../../services/basket';
+import { addToBasket } from '../../services/basket.jsx';
 
 const BookPage = () => {
     const { bookId } = useParams(); // Use useParams to get the bookId from the URL
