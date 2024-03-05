@@ -6,6 +6,10 @@ import { HomePage } from "./pages/Home/HomePage"
 import { SignupPage } from "./pages/Home/SignupPage";
 import BookPage from './pages/Book/BookPage';
 import CartPage from './pages/Cart/CartPage';
+import OrderSuccessPage from './pages/Checkout/sucess';
+import OrderCancelPage from './pages/Checkout/cancel';
+
+
 
 const router = createBrowserRouter([
   {
@@ -27,7 +31,17 @@ const router = createBrowserRouter([
   {
     path: "/basket",
     element: <CartPage />
-  }
+  },
+  {
+    path: "/success", // Add route for the success page
+    element: <OrderSuccessPage />
+  },
+  {
+    path: "/cancel", // Add route for the cancel page
+    element: <OrderCancelPage />
+  },
+
+
   
 ]);
 

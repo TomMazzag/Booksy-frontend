@@ -1,0 +1,87 @@
+      /* Payment Summary */
+      .payment-summary {
+        width: 25%;
+        padding: 1rem;
+        background-color: #fffdfd;
+    }
+    
+    .payment-summary form {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .payment-summary label {
+        display: flex;
+        align-items: center;
+        margin-bottom: 0.5rem;
+        cursor: pointer;
+    }
+    
+    
+    .payment-summary input[type="radio"] + img {
+        height: 40px; /* Set the height for all payment logos */
+        margin-right: 0px; /* Add some space between the radio button and the logo */
+    }
+    
+    .payment-summary p {
+        margin-bottom: 1rem;
+        margin-top: 1rem;
+    }
+    
+    /* Custom styles for when the radio button is checked */
+    .payment-summary input[type="radio"]:checked + img {
+        border: 2px ; /* Example style, replace with your own */
+        border-radius: 5px; /* Optional: add border-radius if you want rounded corners */
+    }
+    
+    /* Style to show selection effect */
+    .payment-summary input[type="radio"]:checked + img {
+        box-shadow: 0 0 0 2px #A1CCD1; /* Adding an outline effect on selection */
+    }
+
+
+
+
+    .checkout-button {
+        padding: 1rem;
+        border: none;
+        font-size: medium;
+        background-color: #A1CCD1;
+        color: white;
+        cursor: pointer;
+    }
+
+
+    /* Responsive Styles */
+@media (max-width: 768px) {
+    .payment-summary {
+        width: 100%; /* Full width on smaller screens */
+        margin-top: 2rem; /* Add some space between the items list and payment summary on smaller screens */
+    }
+
+    /* Adjust label and image sizes for smaller screens */
+    .payment-summary label {
+        font-size: smaller; /* Smaller font size for labels */
+    }
+
+    .payment-summary input[type="radio"] + img {
+        height: 30px; /* Smaller images for payment logos */
+    }
+}
+
+@media (max-width: 480px) {
+    /* Further adjustments for very small screens */
+    .payment-summary form {
+        padding: 0.5rem; /* Reduce padding */
+    }
+
+    .payment-summary label {
+        flex-direction: column; /* Stack label text and image vertically */
+    }
+
+    .checkout-button {
+        padding: 0.8rem; /* Reduce button padding */
+        font-size: small; /* Reduce button font size */
+    }
+}
+

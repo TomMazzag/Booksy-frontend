@@ -10,7 +10,7 @@
     import gpayLogo from '../../assets/Gpay.png';
     import { getBasket } from '../../services/basket';
     import CartItem from './CartItem';
-    import PaymentSummary from './PaymentSummary';
+    import PaymentSummary from '../Checkout/PaymentSummary';
     
     export const CartPage = () => {
         const [basketItems, setBasketItems] = useState([]);
