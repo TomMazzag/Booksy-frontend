@@ -10,26 +10,26 @@
     background-color: transparent;
     cursor: pointer;
     transition: background-color 0.3s ease;
-    text-align: left; /* Align text to the left */
+    text-align: left;
 }
 
 .account-container .tab:hover {
-    background-color: #f0f0f0; /* Light gray background on hover */
+    background-color: #f0f0f0; 
 }
 
 .account-container .tab.active {
-    background-color: #A1CCD1; /* Active tab color */
-    color: white; /* Active tab text color */
-    text-align: left; /* Ensure active tab text is also aligned left */
+    background-color: #A1CCD1; 
+    color: white; 
+    text-align: left; 
 }
 
 .tab-content {
     padding: 20px;
-    text-align: left; /* Align tab content text to the left */
+    text-align: left; 
 }
 
 .email-preferences-container {
     display: flex;
     flex-direction: column;
-    text-align: left; /* Align email preferences text to the left */
+    text-align: left;
 }

@@ -37,7 +37,7 @@ const Navbar = () => {
 {/* //                         <p className="heart">♥</p> */}
                         <p className="heart" onClick={() => navigate('/favourites')}>♥</p>
                         <UserButton />
-                        <p className="basket">Cart</p>
+                        <p className="basket">Basket</p>
                     </div>
                     <div className="mobile-menu">
                         <FontAwesomeIcon icon={faBars} onClick={toggleMenu}/>
@@ -45,7 +45,7 @@ const Navbar = () => {
                             <li><Link to="/account" className="account-link">Hello {user.firstName}</Link></li>
 {/* //                             <li><p className="heart">Favourites</p></li> */}
                             <li><p className="heart" onClick={() => navigate('/favourites')}>Favourites</p></li>
-                            <li><p className="basket">Shopping Cart</p></li>
+                            <li><p className="basket">Basket</p></li>
                         </ul>) : null}
                     </div>
                 </div>
@@ -65,14 +65,14 @@ const Navbar = () => {
                         <SignInComponent />
 {/* //                         <p className="heart">♥</p> */}
                         <p className="heart" onClick={() => navigate('/favourites')}>♥</p>
-                        <p className="basket">Cart</p>
+                        <p className="basket">Basket</p>
                     </div>
                     <div className="mobile-menu">
                         <FontAwesomeIcon icon={faBars} onClick={toggleMenu}/>
                         {openMenu ? (<ul className="mobile-menu-options">
                             <li><SignInComponent /></li>
                             <li><p className="heart">Favourites</p></li>
-                            <li><p className="basket">Shopping Cart</p></li>
+                            <li><p className="basket">Basket</p></li>
                         </ul>) : null}
                     </div>
                 </div>
