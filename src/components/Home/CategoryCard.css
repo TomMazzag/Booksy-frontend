@@ -1,7 +1,7 @@
 /* src/Components/Home/CategoryCard.css */
 
 .category-grid-container {
-    display: grid;
+    display: flex;
     justify-content: center; /* Center align horizontally */
     height:auto;
 }

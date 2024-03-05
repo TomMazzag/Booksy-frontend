@@ -8,9 +8,6 @@
     width: 100%;
 }
 
-.filter-book-card h3 {
-}
-
 .filter-price {
     width:100%; 
 }
@@ -37,4 +34,26 @@
 
 .filter-description {
     margin: 0px;
+}
+
+@media (max-width: 760px) {
+    .filter-book-para {
+        flex-direction: column;
+    }
+
+    .filter-book-card img {
+        align-self: flex-start;
+    }
+
+    .filter-book-card {
+        padding: 10px 5px;
+    }
+
+    .filter-book-text {
+        padding: 0px 0px 0px 10px;
+    }
+
+    .filter-price {
+        margin-top: 10px;
+    }
 }

@@ -4,6 +4,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { FilterPage } from "./pages/Home/FilterPage"
 import { HomePage } from "./pages/Home/HomePage"
 import { SignupPage } from "./pages/Home/SignupPage";
+import { FavouritesPage } from './pages/Favourites/FavouritesPage';
 import BookPage from './pages/Book/BookPage';
 import CartPage from './pages/Cart/CartPage';
 import OrderSuccessPage from './pages/Checkout/sucess';
@@ -33,15 +34,9 @@ const router = createBrowserRouter([
     element: <CartPage />
   },
   {
-    path: "/success", // Add route for the success page
-    element: <OrderSuccessPage />
-  },
-  {
-    path: "/cancel", // Add route for the cancel page
-    element: <OrderCancelPage />
-  },
-
-
+    path: "/favourites",
+    element: <FavouritesPage />
+  }
   
 ]);
 

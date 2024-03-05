@@ -8,6 +8,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHeart, faShoppingBasket, faStar } from '@fortawesome/free-solid-svg-icons';
 import './BookPage.css';
 import { getBookById } from '../../services/books'; 
+import LikeButton from '../../components/LikeButton/LikeButton.jsx';
 import { addToBasket } from '../../services/basket';
 
 const BookPage = () => {
@@ -46,7 +47,13 @@ const BookPage = () => {
         setShowFullSynopsis(!showFullSynopsis); // Toggle between showing full or partial synopsis
     };
 
-    if (isLoading) return <div>Loading...</div>;
+    if (isLoading) return (
+        <>
+            <Navbar />
+            <div>Loading...</div>
+            <Footer />
+        </>
+    );
     if (error) return <div>{error}</div>;
     if (!book) return <div>No book found</div>; // Or any other error handling
 
@@ -61,7 +68,6 @@ const BookPage = () => {
     return (
         <>
             <Navbar />
-            <Link to="/" className='go_back_button'> &lt;&lt; Back to Homepage</Link>
             <div className="container mt-4 centered-content">
                 <div className="row">
                     <div className="col-md-4">
@@ -74,14 +80,10 @@ const BookPage = () => {
                         <p>Rating: <FontAwesomeIcon icon={faStar} /> 4.5</p>
                         <p>Price: £{book.price?.$numberDecimal || 'N/A'}</p>
                         <p>Status: In Stock</p>
-                        <div className="button-group">
-                            <button className="btn btn-outline-danger">
-                                <FontAwesomeIcon icon={faHeart} /> Add to Favourites
-                            </button>
-                            <button className="btn btn-outline-primary" onClick = {addItemToBasket}  > 
+                        <LikeButton />
+                        <button className="btn btn-outline-primary" onClick = {addItemToBasket}  > 
                                 <FontAwesomeIcon icon={faShoppingBasket} /> Add to Basket
-                            </button>
-                        </div>
+                        </button>
                     </div>
                 </div>
                 <div className="synopsis">
@@ -91,6 +93,7 @@ const BookPage = () => {
                         <button onClick={toggleSynopsisVisibility} className="btn btn-outline-secondary">
                             {showFullSynopsis ? 'Hide' : 'See More'}
                         </button>
+                        
                     )}
                 </div>
             </div>
