@@ -21,7 +21,7 @@ Payment Processing: Stripe integration for secure and efficient payment transact
 Styling: CSS and responsive design principles for a polished and adaptive user experience.
 
 
-Authors (Team)
+Authors: (Team)
 
 Demetrius Vissarion - https://github.com/demetriusvissarion
 Thomas Mazzag - https://github.com/TomMazzag
