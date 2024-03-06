@@ -62,8 +62,26 @@ import './PaymentSummary.css';
 import { initiateOrderAndCheckout } from '../../services/orderService';
 
     const PaymentSummary = ({ totalPrice, cartItems }) => {
+
+    const priceAndQuantity = cartItems.map(item => {
+        var { price, quantity, title } = item;
+        const numericPrice = parseFloat(price.$numberDecimal);
+        price = 599
+        return { 
+            price_data: {
+                currency: "gbp",
+                unit_amount: price,
+                product_data: {
+                    name: title
+                }
+            },
+            quantity
+        };
+    })
+
     const handleCheckout = () => {
-        initiateOrderAndCheckout(cartItems); // Trigger Stripe Checkout with the current cart items
+        
+        initiateOrderAndCheckout(priceAndQuantity); // Trigger Stripe Checkout with the current cart items
     };
 
 

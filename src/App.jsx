@@ -33,18 +33,14 @@ const router = createBrowserRouter([
     path: "/books/:bookId",
     element: <BookPage />
   },
-
-
   {
     path: '/books/search/author/:author',
     element: <SearchPage />
   },
-
   {
     path: '/books/search/title/:title',
     element: <SearchPage />
   },
-
   {
     path: "/basket",
     element: <CartPage />
@@ -61,10 +57,6 @@ const router = createBrowserRouter([
     path: "/cancel", // Add route for the cancel page
     element: <OrderCancelPage />
   },
-
-
-  
-
 ]);
 
 

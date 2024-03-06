@@ -77,7 +77,7 @@
                             <div className="empty-basket-message">Your Basket is Empty, Fill it please!</div>
                         )}
                     </div>
-                    <PaymentSummary totalPrice={totalPrice} />
+                    <PaymentSummary totalPrice={totalPrice} cartItems={basketItems}/>
                 </main>
                 <Footer />
             </>
