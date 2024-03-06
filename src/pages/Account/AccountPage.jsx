@@ -79,6 +79,12 @@ export const AccountPage = () => {
     };
 
     const handleAddressSubmit = async () => {
+        if (!addressForm.addressLine1 || !addressForm.townOrCity || !addressForm.postcode) {
+            setMessage({ content: 'Please fill in all mandatory fields.', type: 'error' });
+            setTimeout(() => setMessage({ content: '', type: '' }), 3000); // Message disappears after 3 seconds
+            return; // Prevent further execution
+        }
+
         try {
             await updateUserDetails(user.id, { address: addressForm });
             // Display success message
@@ -99,7 +105,7 @@ export const AccountPage = () => {
     const renderAddressForm = () => (
         <div className="address-form">
             <input type="text" name="addressLine1" placeholder="Address Line 1" value={addressForm.addressLine1} onChange={handleInputChange} />
-            <input type="text" name="addressLine2" placeholder="Address Line 2" value={addressForm.addressLine2} onChange={handleInputChange} />
+            <input type="text" name="addressLine2" placeholder="Address Line 2 (optional)" value={addressForm.addressLine2} onChange={handleInputChange} />
             <input type="text" name="townOrCity" placeholder="Town or City" value={addressForm.townOrCity} onChange={handleInputChange} />
             <input type="text" name="postcode" placeholder="Postcode" value={addressForm.postcode} onChange={handleInputChange} />
             <button className="save-address-btn" onClick={handleAddressSubmit}>Save address</button>
@@ -211,6 +217,14 @@ export const AccountPage = () => {
                         {message.content}
                     </div>
                 )}
+                
+                {
+                    message.content && (
+                        <div className={`message-container ${message.type === 'success' ? 'message-success' : 'message-error'}`}>
+                            {message.content}
+                        </div>
+                    )
+                }
             </div>
             <Footer />
         </>
