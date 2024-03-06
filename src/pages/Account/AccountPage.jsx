@@ -14,6 +14,7 @@ export const AccountPage = () => {
     const { user } = useUser(); 
     const [userData, setUserData] = useState(null);
     const [showAddressForm, setShowAddressForm] = useState(false);
+    const [submitCounter, setSubmitCounte] = useState(0);
     const [addressForm, setAddressForm] = useState({
         addressLine1: "",
         addressLine2: "",
@@ -21,34 +22,40 @@ export const AccountPage = () => {
         postcode: "",
     });
 
-    // const formatAddressString = (addressForm) => {
-    //     return `Address Line 1: ${addressForm.addressLine1}, Address Line 2: ${addressForm.addressLine2}, Town or City: ${addressForm.townOrCity}, Postcode: ${addressForm.postcode}`;
-    // };
-
-    // const parseAddressString = (addressString) => {
-    //     const addressParts = addressString.split(', ').reduce((acc, part) => {
-    //         const [key, value] = part.split(': ').map((str) => str.trim());
-    //         acc[key.toLowerCase().replace(/\s+/g, '')] = value;
-    //         return acc;
-    //     }, {});
+    const convertStringToObject = (addressStr) => {
+        const parts = addressStr.split(", ");
+        const addressObj = {};
     
-    //     return {
-    //         addressLine1: addressParts['addressline1'] || '',
-    //         addressLine2: addressParts['addressline2'] || '',
-    //         townOrCity: addressParts['townorcity'] || '',
-    //         postcode: addressParts['postcode'] || '',
-    //     };
-    // };
+        parts.forEach(part => {
+            const [key, value] = part.split(": ");
+            let formattedKey = key.toLowerCase()
+                .replace("address line 1", "addressLine1")
+                .replace("address line 2", "addressLine2")
+                .replace("town or city", "townOrCity")
+                .replace("postcode", "postcode");
+            // Convert first character of each key to uppercase except for the first key
+            formattedKey = formattedKey.split(' ').map((word, index) => 
+                index === 0 ? word : word.charAt(0).toUpperCase() + word.slice(1)
+            ).join('');
+            addressObj[formattedKey] = value;
+        });
+
+        console.log("[convertStringToObject] addressObj: ", addressObj)
+    
+        return addressObj;
+    };
+    
 
     useEffect(() => {
         const fetchUserData = async () => {
             try {
                 const data = await getUserById(user.id);
                 setUserData(data);
+                setShowAddressForm(false); // Hide form if address exists
                 if (data.address) {
-                    // const addressObj = parseAddressString(data.address);
-                    setAddressForm(data.address);
-                    setShowAddressForm(false); // Hide form if address exists
+                    console.log("data.address: ", data.address)
+                    setAddressForm(convertStringToObject(data.address));
+                    // console.log("addressForm: " , addressForm)
                 }
             } catch (error) {
                 console.error("Error fetching user data:", error);
@@ -58,7 +65,7 @@ export const AccountPage = () => {
         if (user) {
             fetchUserData();
         }
-    }, [user, showAddressForm]);
+    }, [user, submitCounter]);
 
     const handleInputChange = (e) => {
         const { name, value } = e.target;
@@ -70,11 +77,10 @@ export const AccountPage = () => {
 
     const handleAddressSubmit = async () => {
         try {
-            // const formattedAddress = formatAddressString(addressForm);
             await updateUserDetails(user.id, { address: addressForm });
             alert("Address saved successfully!");
             setShowAddressForm(false);
-            // fetchUserData(); // Assuming fetchUserData() is implemented to re-fetch user data
+            setSubmitCounte(submitCounter + 1)
         } catch (error) {
             console.error("Failed to save address:", error);
             alert("Failed to save address. Please try again.");
@@ -113,18 +119,18 @@ export const AccountPage = () => {
                 return (
                     <div>
                         {
-                            userData && userData.address ? (
+                            userData && addressForm ? (
                                 <>
-                                    <p>Address Line 1 : {userData.address.addressLine1 ? userData.address.addressLine1 : "undefined" }</p>
-                                    <p>Address Line 2 : {userData.address.addressLine2 ? userData.address.addressLine2 : "undefined" }</p>
-                                    <p>Town Or City : {userData.address.townOrCity ? userData.address.townOrCity : "undefined" }</p>
-                                    <p>Postcode : {userData.address.postcode ? userData.address.postcode : "undefined" }</p>
+                                    <p>Address Line 1 : {addressForm.addressLine1 ? addressForm.addressLine1 : "undefined" }</p>
+                                    <p>Address Line 2 : {addressForm.addressLine2 ? addressForm.addressLine2 : "undefined" }</p>
+                                    <p>Town Or City : {addressForm.townOrCity ? addressForm.townOrCity : "undefined" }</p>
+                                    <p>Postcode : {addressForm.postcode ? addressForm.postcode : "undefined" }</p>
                                     <button className="edit-address-btn" onClick={() => setShowAddressForm(true)}>Edit address</button>
-                                    {
+                                    {/* {
                                         showAddressForm ?? (
                                             renderAddressForm()
                                         )
-                                    }
+                                    } */}
                                 </>
                             ) : showAddressForm ? (
                                 renderAddressForm()
