@@ -17,6 +17,7 @@ export const AccountPage = () => {
     const [submitCounter, setSubmitCounter] = useState(0);
     const [message, setMessage] = useState({ content: '', type: '' });
     const [showMessage, setShowMessage] = useState(false);
+    const [fieldErrors, setFieldErrors] = useState({});
 
     const [addressForm, setAddressForm] = useState({
         addressLine1: "",
@@ -76,38 +77,83 @@ export const AccountPage = () => {
             ...prevState,
             [name]: value,
         }));
+        // Clear field error
+        setFieldErrors(prevErrors => ({
+            ...prevErrors,
+            [name]: false,
+        }));
     };
 
     const handleAddressSubmit = async () => {
         if (!addressForm.addressLine1 || !addressForm.townOrCity || !addressForm.postcode) {
             setMessage({ content: 'Please fill in all mandatory fields.', type: 'error' });
-            setTimeout(() => setMessage({ content: '', type: '' }), 3000); // Message disappears after 3 seconds
-            return; // Prevent further execution
+            setShowMessage(true);
+            setFieldErrors({
+                addressLine1: !addressForm.addressLine1,
+                townOrCity: !addressForm.townOrCity,
+                postcode: !addressForm.postcode,
+            });
+            setTimeout(() => {
+                setShowMessage(false);
+                setMessage({ content: '', type: '' });
+            }, 3000); // Hide message after 3 seconds
+            return;
         }
 
         try {
             await updateUserDetails(user.id, { address: addressForm });
-            // Display success message
             setMessage({ content: 'Address saved successfully!', type: 'success' });
             setShowMessage(true);
-            setTimeout(() => setShowMessage(false), 1000); // Hide message after 1 second
+            setSubmitCounter(submitCounter + 1); // Trigger a re-fetch of user data
             setShowAddressForm(false);
-            setSubmitCounter(submitCounter + 1);
+            setTimeout(() => {
+                setShowMessage(false);
+                setMessage({ content: '', type: '' });
+            }, 3000);
         } catch (error) {
-            console.error("Failed to save address:", error);
-            // Display error message
             setMessage({ content: 'Failed to save address. Please try again.', type: 'error' });
             setShowMessage(true);
-            setTimeout(() => setShowMessage(false), 1000); // Hide message after 1 second
+            setTimeout(() => {
+                setShowMessage(false);
+                setMessage({ content: '', type: '' });
+            }, 3000);
         }
     };
 
     const renderAddressForm = () => (
         <div className="address-form">
-            <input type="text" name="addressLine1" placeholder="Address Line 1" value={addressForm.addressLine1} onChange={handleInputChange} />
-            <input type="text" name="addressLine2" placeholder="Address Line 2 (optional)" value={addressForm.addressLine2} onChange={handleInputChange} />
-            <input type="text" name="townOrCity" placeholder="Town or City" value={addressForm.townOrCity} onChange={handleInputChange} />
-            <input type="text" name="postcode" placeholder="Postcode" value={addressForm.postcode} onChange={handleInputChange} />
+            <input 
+                className={`input ${fieldErrors.addressLine1 ? 'input-error' : ''}`}
+                type="text" 
+                name="addressLine1" 
+                placeholder="Address Line 1" 
+                value={addressForm.addressLine1} 
+                onChange={handleInputChange}
+            />
+            <input 
+                className="input"
+                type="text" 
+                name="addressLine2" 
+                placeholder="Address Line 2 (optional)" 
+                value={addressForm.addressLine2} 
+                onChange={handleInputChange}
+            />
+            <input 
+                className={`input ${fieldErrors.townOrCity ? 'input-error' : ''}`}
+                type="text" 
+                name="townOrCity" 
+                placeholder="Town or City" 
+                value={addressForm.townOrCity} 
+                onChange={handleInputChange} 
+            />
+            <input 
+                className={`input ${fieldErrors.postcode ? 'input-error' : ''}`}
+                type="text" 
+                name="postcode" 
+                placeholder="Postcode" 
+                value={addressForm.postcode} 
+                onChange={handleInputChange} 
+            />
             <button className="save-address-btn" onClick={handleAddressSubmit}>Save address</button>
         </div>
     );
@@ -217,14 +263,7 @@ export const AccountPage = () => {
                         {message.content}
                     </div>
                 )}
-                
-                {
-                    message.content && (
-                        <div className={`message-container ${message.type === 'success' ? 'message-success' : 'message-error'}`}>
-                            {message.content}
-                        </div>
-                    )
-                }
+
             </div>
             <Footer />
         </>

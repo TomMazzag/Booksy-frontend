@@ -99,7 +99,7 @@
 
 .message-container {
     position: fixed;
-    top: 50%;
+    top: 30%;
     left: 50%;
     transform: translate(-50%, -50%);
     padding: 10px;
@@ -116,4 +116,8 @@
 .message-error {
     background-color: #f2dede; /* Corrected from backgroundColor to background-color */
     color: #a94442;
+}
+
+.input-error {
+    border: 1px solid red;
 }
