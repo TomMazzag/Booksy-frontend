@@ -1,19 +1,22 @@
 
-
+import { useEffect } from "react";
 import { removeFromBasket } from "../../services/basket";
 import './CartItem.css';
 
-const CartItem = ({ book, setUpdateBasketItems, onQuantityChange }) => {
+const CartItem = ({ user, book, setUpdateBasketItems, onQuantityChange }) => {
+
     const removeItem = () => {
-        removeFromBasket('65e07035deb88a4a513164ed', book._id);
+        removeFromBasket(user.id, book._id);
         setUpdateBasketItems(prev => !prev); // Trigger update for re-fetching items
     };
+
+    console.log("book:", book)
 
     const handleQuantityChange = (event) => {
         const newQuantity = event.target.value;
         onQuantityChange(book._id, newQuantity); // Call the passed in onQuantityChange function
     };
-
+    
     return (
         <section className="cart-items">
             {/* Single Cart Item */}

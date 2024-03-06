@@ -4,13 +4,14 @@ const backendUrl = "https://booksy-backend.onrender.com";
 // const backendUrl = "http://127.0.0.1:3000"; 
 
 export const addToBasket = async (item, userId) => {
+    console.log("Hi")
     try {
         const requestOptions = {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
             },
-            body: JSON.stringify({ item })
+            body: JSON.stringify({ item: item })
         };
 
         const response = await fetch(`${backendUrl}/basket/${userId}/add`, requestOptions);

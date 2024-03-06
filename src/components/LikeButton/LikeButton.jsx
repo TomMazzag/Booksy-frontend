@@ -23,7 +23,7 @@ const LikeButton = () => {
         if (user && liked !== undefined) { 
             try {
                 const result = await checkLikedBook(user.id, bookId);
-                console.log("I am the result:", result)
+                // console.log("I am the result:", result)
                 setLiked(result);
             } catch (error) {
                 console.error('Error fetching liked status:', error);

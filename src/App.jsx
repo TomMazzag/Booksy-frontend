@@ -7,7 +7,11 @@ import { SignupPage } from "./pages/Home/SignupPage";
 import { FavouritesPage } from './pages/Favourites/FavouritesPage';
 import { AccountPage } from './pages/Account/AccountPage';
 import BookPage from './pages/Book/BookPage';
+
+import { SearchPage } from './pages/Search/SearchPage';
+
 import CartPage from './pages/Cart/CartPage';
+
 
 const router = createBrowserRouter([
   {
@@ -26,6 +30,18 @@ const router = createBrowserRouter([
     path: "/books/:bookId",
     element: <BookPage />
   },
+
+
+  {
+    path: '/books/search/author/:author',
+    element: <SearchPage />
+  },
+
+  {
+    path: '/books/search/title/:title',
+    element: <SearchPage />
+  },
+
   {
     path: "/basket",
     element: <CartPage />
@@ -39,6 +55,7 @@ const router = createBrowserRouter([
     element: <AccountPage />
   }
   
+
 ]);
 
 
@@ -46,8 +63,7 @@ function App() {
 
   return (
     <>
-    <RouterProvider router={router}/>
-    {/* <CartPage/> */}
+      <RouterProvider router={router}/>
     </>
   )
 };
