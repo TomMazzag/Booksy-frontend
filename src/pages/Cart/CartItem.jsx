@@ -1,44 +1,30 @@
 
-import { useUser } from "@clerk/clerk-react";
 import { useEffect } from "react";
 import { removeFromBasket } from "../../services/basket";
 import './CartItem.css';
-import { getBookById } from "../../services/books";
 
-const CartItem = ( book, setUpdateBasketItems, onQuantityChange ) => {
-    const { user } = useUser();
-    console.log("line 8", book)
-
-    const bookData = async () => {
-        const data = await getBookById(book)
-        console.log(data)
-        return data
-        
-    }
-
-    useEffect(() => {
-        bookData();
-    })
-    
+const CartItem = ({ user, book, setUpdateBasketItems, onQuantityChange }) => {
 
     const removeItem = () => {
         removeFromBasket(user.id, book._id);
         setUpdateBasketItems(prev => !prev); // Trigger update for re-fetching items
     };
 
+    console.log("book:", book)
+
     const handleQuantityChange = (event) => {
         const newQuantity = event.target.value;
         onQuantityChange(book._id, newQuantity); // Call the passed in onQuantityChange function
     };
-
+    
     return (
         <section className="cart-items">
             {/* Single Cart Item */}
             <article className="cart-item">
-                <img src={bookData.image_url} alt={book.title} />
+                <img src={book.image_url} alt={book.title} />
                 <div className="item-details">
-                    <h3>{bookData.title}</h3>
-                    <p>Price: £{bookData.price}</p>
+                    <h3>{book.title}</h3>
+                    <p>Price: £{book.price.$numberDecimal}</p>
                     <input
                         type="number"
                         id={`quantity-${book._id}`}
