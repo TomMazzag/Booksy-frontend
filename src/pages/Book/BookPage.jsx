@@ -21,13 +21,13 @@ const BookPage = () => {
     const [isLoading, setIsLoading] = useState(false);
     const [error, setError] = useState(null);
     const [showFullSynopsis, setShowFullSynopsis] = useState(false);
+    const { user } = useUser();
     const { isSignedIn } = useUser()
     const [newReview, setNewReview] = useState(false)
-
-    const addItemToBasket = () => {
-        addToBasket(book._id, '65e07035deb88a4a513164ed');
-        console.log(book._id);
-    }
+    
+    const addItemToBasket = async () => {
+        await addToBasket(bookId, user.id);
+    };
 
     useEffect(() => {
         const fetchBook = async () => {
