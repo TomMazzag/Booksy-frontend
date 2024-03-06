@@ -33,7 +33,7 @@ const CartItem = ({ user, book, setUpdateBasketItems, onQuantityChange }) => {
                         defaultValue="1"
                         onChange={handleQuantityChange} // Add onChange event to input
                     />
-                    <button className="save-for-later">Save for later</button>
+                    <button className="save-for-later">Add to Favourites</button>
                     <button className="remove-item" onClick={removeItem}>Remove</button>
                 </div>
                 <div className="delivery-info">

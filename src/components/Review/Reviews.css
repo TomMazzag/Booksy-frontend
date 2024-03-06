@@ -1,0 +1,99 @@
+.reviews-container {
+    margin: 20px 0px;
+    display: flex;
+    gap: 20px;
+}
+
+.single-review {
+    padding: 10px;
+    width: 30%;
+    text-align: start;
+}
+
+.review-title {
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.review-rating {
+    margin-bottom: 10px;
+}
+
+.review-user {
+    font-weight: 600;
+}
+
+.review-date {
+    color: gray;
+}
+
+.single-review p {
+    margin: 0;
+}
+
+.review-box {
+    border-top: 1px solid lightgray;
+    text-align: start;
+    width: 100%;
+    padding-top: 20px;
+}
+
+.review-box input {
+    margin-bottom: 20px;
+    padding: 5px;
+}
+
+.user-review-title {
+    width: 20%;
+}
+
+.stars-container {
+    display: flex;
+    flex-direction: row-reverse;
+    align-self: flex-start;
+    gap: 5px;
+}
+
+.star {
+    cursor: pointer;
+    color: gray;
+    font-size: 1.5em;
+    transition: color .2s, transform .2s;
+}
+
+.star:hover {
+    color: #FFD700;
+    transform: scale(1.2);
+}
+
+.star:hover ~ .star {
+    color: #FFD700;
+}
+
+.star[selected] {
+    color: #FFD700;
+}
+
+.star[selected] ~ .star{
+    color: #FFD700;
+}
+
+.review-box form {
+    display: flex;
+    flex-direction: column;
+    margin: 30px 0px;
+}
+
+.share-review {
+    width: 20%;
+    margin-top: 20px;
+    border: 1px solid gray;
+    padding: 5px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.share-review.disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}

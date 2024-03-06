@@ -21,7 +21,7 @@ const LikeButton = ({ user, bookId }) => {
         if (user && liked !== undefined) { 
             try {
                 const result = await checkLikedBook(user.id, bookId);
-                console.log("I am the result:", result)
+                // console.log("I am the result:", result)
                 setLiked(result);
             } catch (error) {
                 console.error('Error fetching liked status:', error);
@@ -52,7 +52,7 @@ const LikeButton = ({ user, bookId }) => {
                 <div>
                     <button className="btn btn-outline-danger" onClick={handleLike}>
                         <FontAwesomeIcon icon={faHeart} /> 
-                        {liked ? "": " Save for later"}
+                        {liked ? "": "Add to Favourites"}
                     </button>
                 </div>
             )}
@@ -62,7 +62,7 @@ const LikeButton = ({ user, bookId }) => {
                     <Popup trigger={(
                     <button className="btn btn-outline-danger" onClick={handleButtonClick}>
                         <FontAwesomeIcon icon={faHeart} /> 
-                        {liked ? "" : " Save for later"}
+                        {liked ? "" : "Add to Favourites"}
                         </button>
                         )} position="right center">
                         {/* {"You need to be logged in to make an account"} */}

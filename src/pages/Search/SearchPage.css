@@ -1,5 +1,3 @@
-/* src/Home/HomePage.css */
-
 body {
     background-color: white; /* Change to your desired background color */
     margin: 0; /* Reset default body margin */
@@ -7,42 +5,29 @@ body {
     font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
 }
 
-.title {
+.search-page-title {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 20vh; /* Set the height to one-third of the viewport height */
+    height: 25vh; 
 }
 
-.title h1 {
+.search-page-title h1 {
     font-size: 2.5em; /* Adjust font size as needed */
     font-family: "Guardian-EgypTT", "Charter", "Charter Bitstream", "Cambria", "Noto Serif Light", "Droid Serif", "Georgia", "serif";
     letter-spacing: .46515px;
+    height: 10vh;
     font-style: italic;
 }
 
-.book-list-container {
-    overflow: hidden;
-}
-
-.category-grid-selection {
+.search-page-book-cards {
     display: flex;
-    animation: carouselAnimation 12s linear infinite; /* Adjust the duration as needed */
-}
-
-.book-list-container.paused .category-grid-selection{
-    animation-play-state: paused;
-}
-
-
-@keyframes carouselAnimation {
-    0% {
-    transform: translateX(0);
-    }
-    100% {
-    transform: translateX(-100%);
-    }
-    200% {
-        transform: translateX(0);
-    }
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    margin: 5px;
+    background-color: #fff;
+    border-radius: 8px;
 }
