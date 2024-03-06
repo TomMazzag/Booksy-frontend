@@ -50,12 +50,12 @@ export const SearchBar = ({ placeholder }) => {
         }
     };
 
-    const handleClick = (id) => {
+    const handleClick = (id) => {   // redirects to individual book page 
         navigate(`/books/${id}`);
     };
 
     const handleAuthorClick = (author) => {
-        navigate(`/books/search/author/${author}`);
+        navigate(`/books/search/author/${author}`);   // redirects to search page (books by author)
     };
 
     const handleKeyPress = (e) => {
@@ -71,7 +71,7 @@ export const SearchBar = ({ placeholder }) => {
                     type="text"
                     placeholder={placeholder}
                     onChange={handleFilter}
-                    onKeyDown={handleKeyPress} // Trigger search on Enter key press
+                    onKeyDown={handleKeyPress} 
                 />
                 <div className='search-icon' onClick={handleSearch}>
                     <button><FontAwesomeIcon icon={faSearch} /></button>
