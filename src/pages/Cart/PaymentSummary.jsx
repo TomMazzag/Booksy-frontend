@@ -1,8 +1,4 @@
 import React from 'react';
-import applePayLogo from '../../assets/Applepay.png';
-import visaMastercardLogo from '../../assets/Cardspay.png';
-import paypalLogo from '../../assets/Paypal.png';
-import gpayLogo from '../../assets/Gpay.png';
 
 const PaymentSummary = ({ totalPrice }) => {
     return (

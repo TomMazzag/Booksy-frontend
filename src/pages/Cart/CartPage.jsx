@@ -4,10 +4,6 @@
     import './CartPage.css';
     import Navbar from '../../components/Home/NavBar';
     import Footer from '../../components/Home/Footer';
-    import applePayLogo from '../../assets/Applepay.png';
-    import visaMastercardLogo from '../../assets/Cardspay.png';
-    import paypalLogo from '../../assets/Paypal.png';
-    import gpayLogo from '../../assets/Gpay.png';
     import { getBasket } from '../../services/basket';
     import CartItem from './CartItem';
     import PaymentSummary from './PaymentSummary';
