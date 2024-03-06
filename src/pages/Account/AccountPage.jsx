@@ -14,7 +14,10 @@ export const AccountPage = () => {
     const { user } = useUser(); 
     const [userData, setUserData] = useState(null);
     const [showAddressForm, setShowAddressForm] = useState(false);
-    const [submitCounter, setSubmitCounte] = useState(0);
+    const [submitCounter, setSubmitCounter] = useState(0);
+    const [message, setMessage] = useState({ content: '', type: '' });
+    const [showMessage, setShowMessage] = useState(false);
+
     const [addressForm, setAddressForm] = useState({
         addressLine1: "",
         addressLine2: "",
@@ -40,7 +43,7 @@ export const AccountPage = () => {
             addressObj[formattedKey] = value;
         });
 
-        console.log("[convertStringToObject] addressObj: ", addressObj)
+        // console.log("[convertStringToObject] addressObj: ", addressObj)
     
         return addressObj;
     };
@@ -53,7 +56,7 @@ export const AccountPage = () => {
                 setUserData(data);
                 setShowAddressForm(false); // Hide form if address exists
                 if (data.address) {
-                    console.log("data.address: ", data.address)
+                    // console.log("data.address: ", data.address)
                     setAddressForm(convertStringToObject(data.address));
                     // console.log("addressForm: " , addressForm)
                 }
@@ -78,12 +81,18 @@ export const AccountPage = () => {
     const handleAddressSubmit = async () => {
         try {
             await updateUserDetails(user.id, { address: addressForm });
-            alert("Address saved successfully!");
+            // Display success message
+            setMessage({ content: 'Address saved successfully!', type: 'success' });
+            setShowMessage(true);
+            setTimeout(() => setShowMessage(false), 1000); // Hide message after 1 second
             setShowAddressForm(false);
-            setSubmitCounte(submitCounter + 1)
+            setSubmitCounter(submitCounter + 1);
         } catch (error) {
             console.error("Failed to save address:", error);
-            alert("Failed to save address. Please try again.");
+            // Display error message
+            setMessage({ content: 'Failed to save address. Please try again.', type: 'error' });
+            setShowMessage(true);
+            setTimeout(() => setShowMessage(false), 1000); // Hide message after 1 second
         }
     };
 
@@ -119,21 +128,17 @@ export const AccountPage = () => {
                 return (
                     <div>
                         {
-                            userData && addressForm ? (
+                            showAddressForm ? (
+                                renderAddressForm()
+                            ) : userData && userData.address ? (
                                 <>
                                     <p>Address Line 1 : {addressForm.addressLine1 ? addressForm.addressLine1 : "undefined" }</p>
                                     <p>Address Line 2 : {addressForm.addressLine2 ? addressForm.addressLine2 : "undefined" }</p>
                                     <p>Town Or City : {addressForm.townOrCity ? addressForm.townOrCity : "undefined" }</p>
                                     <p>Postcode : {addressForm.postcode ? addressForm.postcode : "undefined" }</p>
                                     <button className="edit-address-btn" onClick={() => setShowAddressForm(true)}>Edit address</button>
-                                    {/* {
-                                        showAddressForm ?? (
-                                            renderAddressForm()
-                                        )
-                                    } */}
+
                                 </>
-                            ) : showAddressForm ? (
-                                renderAddressForm()
                             ) : (
                                 <button className="add-new-address-btn" onClick={() => setShowAddressForm(true)}>Add new address</button>
                             )
@@ -200,6 +205,12 @@ export const AccountPage = () => {
                 <div className="tab-content">
                     {renderTabContent()}
                 </div>
+
+                {showMessage && (
+                    <div className={`message-container ${message.type === 'success' ? 'message-success' : 'message-error'}`}>
+                        {message.content}
+                    </div>
+                )}
             </div>
             <Footer />
         </>

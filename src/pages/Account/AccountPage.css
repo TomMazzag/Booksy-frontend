@@ -96,3 +96,24 @@
     margin-bottom: 10px; /* Adds space between inputs */
     /* Other styles */
 }
+
+.message-container {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 10px;
+    border-radius: 5px; /* Corrected from borderRadius to border-radius */
+    z-index: 1000; /* Corrected from zIndex to z-index */
+    text-align: center; /* Corrected from textAlign to text-align */
+}
+
+.message-success {
+    background-color: #dff0d8; /* Corrected from backgroundColor to background-color */
+    color: #3c763d;
+}
+
+.message-error {
+    background-color: #f2dede; /* Corrected from backgroundColor to background-color */
+    color: #a94442;
+}
