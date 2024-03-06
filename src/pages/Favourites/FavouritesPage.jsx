@@ -19,7 +19,6 @@ export const FavouritesPage = () => {
             try {
                 const userData = await getUserById(user.id);
                 setuserData(userData);
-                // Now userData contains all user details, including favourites
             } catch (error) {
                 console.error("Error fetching user data:", error);
             }
