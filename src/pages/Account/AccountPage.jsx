@@ -14,7 +14,7 @@ export const AccountPage = () => {
     const { user } = useUser(); 
     const [userData, setUserData] = useState(null);
     const [showAddressForm, setShowAddressForm] = useState(false);
-    const [submitCounter, setSubmitCounter] = useState(0);
+    const [submitCounter, setSubmitCounter] = useState(0); // here to help refresh address after saves
     const [message, setMessage] = useState({ content: '', type: '' });
     const [showMessage, setShowMessage] = useState(false);
     const [fieldErrors, setFieldErrors] = useState({});
