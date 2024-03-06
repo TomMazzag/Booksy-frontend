@@ -1,4 +1,4 @@
-import { SignIn, useAuth } from "@clerk/clerk-react";
+import { SignIn } from "@clerk/clerk-react";
 import { useState } from 'react'
 import '../Authentication/Modal.css'
 import { useLocation } from "react-router-dom";
@@ -7,7 +7,6 @@ function SignInComponent () {
 
     const [modal, setModal] = useState(false);
     let location = useLocation()
-    console.log(location)
 
     const toggleModal = () => {
         setModal(!modal)

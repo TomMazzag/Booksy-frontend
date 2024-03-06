@@ -2,7 +2,7 @@
 
 // import { Checkbox } from "@/components/CheckBox"
 import React, { useEffect, useState } from 'react';
-import { useParams, Link, useLocation } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 import Navbar from "../../components/Home/NavBar.jsx";
 import Footer from "../../components/Home/Footer.jsx";
 import { CheckBox } from "../../components/Filter/CheckBox.jsx";
@@ -38,7 +38,6 @@ export const FilterPage = () => {
     useEffect(() => {
         setCheckedCategories([selected.name]);   // assigns selected to checked categories, shows as checked on filter page
     }, [selected]);
-
 
     useEffect(() => {
         if (checkedCategories.length > 0) {

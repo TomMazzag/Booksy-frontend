@@ -1,11 +1,11 @@
 // src/components/Home/BookCard.jsx
 
-import React, { useEffect, useState } from 'react';
-import { useParams, Link } from 'react-router-dom';
+import { useEffect, useState } from 'react';
+import { useParams} from 'react-router-dom';
 import Navbar from '../../components/Home/NavBar.jsx';
 import Footer from "../../components/Home/Footer.jsx";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHeart, faShoppingBasket, faStar } from '@fortawesome/free-solid-svg-icons';
+import { faShoppingBasket, faStar } from '@fortawesome/free-solid-svg-icons';
 import './BookPage.css';
 import { getBookById } from '../../services/books'; 
 import LikeButton from '../../components/LikeButton/LikeButton.jsx';
@@ -80,7 +80,7 @@ const BookPage = () => {
                         <p>Rating: <FontAwesomeIcon icon={faStar} /> 4.5</p>
                         <p>Price: £{book.price?.$numberDecimal || 'N/A'}</p>
                         <p>Status: In Stock</p>
-                        <LikeButton />
+                        <LikeButton user={user} bookdId={bookId} />
                         <button className="btn btn-outline-primary" onClick = {addItemToBasket}  > 
                                 <FontAwesomeIcon icon={faShoppingBasket} /> Add to Basket
                         </button>

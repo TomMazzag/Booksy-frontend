@@ -1,7 +1,7 @@
 
-import { useEffect } from "react";
 import { removeFromBasket } from "../../services/basket";
 import './CartItem.css';
+import PropTypes from 'prop-types';
 
 const CartItem = ({ user, book, setUpdateBasketItems, onQuantityChange }) => {
 
@@ -46,3 +46,10 @@ const CartItem = ({ user, book, setUpdateBasketItems, onQuantityChange }) => {
 };
 
 export default CartItem;
+
+CartItem.propTypes = {
+    user: PropTypes.string.isRequired,
+    book: PropTypes.array.isRequired,
+    setUpdateBasketItems: PropTypes.func.isRequired,
+    onQuantityChange: PropTypes.func.isRequired,
+};

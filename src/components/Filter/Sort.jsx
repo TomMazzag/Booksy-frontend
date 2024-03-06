@@ -1,6 +1,6 @@
-import FilterBookCard from "./FilterBookCard";
 import "./Sort.css"
 import { useState } from 'react';
+import PropTypes from 'prop-types';
 
 export const SortBy = ({ books, setBooks }) => {
 
@@ -54,4 +54,11 @@ export const SortBy = ({ books, setBooks }) => {
             </div>
         </>
     )
-}
+};
+
+SortBy.propTypes = {
+    setBooks: PropTypes.array.isRequired,
+    books: PropTypes.array.isRequired,
+
+};
+

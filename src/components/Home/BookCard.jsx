@@ -1,8 +1,8 @@
 // src/components/Home/BookCard.jsx
-
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import "./BookCard.css"
+import "./BookCard.css";
+import PropTypes from 'prop-types';
 
 const BookCard = ({ book }) => {
     const navigate = useNavigate();
@@ -22,6 +22,10 @@ const BookCard = ({ book }) => {
             <p className='book-card-price'>£{price}</p>
         </div>
     );
+};
+
+BookCard.propTypes = {
+    book: PropTypes.object.isRequired,
 };
 
 export default BookCard;
