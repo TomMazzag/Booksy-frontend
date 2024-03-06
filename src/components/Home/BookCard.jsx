@@ -18,8 +18,10 @@ const BookCard = ({ book }) => {
         <div className="book-card" onClick={handleClick} style={{ cursor: 'pointer' }}>
             <img src={book.image_url || 'https://www.peeters-leuven.be/covers/no_cover.gif'} alt={book.title} />
             <h3>{book.title}</h3>
+
             <p className='author'>{book.author}</p>
             <p className='book-card-price'>£{price}</p>
+
         </div>
     );
 };

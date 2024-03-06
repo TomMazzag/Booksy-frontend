@@ -5,9 +5,14 @@ import { UserButton } from "@clerk/clerk-react";
 import "../Home/NavBar.css";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars } from '@fortawesome/free-solid-svg-icons'
+import { SearchBar } from "./SearchBar";
+
+
+
 import { useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom'; // Make sure this is imported
 import { useState } from "react";
+
 
 const Navbar = () => {
     const navigate = useNavigate();
@@ -55,6 +60,7 @@ const Navbar = () => {
                 <div className="navbar-content">
                     <div className="navbar-logo">
                         <p onClick={navigateHomePage}> Booksy </p>
+
                     </div>
                     <div className="navbar-middle">
                         <input type="text" placeholder="Search Books" />
