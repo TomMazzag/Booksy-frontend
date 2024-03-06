@@ -34,9 +34,7 @@ const Navbar = () => {
                     <div className="navbar-logo">
                         <p onClick={navigateHomePage}> Booksy </p>
                     </div>
-                    <div className="navbar-middle">
-                        <input type="text" placeholder="Search Books by Title or Author " />
-                    </div>
+                    <SearchBar />
                     <div className="navbar-actions">
                         <p>Hello {user.firstName} </p>
                         <p className="heart" onClick={() => navigate('/favourites')}>♥</p>
@@ -62,9 +60,7 @@ const Navbar = () => {
                         <p onClick={navigateHomePage}> Booksy </p>
 
                     </div>
-                    <div className="navbar-middle">
-                        <input type="text" placeholder="Search Books" />
-                    </div>
+                    <SearchBar />
                     <div className="navbar-actions">
                         <SignInComponent />
                         <p className="heart" onClick={() => navigate('/favourites')}>♥</p>

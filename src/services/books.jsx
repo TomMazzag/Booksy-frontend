@@ -43,7 +43,7 @@ export const getBookById = async (bookId) => {
         const data = await response.json();
 
         //console.log("Data received:", data);
-        return data.books; // Ensure your API response structure includes a 'books' array
+        return data; // Ensure your API response structure includes a 'books' array
 
     } catch (error) {
         console.error("Fetch error:", error.message);
