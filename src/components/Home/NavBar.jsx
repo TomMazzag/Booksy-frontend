@@ -51,7 +51,7 @@ import bookData from '../../assets/books.json'
                             
                             />
                         </div> */}
-                        <SearchBar placeholder="Search for books..." />
+                        <SearchBar placeholder="Books, title, author, ISBN..." />
                         <div className="navbar-actions">
                             <SignInComponent />
                             <p className="heart">♥</p>

@@ -1,6 +1,7 @@
 .search {
-    position: absolute; /* Set position to fixed */
-    margin-left: 200px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 
@@ -19,6 +20,7 @@
     width: 500px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add a subtle shadow to the input */
     margin-top: 15px;
+    font-style: italic;
 }
 
 .search-icon {
