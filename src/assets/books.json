@@ -1,0 +1,324 @@
+
+[
+    {
+        "_id": {
+        "$oid": "65ddd7a6b872e601b2a7cbfb"
+        },
+        "title": "Open",
+        "author": "Andre Agassi",
+        "price": {
+        "$numberDecimal": "10.99"
+        },
+        "ISBN_10": "9780007281435",
+        "ISBN_13": "0007281439",
+        "image_url": "http://books.google.com/books/content?id=80pje6QWDEYC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+        "synopsis": "A stunning memoir by one of the world's most beloved athletes-a nuance portrait, an intensely candid account of a remarkable life, and a thrilling inside view of the pro tennis tour.",
+        "category": "Autobiography",
+        "__v": 0
+    },
+
+    {
+        "_id": {
+        "$oid": "65dddf8216673902b23bf95d"
+        },
+        "title": "Pride and Prejudice",
+        "author": "Jane Austen",
+        "price": {
+        "$numberDecimal": "7.99"
+        },
+        "ISBN_10": "HARVARD:32044086796588",
+        "ISBN_13": "",
+        "image_url": "http://books.google.com/books/content?id=s1gVAAAAYAAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+        "synopsis": "Austen’s most celebrated novel tells the story of Elizabeth Bennet, a bright, lively young woman with four sisters, and a mother determined to marry them to wealthy men. At a party near the Bennets’ home in the English countryside, Elizabeth meets the wealthy, proud Fitzwilliam Darcy. Elizabeth initially finds Darcy haughty and intolerable, but circumstances continue to unite the pair. Mr. Darcy finds himself captivated by Elizabeth’s wit and candor, while her reservations about his character slowly vanish. The story is as much a social critique as it is a love story, and the prose crackles with Austen’s wry wit.",
+        "category": "Romance",
+        "__v": 0
+    },
+
+    {
+        "_id": {
+        "$oid": "65dddfb616673902b23bf95f"
+        },
+        "title": "The Da Vinci Code",
+        "author": "Dan Brown",
+        "price": {
+        "$numberDecimal": "8.99"
+        },
+        "ISBN_10": "9780552169929",
+        "ISBN_13": "0552169927",
+        "image_url": "http://books.google.com/books/content?id=So4NOO9Yq54C&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+        "synopsis": "The stakes are raised when Langdon uncovers a startling link. The late curator was involved in the Priory of Sion - an actual secret society whose members included Sir Isaac Newton, Botticelli, Victor Hugo, and Da Vinci, among others. Langdon suspects they are on the hunt for a breathtaking historical secret, one that has proven through the centuries to be as enlightening as it is dangerous. In a frantic race through Paris, and beyond, Langdon and Neveu find themselves matching wits with a faceless powerbroker who appears to anticipate their every move. Unless they can decipher the labyrinthine puzzle, the Priory's secret - and an explosive ancient truth - will be lost forever.",
+        "category": "Action",
+        "__v": 0
+    },
+
+    {
+        "_id": {
+        "$oid": "65de020b63ab75aac14ae87c"
+        },
+        "title": "Incremental Software Architecture",
+        "author": "Michael Bell",
+        "price": {
+        "$numberDecimal": "4.99"
+        },
+        "ISBN_10": "9781119117643",
+        "ISBN_13": "111911764X",
+        "image_url": "http://books.google.com/books/content?id=cF3KCQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+        "synopsis": "The best-practices solution guide for rescuing broken software systems Incremental Software Architecture is a solutions manual for companies with underperforming software systems. With complete guidance and plenty of hands-on instruction, this practical guide shows you how to identify and analyze the root cause of software malfunction, then identify and implement the most powerful remedies to save the system. You'll learn how to avoid developing software systems that are destined to fail, and the methods and practices that help you avoid business losses caused by poorly designed software. Designed to answer the most common questions that arise when software systems negatively impact business performance, this guide details architecture and design best practices for enterprise architecture efforts, and helps you foster the reuse and consolidation of software assets. Relying on the wrong software system puts your company at risk of failing. It's a question of when, not if, something goes catastrophically wrong. This guide shows you how to proactively root out and repair the most likely cause of potential issues, and how to rescue a system that has already begun to go bad. Mitigate risks of software development projects Increase ROI and accelerate time-to-market Accurately assess technological achievability and viability Identify actual software construction value propositions Fierce competition and volatile commerce markets drive companies to invest heavily in the construction of software systems, which strains IT and business budgets and puts immense strain on existing network infrastructure. As technology evolves, these ever-more-complex computing landscapes become more and more expensive and difficult to maintain. Incremental Software Architecture shows you how to revamp the architecture to effectively reduce strain, cost, and the chance of failure.",
+        "category": "Non-fiction",
+        "__v": 0
+    },
+
+    {
+        "_id": {
+        "$oid": "65de02be63ab75aac14ae87e"
+        },
+        "title": "The Official DVSA Guide to Learning to Drive",
+        "author": "Driver and Vehicle Standards Agency",
+        "price": {
+        "$numberDecimal": "10.99"
+        },
+        "ISBN_10": "0115535500",
+        "ISBN_13": "9780115535505",
+        "image_url": "http://books.google.com/books/content?id=IFyjswEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+        "synopsis": "The official guide which explains the standards required to pass today's practical driving test. Most people fail their driving test because they are not prepared. 'The Official DSA Guide to Learning to Drive' will help the learner and anyone helping someone learn to drive by explaining the standard required for each key skill examined within the driving test. This new edition will help the person sitting in the passenger seat understand what the learner needs to practise and the potential hazards they may encounter. The aim is to make sure that the learner is capable of driving safely and confidently, without prompting from an instructor, before they take their test.",
+        "category": "Non-fiction",
+        "__v": 0
+    },
+
+    {
+        "_id": {
+        "$oid": "65df14b57d26fba2f85d4199"
+        },
+        "title": "The Tariff",
+        "author": "James Kimbrough Jones",
+        "price": {
+        "$numberDecimal": "12.99"
+        },
+        "ISBN_10": "UIUC:30112054474074",
+        "ISBN_13": "",
+        "image_url": "http://books.google.com/books/content?id=yY8rMXg_N-kC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+        "category": "Non-fiction",
+        "__v": 0
+    },
+
+    {
+        "_id": {
+        "$oid": "65df1e2da57bf718f5fd74ed"
+        },
+        "title": "Much Ado about Nothing",
+        "author": "William Shakespeare",
+        "price": {
+        "$numberDecimal": "7.99"
+        },
+        "ISBN_10": "0521598222",
+        "ISBN_13": "9780521598224",
+        "image_url": "http://books.google.com/books/content?id=XwLFDBmVO20C&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+        "synopsis": "This is the first edition of Much Ado About Nothing to focus wholly on the play in performance. John Cox investigates major issues and trends in the production of this popular work, analysing successive reinterpretations of the play in relation to their cultural and ideological contexts. Gender issues are central to the study, which highlights in striking ways the changing constructions of womanhood in performances from Shakespeare's time to the present. A commentary alongside the New Cambridge Shakespeare edition of the text recreates in lively detail interpretations of each passage in a variety of British, American, Canadian and other productions, including film and television versions. A full introduction also examines the problematic relation of dark and comic elements in a wide range of performances. An essential resource for students, teachers, actors and directors, this is an illuminating book for all theatregoers. -- from Publisher's Description.",
+        "category": "Non-fiction",
+        "__v": 0
+    },
+
+    {
+        "_id": {
+        "$oid": "65df1ef2cf0c25dfc74f6115"
+        },
+        "title": "Elon Musk",
+        "author": "Walter Isaacson",
+        "price": {
+        "$numberDecimal": "13.99"
+        },
+        "ISBN_10": "9781398527515",
+        "ISBN_13": "1398527513",
+        "image_url": "http://books.google.com/books/content?id=HjyvEAAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+        "synopsis": "#1 New York Times non-fiction bestseller #2 Sunday Times non-fiction bestseller SHORTLISTED FOR THE FINANCIAL TIMES BUSINESS BOOK OF THE YEAR AWARD CHOSEN AS A BOOK OF THE YEAR BY APPLE, AMAZON, THE TIMES AND FINANCIAL TIMES Epic feats. Epic failures. An epic story. Walter Isaacson charts Elon Musk’s journey from humble beginnings to one of the wealthiest people on the planet – but is Musk a genius or a jerk? From the author of Steve Jobs and other bestselling biographies, this is the astonishingly intimate story of Elon Musk, the most fascinating and controversial innovator of our era – a rule-breaking visionary who helped to lead the world into the era of electric vehicles, private space exploration and artificial intelligence. Oh, and took over Twitter. When Elon Musk was a kid in South Africa, he was regularly beaten by bullies. One day a group pushed him down some concrete steps and kicked him until his face was a swollen ball of flesh. He was in the hospital for a week. But the physical scars were minor compared to the emotional ones inflicted by his father, an engineer, rogue and charismatic fantasist. His father’s impact on his psyche would linger. He developed into a tough yet vulnerable man-child with an exceedingly high tolerance for risk, a craving for drama, an epic sense of mission, and a maniacal intensity that was callous and at times destructive. At the beginning of 2022 – after a year marked by SpaceX launching thirty-one rockets into orbit, Tesla selling a million cars, and him becoming the richest man on earth – Musk spoke ruefully about his compulsion to stir up dramas. ‘I need to shift my mindset away from being in crisis mode, which it has been for about fourteen years now, or arguably most of my life,’ he said. It was a wistful comment, not a New Year’s resolution. Even as he said it, he was secretly buying up shares of Twitter, the world’s ultimate playground. Over the years, whenever he was in a dark place, his mind went back to being bullied on the playground. Now he had the chance to own the playground. For two years, Walter Isaacson had unprecedented access. He shadowed Musk, attended his meetings, walked his factories with him and spent hours interviewing him, his family, friends, coworkers and adversaries. The result is the revealing inside story, filled with amazing tales of triumphs and turmoil, that addresses the question: are the demons that drive Musk also what it takes to drive innovation and progress? The book includes over 100 integrated black and white images.",
+        "category": "Autobiography",
+        "__v": 0
+    },
+
+    {
+        "_id": {
+        "$oid": "65e20aff1d1907307111a295"
+        },
+        "title": "Dune",
+        "author": "Frank Herbert",
+        "price": {
+        "$numberDecimal": "14.99"
+        },
+        "ISBN_10": "0340960191",
+        "ISBN_13": "9780340960196",
+        "image_url": "http://books.google.com/books/content?id=I12oPwAACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+        "synopsis": "Before The Matrix, before Star Wars, before Ender's Game and Neuromancer, there was Dune: winner of the prestigious Hugo and Nebula awards, and widely considered one of the greatest science fiction novels ever written. Melange, or 'spice', is the most valuable - and rarest - element in the universe; a drug that does everything from increasing a person's life-span to making intersteller travel possible. And it can only be found on a single planet: the inhospitable desert world Arrakis. Whoever controls Arrakis controls the spice. And whoever controls the spice controls the universe. When the Emperor transfers stewardship of Arrakis from the noble House Harkonnen to House Atreides, the Harkonnens fight back, murdering Duke Leto Atreides. Paul, his son, and Lady Jessica, his concubine, flee into the desert. On the point of death, they are rescued by a band for Fremen, the native people of Arrakis, who control Arrakis' second great resource: the giant worms that burrow beneath the burning desert sands. In order to avenge his father and retake Arrakis from the Harkonnens, Paul must earn the trust of the Fremen and lead a tiny army against the innumerable forces aligned against them. And his journey will change the universe.",
+        "category": "Action",
+        "__v": 0
+    },
+
+    {
+        "_id": {
+        "$oid": "65e20b2a1d1907307111a297"
+        },
+        "title": "One Day",
+        "author": "David Nicholls",
+        "price": {
+        "$numberDecimal": "7.99"
+        },
+        "ISBN_10": "9780307739308",
+        "ISBN_13": "0307739309",
+        "image_url": "http://books.google.com/books/content?id=oqmBpk1EzvAC&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+        "synopsis": "NOW A NETFLIX SERIES • NEW YORK TIMES BESTSELLER • TWO PEOPLE. ONE DAY. TWENTY YEARS. • What starts as a fleeting connection between two strangers soon becomes a deep bond that spans decades. • \"[An] instant classic. . . . One of the most ...emotionally riveting love stories you’ll ever encounter.\" —People It’s 1988 and Dexter Mayhew and Emma Morley have only just met. But after only one day together, they cannot stop thinking about one another. Over twenty years, snapshots of that relationship are revealed on the same day—July 15th—of each year. They face squabbles and fights, hopes and missed opportunities, laughter and tears. Dex and Em must come to grips with the nature of love and life itself. As the years go by, the true meaning of this one crucial day is revealed. \"[A] surprisingly deep romance...so thoroughly satisfying.\" —Entertainment Weekly",
+        "category": "Romance",
+        "__v": 0
+    },
+
+    {
+        "_id": {
+        "$oid": "65e210a38bf8d4f3d93016ca"
+        },
+        "title": "The Wager",
+        "author": "David Grann",
+        "price": {
+        "$numberDecimal": "6.99"
+        },
+        "ISBN_10": "9781471183690",
+        "ISBN_13": "1471183696",
+        "image_url": "http://books.google.com/books/content?id=qb-BEAAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+        "synopsis": "From the international bestselling author of KILLERS OF THE FLOWER MOON and THE LOST CITY OF Z, a mesmerising story of shipwreck, mutiny and murder, culminating in a court martial that reveals a shocking truth. On 28th January 1742, a ramshackle vessel of patched-together wood and cloth washed up on the coast of Brazil. Inside were thirty emaciated men, barely alive, and they had an extraordinary tale to tell. They were survivors of His Majesty’s ship the Wager, a British vessel that had left England in 1740 on a secret mission during an imperial war with Spain. While chasing a Spanish treasure-filled galleon, the Wager was wrecked on a desolate island off the coast of Patagonia. The crew, marooned for months and facing starvation, built the flimsy craft and sailed for more than a hundred days, traversing 2,500 miles of storm-wracked seas. They were greeted as heroes. Then, six months later, another, even more decrepit, craft landed on the coast of Chile. This boat contained just three castaways and they had a very different story to tell. The thirty sailors who landed in Brazil were not heroes – they were mutineers. The first group responded with counter-charges of their own, of a tyrannical and murderous captain and his henchmen. While stranded on the island the crew had fallen into anarchy, with warring factions fighting for dominion over the barren wilderness. As accusations of treachery and murder flew, the Admiralty convened a court martial to determine who was telling the truth. The stakes were life-and-death—for whomever the court found guilty could hang.",
+        "category": "History",
+        "__v": 0
+    },
+
+    {
+        "_id": {
+        "$oid": "65e210f78bf8d4f3d93016cc"
+        },
+        "title": "Red, White & Royal Blue",
+        "author": "Casey McQuiston",
+        "price": {
+        "$numberDecimal": "9.99"
+        },
+        "ISBN_10": "9781250316783",
+        "ISBN_13": "1250316782",
+        "image_url": "http://books.google.com/books/content?id=1I1xDwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+        "synopsis": "* Instant NEW YORK TIMES and USA TODAY bestseller * * GOODREADS CHOICE AWARD WINNER for BEST DEBUT and BEST ROMANCE of 2019 * * BEST BOOK OF THE YEAR* for VOGUE, NPR, VANITY FAIR, and more! * What happens when America's First Son falls in love with the Prince of Wales? When his mother became President, Alex Claremont-Diaz was promptly cast as the American equivalent of a young royal. Handsome, charismatic, genius—his image is pure millennial-marketing gold for the White House. There's only one problem: Alex has a beef with the actual prince, Henry, across the pond. And when the tabloids get hold of a photo involving an Alex-Henry altercation, U.S./British relations take a turn for the worse. Heads of family, state, and other handlers devise a plan for damage control: staging a truce between the two rivals. What at first begins as a fake, Instragramable friendship grows deeper, and more dangerous, than either Alex or Henry could have imagined. Soon Alex finds himself hurtling into a secret romance with a surprisingly unstuffy Henry that could derail the campaign and upend two nations and begs the question: Can love save the world after all? Where do we find the courage, and the power, to be the people we are meant to be? And how can we learn to let our true colors shine through? Casey McQuiston's Red, White & Royal Blue proves: true love isn't always diplomatic. \"I took this with me wherever I went and stole every second I had to read! Absorbing, hilarious, tender, sexy—this book had everything I crave. I’m jealous of all the readers out there who still get to experience Red, White & Royal Blue for the first time!\" - Christina Lauren, New York Times bestselling author of The Unhoneymooners \"Red, White & Royal Blue is outrageously fun. It is romantic, sexy, witty, and thrilling. I loved every second.\" - Taylor Jenkins Reid, New York Times bestselling author of Daisy Jones & The Six",
+        "category": "LGBTQIA+",
+        "__v": 0
+    },
+
+    {
+        "_id": {
+        "$oid": "65e211618bf8d4f3d93016ce"
+        },
+        "title": "All the Light We Cannot See",
+        "author": "Anthony Doerr",
+        "price": {
+        "$numberDecimal": "6.99"
+        },
+        "ISBN_10": "9781476746609",
+        "ISBN_13": "1476746605",
+        "image_url": "http://books.google.com/books/content?id=0cH0AAAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+        "synopsis": "*NOW A NETFLIX LIMITED SERIES—from producer and director Shawn Levy (Stranger Things) starring Mark Ruffalo, Hugh Laurie, and newcomer Aria Mia Loberti* Winner of the Pulitzer Prize and National Book Award finalist, the beloved instant New York Times bestseller and New York Times Book Review Top 10 Book about a blind French girl and a German boy whose paths collide in occupied France as both try to survive the devastation of World War II. Marie-Laure lives with her father in Paris near the Museum of Natural History where he works as the master of its thousands of locks. When she is six, Marie-Laure goes blind and her father builds a perfect miniature of their neighborhood so she can memorize it by touch and navigate her way home. When she is twelve, the Nazis occupy Paris, and father and daughter flee to the walled citadel of Saint-Malo, where Marie-Laure’s reclusive great uncle lives in a tall house by the sea. With them they carry what might be the museum’s most valuable and dangerous jewel. In a mining town in Germany, the orphan Werner grows up with his younger sister, enchanted by a crude radio they find. Werner becomes an expert at building and fixing these crucial new instruments, a talent that wins him a place at a brutal academy for Hitler Youth, then a special assignment to track the Resistance. More and more aware of the human cost of his intelligence, Werner travels through the heart of the war and, finally, into Saint-Malo, where his story and Marie-Laure’s converge. Doerr’s “stunning sense of physical detail and gorgeous metaphors” (San Francisco Chronicle) are dazzling. Deftly interweaving the lives of Marie-Laure and Werner, he illuminates the ways, against all odds, people try to be good to one another. Ten years in the writing, All the Light We Cannot See is a magnificent, deeply moving novel from a writer “whose sentences never fail to thrill” (Los Angeles Times).",
+        "category": "Mystery",
+        "__v": 0
+    },
+
+    {
+        "_id": {
+        "$oid": "65e211a18bf8d4f3d93016d0"
+        },
+        "title": "The Mirror Man",
+        "author": "Lars Kepler",
+        "price": {
+        "$numberDecimal": "5.99"
+        },
+        "ISBN_10": "9781838776497",
+        "ISBN_13": "1838776494",
+        "image_url": "http://books.google.com/books/content?id=XA87EAAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+        "synopsis": "Seventeen-year-old Jenny is abducted in broad daylight and taken to a dilapidated, isolated house where she is chained and caged along with several other girls. Their captor is unpredictable, and as wily as he is cruel: he foils every one of their desperate attempts to escape . . . and once caught they rarely survive their punishment. Five years later, Jenny is found dead in a public park, and the police are scrambling to find a lead among the scant evidence. But Detective Joona Linna realizes that this murder has an eerie connection to a death that was declared a suicide years before. And now when Mia, a seventeen-year-old orphan, goes missing, it becomes clear to Joona that they are dealing with a serial killer-and the murderous rampage has just begun. As the police close in on the killer, Mia and her fellow captives are plunged into ever greater danger, and Joona finds himself in a seemingly impossible race against time to save their young lives.",
+        "category": "Thriller",
+        "__v": 0
+    },
+
+    {
+        "_id": {
+        "$oid": "65e211ed8bf8d4f3d93016d2"
+        },
+        "title": "This Is Going to Hurt",
+        "author": "Adam Kay",
+        "price": {
+        "$numberDecimal": "7.99"
+        },
+        "ISBN_10": "9780316426732",
+        "ISBN_13": "0316426733",
+        "image_url": "http://books.google.com/books/content?id=jaOHDwAAQBAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+        "synopsis": "In the US edition of this international bestseller, Adam Kay channels Henry Marsh and David Sedaris to tell us the \"darkly funny\" (The New Yorker) -- and sometimes horrifying -- truth about life and work in a hospital. Welcome to 97-hour weeks. Welcome to life and death decisions. Welcome to a constant tsunami of bodily fluids. Welcome to earning less than the hospital parking meter. Wave goodbye to your friends and relationships. Welcome to the life of a first-year doctor. Scribbled in secret after endless days, sleepless nights and missed weekends, comedian and former medical resident Adam Kay's This Is Going to Hurt provides a no-holds-barred account of his time on the front lines of medicine. Hilarious, horrifying and heartbreaking by turns, this is everything you wanted to know -- and more than a few things you didn't -- about life on and off the hospital ward. And yes, it may leave a scar.",
+        "category": "Young Adult",
+        "__v": 0
+    },
+
+    {
+        "_id": {
+        "$oid": "65e324e1f648f195bfaebb66"
+        },
+        "title": "The Myth of Sisyphus",
+        "author": "Albert Camus",
+        "price": {
+        "$numberDecimal": "9.99"
+        },
+        "ISBN_10": "9780141914176",
+        "ISBN_13": "0141914173",
+        "image_url": "http://books.google.com/books/content?id=zaPoAQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+        "synopsis": "In this profound and moving philosophical statement, Camus poses the fundamental question: Is life worth living? If human existence holds no significance, what can keep us from suicide? As Camus argues, if there is no God to give meaning to our lives, humans must take on that purpose themselves. This is our 'absurd' task, like Sisyphus forever rolling his rock up a hill, as the inevitability of death constantly overshadows us. Written during the bleakest days of the Second World War, The Myth of Sisyphus argues for an acceptance of reality that encompasses revolt, passion and, above all, liberty. This volume contains several other essays, including lyrical evocations of the sunlit cities of Algiers and Oran, the settings of his great novels The Outsider and The Plague. Albert Camus is the author of a number of best-selling and highly influential works, all of which are published by Penguin. They include The Fall, The Outsider and The First Man. He is remembered as one of the few writers to have shaped the intellectual climate of post-war France, but beyond that, his fame has been international. Translated by Justin O'Brien With an Introduction by James Wood",
+        "category": "Non-fiction",
+        "__v": 0
+    },
+
+    {
+        "_id": {
+        "$oid": "65e3251af648f195bfaebb68"
+        },
+        "title": "The Fall",
+        "author": "Albert Camus",
+        "price": {
+        "$numberDecimal": "6.99"
+        },
+        "ISBN_10": "9780141978871",
+        "ISBN_13": "0141978872",
+        "image_url": "http://books.google.com/books/content?id=UafoAQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+        "synopsis": "A philosophical novel described by fellow existentialist Sartre as 'perhaps the most beautiful and the least understood' of his novels, Albert Camus' The Fall is translated by Robin Buss in Penguin Modern Classics. Jean-Baptiste Clamence is a soul in turmoil. Over several drunken nights in an Amsterdam bar, he regales a chance acquaintance with his story. From this successful former lawyer and seemingly model citizen a compelling, self-loathing catalogue of guilt, hypocrisy and alienation pours forth. The Fall (1956) is a brilliant portrayal of a man who has glimpsed the hollowness of his existence. But beyond depicting one man's disillusionment, Camus's novel exposes the universal human condition and its absurdities - for our innocence that, once lost, can never be recaptured ... Albert Camus (1913-60) is the author of a number of best-selling and highly influential works, all of which are published by Penguin. They include The Fall, The Outsider and The First Man. Awarded the Nobel Prize for Literature in 1957, Camus is remembered as one of the few writers to have shaped the intellectual climate of post-war France, but beyond that, his fame has been international. If you enjoyed The Fall, you might like Jean-Paul Sartre's Nausea, also available in Penguin Modern Classics. 'An irresistibly brilliant examination of modern conscience' The New York Times 'Camus is the accused, his own prosecutor and advocate. The Fall might have been called \"The Last Judgement\" ' Olivier Todd",
+        "category": "Non-fiction",
+        "__v": 0
+    },
+
+    {
+        "_id": {
+        "$oid": "65e3253df648f195bfaebb6a"
+        },
+        "title": "Caligula",
+        "author": "Albert Camus",
+        "price": {
+        "$numberDecimal": "5.99"
+        },
+        "ISBN_10": "WISC:89059500983",
+        "ISBN_13": "",
+        "image_url": "http://books.google.com/books/content?id=DurvAAAAMAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+        "synopsis": "Caligula was born into an illustrious Roman family. His father was Germanicus, a hugely popular and talented general, who, before his early death, was seen as the natural heir of the reigning Augustus. Caligula was a fond nickname meaning \"Little Boots\" (his real name was Gaius), given to him by the soldiers in Germanicus' legions who loved to see the young boy in the camps dressed in a military uniform. When the cruel and unpopular Emperor Tiberius (who had succeeded Augustus) died, Caligula was swept into office on a wave of good will. But Caligula turned out to be the most insane Caesar of Rome. His evil deeds surpassed both Tiberius, who reigned immediately before him, or Nero, who ruled shortly after.",
+        "category": "Romance",
+        "__v": 0
+    },
+
+    {
+        "_id": {
+        "$oid": "65e32cd56aadcac3fc069f85"
+        },
+        "title": "The Book of Disquiet",
+        "author": "Fernando Pessoa",
+        "price": {
+        "$numberDecimal": "7.99"
+        },
+        "ISBN_10": "9781782833567",
+        "ISBN_13": "1782833560",
+        "image_url": "http://books.google.com/books/content?id=fbVEDgAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+        "synopsis": "The Book of Disquiet is one of the great literary works of the twentieth century. Written over the course of Fernando Pessoa's life, it was first published in 1982, pieced together from the thousands of individual manuscript pages left behind by Pessoa after his death in 1935. Now this fragmentary modernist masterpiece appears in a major new edition that unites Margaret Jull Costa's celebrated translation with the most complete version of the text ever produced. It is presented here, for the first time in English, by order of original composition, and accompanied by facsimiles of the original manuscript. Narrated principally by an assistant bookkeeper named Bernardo Soares - an alias of sorts for Pessoa himself - The Book of Disquiet is 'the autobiobraphy of someone who never existed', a mosaic of dreams, of hope and despair; a hymn to the streets and cafs of 1930s Lisbon, and an extraordinary record of the inner life of one of the century's most important writers. This new edition represents the most complete vision of Pessoa's genius.",
+        "category": "Autobiography",
+        "__v": 0
+    }
+]

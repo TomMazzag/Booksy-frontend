@@ -3,7 +3,7 @@ import { useState } from 'react'
 import '../Authentication/Modal.css'
 import { useLocation } from "react-router-dom";
 
-function SignInComponent () {
+function SignInComponent ({text}) {
 
     const [modal, setModal] = useState(false);
     let location = useLocation()
@@ -17,7 +17,7 @@ function SignInComponent () {
     return (
         <div> 
             <div onClick={toggleModal} className="button-modal"> 
-            Account
+            {text ? text : "Account"}
             </div>
                 {modal && (
                     <div className ="modal">
