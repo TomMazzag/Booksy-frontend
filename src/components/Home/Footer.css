@@ -1,69 +1,13 @@
 /* src/Components/Home/Footer.css */
 
-
-    .footer {
-        background-color: #f8f8f8;
-        padding: 20px 0;
-        color: #333;
-        margin-top: 60px;
-    }
-    
-    .footer-content {
-        display: flex;
-        justify-content: space-around;
-        align-items: flex-start;
-        max-width: 1200px;
-        margin: auto;
-        flex-wrap: wrap;
-    }
-    
-    .footer-section {
-        margin: 10px 0;
-    }
-    
-    .footer-section h5 {
-        color: #000;
-        margin-bottom: 10px;
-        font-size: medium;
-    }
-
-    .footer-section h5:hover {
-        text-decoration: underline;
-        cursor: pointer;
-    }
-    
-    .footer-section ul {
-        list-style: none;
-        padding: 0;
-    }
-    
-    .footer-section ul li {
-        margin-bottom: 5px;
-        cursor: pointer;
-        color: #666;
-        font-size: small;
-    }
-    
-    .footer-section ul li:hover {
-        text-decoration: underline;
-    }
-    
-    .footer-bottom {
-        text-align: center;
-        padding-top: 10px;
-    }
-    
-    .footer-bottom p {
-        color: #666;
-        margin: 0;
-    }
-    
 .footer {
     background-color: #A1CCD1;
     padding: 20px 0;
     color: #333;
-    padding: 2px 0;
+    padding: 30px 0;
+    margin-top: 40px;
 }
+
 .footer-content {
     display: flex;
     justify-content: space-around;
@@ -72,30 +16,55 @@
     margin: auto;
     flex-wrap: wrap;
 }
+
 .footer-section {
     margin: 10px 0;
 }
+
 .footer-section h5 {
     color: #000;
     margin-bottom: 10px;
 }
+
 .footer-section ul {
     list-style: none;
     padding: 0;
 }
+
 .footer-section ul li {
     margin-bottom: 5px;
     cursor: pointer;
     color: #666;
 }
+
 .footer-section ul li:hover {
     text-decoration: underline;
 }
+
 .footer-bottom {
     text-align: center;
     padding-top: 10px;
 }
+
 .footer-bottom p {
     color: #666;
     margin: 0;
 }
+
+@media (max-width: 760px) {
+    .footer-section {
+        padding-top: 20px;
+        width: 50%;
+    }
+
+    .footer-section h5 {
+        font-size: x-large;
+        font-weight: 600;
+    }
+
+    .footer-section ul li {
+        font-size: larger;
+        font-weight: 300;
+    }
+}
+

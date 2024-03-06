@@ -2,12 +2,18 @@
 
 import React, { useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
-import Navbar from "../../components/Home/NavBar.jsx";
+import Navbar from '../../components/Home/NavBar.jsx';
 import Footer from "../../components/Home/Footer.jsx";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHeart, faShoppingBasket, faStar } from '@fortawesome/free-solid-svg-icons';
 import './BookPage.css';
 import { getBookById } from '../../services/books'; 
+import LikeButton from '../../components/LikeButton/LikeButton.jsx';
+import { addToBasket } from '../../services/basket';
+import ReviewBox from '../../components/Review/LeaveReview.jsx';
+import AllReviews from '../../components/Review/AllReviews.jsx';
+import { useUser } from '@clerk/clerk-react';
+import SignInComponent from '../../components/Authentication/LogInModal.jsx';
 
 const BookPage = () => {
     const { bookId } = useParams(); // Use useParams to get the bookId from the URL
@@ -15,6 +21,13 @@ const BookPage = () => {
     const [isLoading, setIsLoading] = useState(false);
     const [error, setError] = useState(null);
     const [showFullSynopsis, setShowFullSynopsis] = useState(false);
+    const { isSignedIn } = useUser()
+    const [newReview, setNewReview] = useState(false)
+
+    const addItemToBasket = () => {
+        addToBasket(book._id, '65e07035deb88a4a513164ed');
+        console.log(book._id);
+    }
 
     useEffect(() => {
         const fetchBook = async () => {
@@ -22,7 +35,7 @@ const BookPage = () => {
             try {
                 const fetchedBook = await getBookById(bookId);
                 setBook(fetchedBook.book);
-                console.log(fetchedBook.book)
+                // console.log(fetchedBook.book)
                 setError(null); // Reset error state in case of successful fetch
             } catch (err) {
                 setError('Failed to fetch book details.');
@@ -39,7 +52,13 @@ const BookPage = () => {
         setShowFullSynopsis(!showFullSynopsis); // Toggle between showing full or partial synopsis
     };
 
-    if (isLoading) return <div>Loading...</div>;
+    if (isLoading) return (
+        <>
+            <Navbar />
+            <div>Loading...</div>
+            <Footer />
+        </>
+    );
     if (error) return <div>{error}</div>;
     if (!book) return <div>No book found</div>; // Or any other error handling
 
@@ -54,7 +73,6 @@ const BookPage = () => {
     return (
         <>
             <Navbar />
-            <Link to="/" className='go_back_button'> &lt;&lt; Back to Homepage</Link>
             <div className="container mt-4 centered-content">
                 <div className="row">
                     <div className="col-md-4">
@@ -67,14 +85,10 @@ const BookPage = () => {
                         <p>Rating: <FontAwesomeIcon icon={faStar} /> 4.5</p>
                         <p>Price: £{book.price?.$numberDecimal || 'N/A'}</p>
                         <p>Status: In Stock</p>
-                        <div className="button-group">
-                            <button className="btn btn-outline-danger">
-                                <FontAwesomeIcon icon={faHeart} /> Add to Favourites
-                            </button>
-                            <button className="btn btn-outline-primary">
+                        <LikeButton />
+                        <button className="btn btn-outline-primary" onClick = {addItemToBasket}  > 
                                 <FontAwesomeIcon icon={faShoppingBasket} /> Add to Basket
-                            </button>
-                        </div>
+                        </button>
                     </div>
                 </div>
                 <div className="synopsis">
@@ -84,7 +98,19 @@ const BookPage = () => {
                         <button onClick={toggleSynopsisVisibility} className="btn btn-outline-secondary">
                             {showFullSynopsis ? 'Hide' : 'See More'}
                         </button>
+                        
                     )}
+                </div>
+                <div className='reviews-section'>
+                    <div className='reviews-section-headers'>
+                        <h2>Reviews</h2>
+                        {!isSignedIn && <button className="btn btn-outline-secondary">
+                            <SignInComponent text="Sign in to leave a review"/>
+                        </button> 
+                        }
+                    </div>
+                    <AllReviews book_id={bookId} newReview={newReview} setNewReview={setNewReview}/>
+                    {isSignedIn && <ReviewBox book_id={bookId} setNewReview={setNewReview}/>}  
                 </div>
             </div>
             <Footer />

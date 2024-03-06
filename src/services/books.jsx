@@ -1,5 +1,8 @@
-// const backend_url = "https://booksy-backend.onrender.com";
-const backend_url = 'http://localhost:3000'
+
+// src/services/books.jsx
+
+const backend_url = "https://booksy-backend.onrender.com";
+
 
 export const getAllBooks = async () => {
     try {
@@ -38,7 +41,10 @@ export const getBookById = async (bookId) => {
         }
 
         const data = await response.json();
-        return data; // Assuming the data structure matches what your component expects
+
+        //console.log("Data received:", data);
+        return data.books; // Ensure your API response structure includes a 'books' array
+
     } catch (error) {
         console.error("Fetch error:", error.message);
         throw error; // Re-throw to handle in the component if needed

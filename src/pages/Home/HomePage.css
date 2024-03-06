@@ -20,3 +20,29 @@ body {
     letter-spacing: .46515px;
     font-style: italic;
 }
+
+.book-list-container {
+    overflow: hidden;
+}
+
+.category-grid-selection {
+    display: flex;
+    animation: carouselAnimation 12s linear infinite; /* Adjust the duration as needed */
+}
+
+.book-list-container.paused .category-grid-selection{
+    animation-play-state: paused;
+}
+
+
+@keyframes carouselAnimation {
+    0% {
+    transform: translateX(0);
+    }
+    100% {
+    transform: translateX(-100%);
+    }
+    200% {
+        transform: translateX(0);
+    }
+}

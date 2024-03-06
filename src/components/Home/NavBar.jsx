@@ -5,116 +5,83 @@ import { UserButton } from "@clerk/clerk-react";
 import "../Home/NavBar.css";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars } from '@fortawesome/free-solid-svg-icons'
-import { useState } from "react";
 import { SearchBar } from "./SearchBar";
-import bookData from '../../assets/books.json'
 
 
 
-    const Navbar = () => {
+import { useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom'; // Make sure this is imported
+import { useState } from "react";
 
-    // You can use this function to get the user's first, last and fullName if needed
+
+const Navbar = () => {
+    const navigate = useNavigate();
     const { isSignedIn, user } = useUser();
+    const [openMenu, setOpenMenu] = useState(false)
+
+    const toggleMenu = () => {
+        setOpenMenu(!openMenu)
+    }
+
+    const navigateHomePage = () => {
+        navigate("/")
+    }
 
     if (isSignedIn) {
         return ( 
             <nav>
-                <div className="navbar-logo">
-                    <div className="logo"> Booksy </div>
-                </div>
-                <div className="navbar-categories">
-                    <div className="categories"> Categories </div>
-                </div>
-                <div className="navbar-search">
-                    <input type="text" placeholder="Search Books" />
-                    {/* Add search icon if necessary */}
-                </div>
-                <div className="navbar-actions">
-                    {/* Will display dynamically only if logged in */}
-                    <p>Hello {user.firstName} </p>
-                    <div className="heart">♥</div>
-                    <UserButton />
-                    <div className="basket">Shopping Cart</div>
+                <div className="navbar-content">
+                    <div className="navbar-logo">
+                        <p onClick={navigateHomePage}> Booksy </p>
+                    </div>
+                    <div className="navbar-middle">
+                        <input type="text" placeholder="Search Books" />
+                    </div>
+                    <div className="navbar-actions">
+                        <p>Hello {user.firstName} </p>
+                        <p className="heart" onClick={() => navigate('/favourites')}>♥</p>
+                        <UserButton />
+                        <p className="basket">Cart</p>
+                    </div>
+                    <div className="mobile-menu">
+                        <FontAwesomeIcon icon={faBars} onClick={toggleMenu}/>
+                        {openMenu ? (<ul className="mobile-menu-options">
+                            <li>Hello {user.firstName}</li>
+                            <li><p className="heart" onClick={() => navigate('/favourites')}>Favourites</p></li>
+                            <li><p className="basket">Shopping Cart</p></li>
+                        </ul>) : null}
+                    </div>
                 </div>
             </nav>
-        )}
-        else {
-            return (
-                <nav>
-                    <div className="navbar-content">
-                        <div className="navbar-logo">
-                            <p> Booksy </p>
-                        </div>
-                        {/* <div className="navbar-middle">
-                            <input type="text" placeholder="Search Books"
-                            
-                            
-                            />
-                        </div> */}
-                        <SearchBar placeholder="Books, title, author, ISBN..." />
-                        <div className="navbar-actions">
-                            <SignInComponent />
-                            <p className="heart">♥</p>
-                            <p className="basket">Shopping Cart</p>
-                        </div>
-                        <div className="mobile-menu">
-                            <FontAwesomeIcon icon={faBars} />
-                            <ul className="mobile-menu-options">
-                                <li><SignInComponent /></li>
-                                <li><p className="heart">♥</p></li>
-                                <li><p className="basket">Shopping Cart</p></li>
-                            </ul>
-                        </div>
+        )
+    } else {
+        return (
+            <nav>
+                <div className="navbar-content">
+                    <div className="navbar-logo">
+                        <p onClick={navigateHomePage}> Booksy </p>
+
                     </div>
-                </nav>
-            )}
-    };
+                    <div className="navbar-middle">
+                        <input type="text" placeholder="Search Books" />
+                    </div>
+                    <div className="navbar-actions">
+                        <SignInComponent />
+                        <p className="heart" onClick={() => navigate('/favourites')}>♥</p>
+                        <p className="basket">Cart</p>
+                    </div>
+                    <div className="mobile-menu">
+                        <FontAwesomeIcon icon={faBars} onClick={toggleMenu}/>
+                        {openMenu ? (<ul className="mobile-menu-options">
+                            <li><SignInComponent /></li>
+                            <li><p className="heart">Favourites</p></li>
+                            <li><p className="basket">Shopping Cart</p></li>
+                        </ul>) : null}
+                    </div>
+                </div>
+            </nav>
+        )
+    }
+}
 
-    export default Navbar;
-
-
-
-
-
-
-// const Navbar = () => {
-//     const navigate = useNavigate();
-//     const id = window.localStorage.getItem("id")
-
-//     const profilePage = () => {
-//         navigate(`/profile/${id}`);
-//     };
-
-//     const home = () => {
-//         navigate("/posts");
-//     };
-
-//     const shoppingBasket = () => {
-//         navigate("/basket");
-//     };
-
-//     const favouriteBooks = () => {
-//         navigate(`/favourites/${id}`);
-//     };
-
-//     const signIn = () => {
-//         navigate("/signIn");
-//     };
-
-//     return (
-//         <nav>
-//             <div onClick={home}>
-//                 <p>Booksy</p>
-//             </div>
-//             <div>
-//                 <button onClick={home}>Home</button>
-//                 <button onClick={profilePage}>Profile</button>
-//                 <button onClick={shoppingBasket}>Shopping Basket</button>
-//                 <button onClick={favouriteBooks}>Favourite Books</button>
-//                 <button onClick={signIn}>Sign In</button>
-//             </div>
-//         </nav>
-//     );
-// };
-
-// export default Navbar;
+export default Navbar;

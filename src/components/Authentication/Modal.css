@@ -9,7 +9,11 @@ body.active-modal {
     font-size: 18px;
 }
 
+.overlay {
+    background: transparent;
+}
 .modal, .overlay {
+    display: block;
     width: 100vw;
     height: 100vh;
     top: 0;
@@ -17,21 +21,24 @@ body.active-modal {
     right: 0;
     bottom: 0;
     position: fixed;
-}
-
-.overlay {
-    background: rgba(244, 242, 222);
+    z-index: 2;
+    background-color: rgba(56, 56, 56, 0.564);
 }
 
 .modal-content {
+    z-index: 1;
     position: absolute;
     top: 40%;
     left: 50%;
     transform: translate(-50%, -50%);
     line-height: 1.4;
     padding: 14px 28px;
-    max-width: 600px;
+    max-width: 450px;
     min-width: 300px;
+
+    background-color: transparent;
+    border: transparent;
+    color: black;
 }
 
 .close-modal {
@@ -40,7 +47,7 @@ body.active-modal {
     right: 35px;
     padding: 5px 7px;
     background-color: rgb(255, 255, 255);
-    font-size: 15px;
+    font-size: 10px;
 }
 
 .cl-formButtonPrimary {

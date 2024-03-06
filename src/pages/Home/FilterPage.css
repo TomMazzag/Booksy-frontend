@@ -1,0 +1,70 @@
+.categories-box {
+    display: flex;
+    width: 100%;
+}
+
+
+
+.categories-container {
+    /* background-color: white; */
+    display: flex; /* Use flexbox layout */
+    flex-direction: column; /* Stack items vertically */
+    align-items:flex-start; /* Align items to the start of the container (left side) */
+    margin-left: 20px; /* Add some left margin for spacing */
+    padding: 10px; /* Add padding inside the container */
+    gap: 10px;
+    flex: 0 0 200px;
+}
+
+
+.category-item {
+    cursor: pointer;
+    margin: 0;
+}
+
+.category-item:hover {
+    text-decoration: underline;
+}
+
+
+.filter-page-title {
+    font-size: 3.5em; /* Adjust font size as needed */
+    font-family: "Guardian-EgypTT", "Charter", "Charter Bitstream", "Cambria", "Noto Serif Light", "Droid Serif", "Georgia", "serif";
+    letter-spacing: .46515px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 20vh;
+}
+
+.category-item input {
+    align-self: flex-end;
+}
+
+.filter-item {
+    display: flex;
+    padding: 10px 5px;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.filtered-books-container {
+    padding: 10px 20px;
+    flex-grow: 1;
+}
+
+.filtered-books {
+    width: 100%;
+}
+
+@media (max-width: 760px) {
+    .categories-box {
+        flex-direction: column;
+    }
+
+    .categories-container {
+        gap: 0px;
+        margin-left: 0;
+        padding: 20px;
+    }
+}

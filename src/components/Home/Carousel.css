@@ -1,0 +1,103 @@
+/* Carousel.css */
+
+/* Style for the carousel container */
+.slick-slider {
+    position: relative;
+    display: block;
+    box-sizing: border-box;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-touch-callout: none;
+    -khtml-user-select: none;
+    -ms-touch-action: pan-y;
+    touch-action: pan-y;
+    -webkit-tap-highlight-color: transparent;
+}
+
+/* Style for individual carousel slides */
+.slick-slide {
+    display: none;
+    float: left;
+    height: 100%;
+    min-height: 1px;
+}
+
+/* Style for carousel arrows */
+.slick-prev, .slick-next {
+    position: absolute;
+    top: 50%;
+    z-index: 1;
+    display: block;
+    width: 20px;
+    height: 20px;
+    line-height: 0;
+    font-size: 0;
+    cursor: pointer;
+    -webkit-transform: translate(0, -50%);
+    -ms-transform: translate(0, -50%);
+    transform: translate(0, -50%);
+    color: #fff;
+}
+
+.slick-prev {
+    left: 10px;
+}
+
+.slick-next {
+    right: 10px;
+}
+
+/* Style for carousel dots */
+.slick-dots {
+    position: absolute;
+    bottom: 10px;
+    list-style: none;
+    display: block;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+}
+
+.slick-dots li {
+    position: relative;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin: 0 5px;
+    padding: 0;
+    cursor: pointer;
+}
+
+.slick-dots li button {
+    font-size: 0;
+    line-height: 0;
+    display: block;
+    width: 20px;
+    height: 20px;
+    padding: 5px;
+    cursor: pointer;
+    color: transparent;
+    border: 0;
+    outline: none;
+    background: transparent;
+}
+
+.slick-dots li button:focus, .slick-dots li button:hover {
+    outline: none;
+}
+
+/* Style for active carousel dot */
+.slick-dots li.slick-active button {
+    width: 20px;
+    height: 20px;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: none;
+    cursor: pointer;
+    color: #fff;
+    background: #007bff; /* Active dot color */
+}

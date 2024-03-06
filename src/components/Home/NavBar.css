@@ -22,10 +22,27 @@ nav p {
 .navbar-logo {
     display: flex;
     align-items: center;
-    color: #000000;
-    font-size: 35px;
-    font-weight: bold;
+    color: #F4F2DE;
+    font-size: 40px;
+    font-weight: lighter;
     cursor: pointer;
+}
+
+/* Target the <a> tag inside .navbar-logo more specifically and enforce no text decoration */
+.navbar-logo a, .navbar-logo a:hover, .navbar-logo a:visited, .navbar-logo a:active {
+    color: #F4F2DE; /* Keep the logo color consistent */
+    text-decoration: none; /* Remove underline */
+}
+
+/* Ensure color does not change on hover */
+.navbar-logo a:hover {
+    color: #F4F2DE; /* Maintain the same color on hover */
+    background-color: transparent; /* Prevent any background color change */
+}
+
+
+.navbar-logo a:hover {
+    text-decoration: none; /* Ensure underline doesn't appear on hover */
 }
 
 .navbar-middle {
@@ -84,18 +101,61 @@ nav p {
     flex-direction: flex-start;
 }
 
+@keyframes slideIn {
+    from {
+      height: 0px;
+    }
+    to {
+      height: 120px;
+    }
+}
+
 .mobile-menu-options {
+    padding: 0;
     padding-top: 5px;
     display: block;
     position: absolute;
     top: 82px;
     left: 0;
     width: 100%;
-    height: 90px;
+    height: 120px;
     background-color: #A1CCD1;
     list-style: none;
     cursor: pointer;
-    border-top: 1px solid black;
+    border-top: 2px solid rgba(116, 116, 116, 0.435);
+    z-index: 1;
+    animation: slideIn 0.5s ease;
+}
+
+@keyframes slideInText {
+    from {
+      opacity: 0; /* Start with opacity 0 */
+      transform: translateY(-20px); /* Optionally, add a vertical translation for additional effect */
+    }
+    to {
+      opacity: 1; /* Fully reveal the text */
+      transform: translateY(0); /* Optionally, reset vertical translation */
+    }
+}
+
+.mobile-menu-options li {
+    margin: 5px;
+    font-size: larger;
+    animation: slideInText 0.5s ease forwards;
+    opacity: 0; /* Initially hide the text */
+    font-weight: 550;
+}
+
+.mobile-menu-options li:nth-child(1) {
+    animation-delay: 0.2s;  
+}
+
+.mobile-menu-options li:nth-child(2) {
+    animation-delay: 0.4s;
+}
+
+.mobile-menu-options li:nth-child(3) {
+    animation-delay: 0.6s;
 }
 
 @media (min-width: 1300px) {
@@ -130,5 +190,13 @@ nav p {
     }
     .mobile-menu {
         display: block;
+    }
+
+    .navbar-middle {
+        display: none;
+    }
+
+    .navbar-content {
+        padding: 0px 10px;
     }
 }

@@ -1,5 +1,5 @@
 import { SignUp } from "@clerk/clerk-react";
-import '../Authentication/Modal.css'
+import './Modal.css'
 
 function SignUpComponent () {
 
@@ -8,9 +8,9 @@ function SignUpComponent () {
           <div className ="modal">
             <div className="overlay">
               <div className="modal-content">
-                <p>
+                <div>
                   <SignUp />
-                </p>
+                </div>
               </div>
             </div>
           </div>

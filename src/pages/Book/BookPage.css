@@ -6,6 +6,7 @@
 
 .btn-outline-danger {
     color: red;
+    border-color: white;
 }
 
 .fa-heart {
@@ -49,8 +50,8 @@ text-align: left; /* Align text to the left */
 
 .go_back_button {
     position: absolute;
-    top: 35%;
-    left: 15%;
+    top: 110px;
+    left: 10%;
 }
 
 .synopsis {
@@ -91,4 +92,18 @@ text-align: left; /* Align text to the left */
 
 .fa-shopping-basket {
     color: #007bff; /* Match the button color or choose as per your design */
+}
+
+.reviews-section {
+    border-top: 1px solid lightgray;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 35px;
+    padding-top: 25px;
+}
+
+.reviews-section-headers {
+    display: flex;
+    justify-content: space-between;
 }
