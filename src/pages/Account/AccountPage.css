@@ -1,3 +1,5 @@
+/* src/pages/Account/AccountPage.css */
+
 .account-container .tabs {
     display: flex;
     padding: 10px;
@@ -51,4 +53,46 @@
 
 .add-new-address-btn:hover {
     background-color: #7C9D96; /* Darker background on hover, similar to .synopsis button */
+}
+
+/* Styles for the address form inputs */
+.address-form input[type="text"] {
+    width: 100%;
+    padding: 8px;
+    margin: 5px 0 15px; /* Spacing between each input field */
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box; /* Ensure padding doesn't increase the width */
+}
+
+/* Styles for the "Save address" button */
+.save-address-btn, .edit-address-btn {
+    cursor: pointer;
+    padding: 10px 20px;
+    background-color: #A1CCD1;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    color: #333;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+    text-align: center;
+    display: block; /* Make the button take the full width */
+    margin-top: 10px; /* Margin at the top to separate from last input field */
+    width: auto; /* Auto width to fit the text */
+}
+
+.save-address-btn:hover .edit-address-btn:hover {
+    background-color: #7C9D96;
+}
+
+/* Container for the form to ensure padding and margin */
+.address-form {
+    margin-bottom: 20px; /* Space below the form */
+}
+
+.address-form input[type="text"] {
+    display: block; /* Makes each input appear on its own line */
+    width: 100%; /* Adjust as necessary */
+    margin-bottom: 10px; /* Adds space between inputs */
+    /* Other styles */
 }

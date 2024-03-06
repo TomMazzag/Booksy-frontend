@@ -1,7 +1,7 @@
 // src/services/users.jsx
 
-const backend_url = "https://booksy-backend.onrender.com";
-// const backend_url = "http://localhost:3000";
+// const backend_url = "https://booksy-backend.onrender.com";
+const backend_url = "http://localhost:3000";
 
 export const getUserById = async (userId) => {
     try {
@@ -65,3 +65,27 @@ export const checkLikedBook = async (user_id, bookId) => {
     return data.state
 }
 
+
+export const updateUserDetails = async (user_id, updateData) => {
+    const requestOptions = {
+        method: "PATCH",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify(updateData),
+    };
+
+    try {
+        const response = await fetch(`${backend_url}/users/${user_id}`, requestOptions);
+
+        if (!response.ok) {
+            throw new Error(`Error updating user with ID ${user_id}: ${response.statusText}`);
+        }
+
+        const data = await response.json();
+        return data;
+    } catch (error) {
+        console.error("Fetch error:", error.message);
+        throw error;
+    }
+};

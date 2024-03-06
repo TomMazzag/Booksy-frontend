@@ -35,7 +35,7 @@ const router = createBrowserRouter([
     element: <FavouritesPage />
   },
   {
-    path: "/account",
+    path: "/settings",
     element: <AccountPage />
   }
   
