@@ -1,5 +1,7 @@
 import React, { useEffect } from 'react';
 import { createOrderRecord } from '../../services/order';
+import Navbar from '../../components/Home/NavBar';
+import Footer from '../../components/Home/Footer';
 
 const OrderSuccessPage = () => {
     useEffect(() => {
@@ -16,14 +18,18 @@ const OrderSuccessPage = () => {
         });
     }, []);
 
-    
+
 
     return (
-        <div>
-            <h1>Payment Successful!</h1>
-            <p>Your order is being processed.</p>
-            {/* Additional content as needed */}
-        </div>
+        <>
+            <Navbar />
+            <div>
+                <h1>Payment Successful!</h1>
+                <p>Your order is being processed.</p>
+
+            </div>
+            <Footer />
+        </>
     );
 };
 

@@ -64,9 +64,9 @@ import { initiateOrderAndCheckout } from '../../services/orderService';
     const PaymentSummary = ({ totalPrice, cartItems }) => {
 
     const priceAndQuantity = cartItems.map(item => {
-        var { price, quantity, title } = item;
+        var { price, title } = item;
         const numericPrice = parseFloat(price.$numberDecimal);
-        price = 599
+        price = numericPrice * 100
         return { 
             price_data: {
                 currency: "gbp",
@@ -75,7 +75,7 @@ import { initiateOrderAndCheckout } from '../../services/orderService';
                     name: title
                 }
             },
-            quantity
+            quantity: 1
         };
     })
 
