@@ -1,16 +1,19 @@
 
 ## Booksy - Online Book Store
 
-Welcome to Booksy, your go-to online bookstore built using the MERN stack (MongoDB, Express.js, React.js, Node.js). Booksy offers a vast collection of books across various genres, providing book lovers with an intuitive platform to explore, select, and purchase their favorite reads with ease. Whether you're into fiction, non-fiction, educational materials, or rare finds, Booksy is designed to cater to your reading preferences.
+Welcome to Booksy, your go-to online bookstore built using the MERN stack (MongoDB, Express.js, React.js, Node.js) with user authentication handled by Clerk and payments processed by Stripe.. Booksy offers a vast collection of books across various genres, providing book lovers with an intuitive platform to explore, select, and purchase their favorite reads with ease. Whether you're into fiction, non-fiction, educational materials, or rare finds, Booksy is designed to cater to your reading preferences.
 
 ## Features
 
-Browse and Search: Easily navigate through our extensive library or use the search functionality to find specific books.
-Book Details: Get detailed information about books, including summaries, author details, and pricing.
-User Accounts: Sign up for a personalized shopping experience, manage your profile, and keep track of your orders.
-Shopping Cart: Add books to your cart, adjust quantities, or remove items as needed before checkout.
-Secure Checkout: Complete your purchase securely with integrated payment options, including Stripe for safe and convenient transactions.
-Order History: Access your past orders.
+- **Browse and Search**: Navigate through our extensive library or use the search functionality to find specific books with ease.
+- **Book Details**: Access detailed information about books, including summaries, author details, and pricing.
+- **User Authentication**: Securely sign up and log in with Clerk user authentication for a personalized and secure shopping experience.
+- **User Profiles**: Manage your profile, view personalized recommendations, and keep track of your reading preferences.
+- **Shopping Cart**: Add books to your cart, adjust quantities, or remove items as needed before checkout.
+- **Secure Checkout**: Safely complete your purchases with integrated payment options, including Stripe for secure transactions.
+- **Order History**: View your past orders and track the status of your current purchases.
+- **Favorites**: Save books to your favorites list for easy access or future purchase.
+- **Responsive Design**: Enjoy a seamless shopping experience across all devices, thanks to our responsive design.
 
 ## Tech Stack
 
@@ -58,30 +61,38 @@ MongoDB
 
 ## Installation
 
+### Backend Setup
+
+1. Clone the backend repository:
+
+git clone https://github.com/AVJehoshua/Booksy-backend.git
+
 Clone the repository or download the source code:
+
+### Frontend Setup
+
+2. Clone the backend repository:
 
 git clone https://github.com/TomMazzag/Booksy-frontend.git
 
+
+
 Navigate to the project directory:
 
-cd booksy
+cd Booksy-frontend
+- npm install
+- install dependencies
+- Start the React development server:
+
 Install the required dependencies for the backend:
 
-cd backend
-npm install
+cd Booksy-backend
+- Start the backend server:
+- npm start
+- The application should now be running on http://localhost:3000.
 
 Start the backend server:
 
-npm start
-Open a new terminal window, navigate to the frontend directory, and install dependencies:
-
-cd frontend
-npm install
-Start the React development server:
-bash
-Copy code
-npm start
-The application should now be running on http://localhost:3000.
 
 ## Configuration
 
