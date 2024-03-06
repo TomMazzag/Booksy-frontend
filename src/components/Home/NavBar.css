@@ -19,6 +19,10 @@ nav {
     margin: auto;
 }
 
+nav p {
+    margin: 0;
+}
+
 .navbar-logo {
     font-size: 2.0rem; /* Reduced size for a subtler logo */
     font-weight: lighter; /* Bold font weight for the logo */

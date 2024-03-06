@@ -5,10 +5,13 @@ import { UserButton } from "@clerk/clerk-react";
 import "../Home/NavBar.css";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars } from '@fortawesome/free-solid-svg-icons'
+import { SearchBar } from "./SearchBar";
+
+
+
 import { useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom'; // Make sure this is imported
 import { useState } from "react";
-
 
 
 const Navbar = () => {
@@ -36,7 +39,6 @@ const Navbar = () => {
                     </div>
                     <div className="navbar-actions">
                         <p>Hello {user.firstName} </p>
-{/* //                         <p className="heart">♥</p> */}
                         <p className="heart" onClick={() => navigate('/favourites')}>♥</p>
                         <UserButton />
                         <p className="basket"onClick={() => navigate('/basket')}>Cart</p>
@@ -45,7 +47,6 @@ const Navbar = () => {
                         <FontAwesomeIcon icon={faBars} onClick={toggleMenu}/>
                         {openMenu ? (<ul className="mobile-menu-options">
                             <li>Hello {user.firstName}</li>
-{/* //                             <li><p className="heart">Favourites</p></li> */}
                             <li><p className="heart" onClick={() => navigate('/favourites')}>Favourites</p></li>
                             <li><p className="basket"onClick={() => navigate('/basket')}>Shopping Cart</p></li>
                         </ul>) : null}
@@ -59,13 +60,13 @@ const Navbar = () => {
                 <div className="navbar-content">
                     <div className="navbar-logo">
                         <p onClick={navigateHomePage}> Booksy </p>
+
                     </div>
                     <div className="navbar-middle">
                         <input type="text" placeholder="Search Books" />
                     </div>
                     <div className="navbar-actions">
                         <SignInComponent />
-{/* //                         <p className="heart">♥</p> */}
                         <p className="heart" onClick={() => navigate('/favourites')}>♥</p>
                         <p className="basket"onClick={() => navigate('/basket')}>Cart</p>
                     </div>
