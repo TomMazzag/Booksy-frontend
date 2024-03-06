@@ -21,8 +21,6 @@ const BookPage = () => {
     const { user } = useUser();
     
     const addItemToBasket = async () => {
-        console.log("bookdID", bookId);
-        console.log("userid:", user.id)
         await addToBasket(bookId, user.id);
     }
 
