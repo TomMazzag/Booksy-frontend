@@ -4,35 +4,34 @@ import { useState } from 'react'
 import { useLocation } from "react-router-dom";
 
 function SignUpComponent () {
-  
-  const [modal, setModal] = useState(false);
-  let location = useLocation()
 
-  const toggleModal = () => {
-      setModal(!modal)
-      console.log(modal)
-  }
+    const [modal, setModal] = useState(false);
+    let location = useLocation()
+
+    const toggleModal = () => {
+        setModal(!modal)
+    }
 
     return (
         <div> 
-        <div onClick={toggleModal} className="button-modal"> 
-        Account
+            <div onClick={toggleModal} className="button-modal"> 
+                Sign up
         </div>
-          {modal && (
-              <div className ="modal">
-                  <div className="overlay">
-                      <div className="modal-content">
-                          <SignUp
-                          afterSignInUrl={location.pathname}
-                          />
-                          <p className="close-modal" onClick={toggleModal}>
-                          X
-                          </p>
-                      </div>
-                  </div>
-              </div>
-          )}
-  </div>
+            {modal && (
+                <div className ="modal">
+                    <div className="overlay">
+                        <div className="modal-content">
+                            <SignUp
+                            afterSignUpUrl={location.pathname}
+                            />
+                            <p className="close-modal" onClick={toggleModal}>
+                            X
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            )}
+    </div>
 
 )}
 

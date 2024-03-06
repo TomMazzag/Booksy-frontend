@@ -1,14 +1,12 @@
 // src/Components/Home/NavBar.jsx
 import SignInComponent from "../Authentication/LogInModal";
+import SignUpComponent from "../Authentication/SignUpModal";
 import { useUser } from "@clerk/clerk-react";
 import { UserButton } from "@clerk/clerk-react";
 import "../Home/NavBar.css";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars } from '@fortawesome/free-solid-svg-icons'
 import { SearchBar } from "./SearchBar";
-
-
-
 import { useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom'; // Make sure this is imported
 import { useState } from "react";
@@ -36,7 +34,6 @@ const Navbar = () => {
                     </div>
                     <SearchBar />
                     <div className="navbar-actions">
-
                         <Link to="/settings" className="account-link">Hello {user.firstName}</Link>
                         <p className="heart" onClick={() => navigate('/favourites')}>♥</p>
                         <UserButton />
@@ -63,7 +60,13 @@ const Navbar = () => {
                     </div>
                     <SearchBar />
                     <div className="navbar-actions">
-                        <SignInComponent />
+                        <div className="dropdown-account">
+                            <p>Account</p> 
+                            <div className="dropdown-account-content">
+                                <SignInComponent />
+                                <SignUpComponent />
+                            </div>
+                        </div>
                         <p className="heart" onClick={() => navigate('/favourites')}>♥</p>
                         <p className="basket" onClick={() => navigate('/basket')}>Basket</p>
                     </div>

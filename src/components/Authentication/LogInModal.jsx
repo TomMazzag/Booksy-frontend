@@ -10,13 +10,12 @@ function SignInComponent ({text}) {
 
     const toggleModal = () => {
         setModal(!modal)
-        console.log(modal)
     }
 
     return (
         <div> 
             <div onClick={toggleModal} className="button-modal"> 
-            {text ? text : "Account"}
+            {text ? text : "Log in"}
             </div>
                 {modal && (
                     <div className ="modal">
