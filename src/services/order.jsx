@@ -1,14 +1,14 @@
 // orderService.js
 const backendUrl = "http://127.0.0.1:3000";
 
-export const createOrderRecord = async (orderDetails) => {
+export const createOrderRecord = async (basketDetails) => {
     try {
         const requestOptions = {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
             },
-            body: JSON.stringify(orderDetails)
+            body: JSON.stringify(basketDetails)
         };
 
         const response = await fetch(`${backendUrl}/order/create`, requestOptions);
