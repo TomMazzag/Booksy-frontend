@@ -11,7 +11,7 @@ export const getAllBooks = async () => {
             headers: {},
         };
 
-        // console.log("Requesting URL:", `${backend_url}/books/all`);
+        // // console.log("Requesting URL:", `${backend_url}/books/all`);
         const response = await fetch(`${backend_url}/books/all`, requestOptions);
 
         if (!response.ok) { // This checks for any response status outside the 200-299 range
@@ -19,7 +19,7 @@ export const getAllBooks = async () => {
         }
 
         const data = await response.json();
-        // console.log("Data received:", data);
+        // // console.log("Data received:", data);
         return data.books; // Ensure your API response structure includes a 'books' array
     } catch (error) {
         console.error("Fetch error:", error.message);
@@ -42,7 +42,7 @@ export const getBookById = async (bookId) => {
 
         const data = await response.json();
 
-        //console.log("Data received:", data);
+        //// console.log("Data received:", data);
         return data; // Ensure your API response structure includes a 'books' array
 
     } catch (error) {
@@ -58,7 +58,7 @@ export const getBooksBySearchQueryTitleOrAuthorOrISBN = async ( title ) => {
         headers: {}
         };
         
-        console.log(`request to ${backend_url}/books/search/title/${title}`)
+        // console.log(`request to ${backend_url}/books/search/title/${title}`)
 
         const response = await fetch(`${backend_url}/books/search/title/${title}` , requestOptions);
     
@@ -67,6 +67,6 @@ export const getBooksBySearchQueryTitleOrAuthorOrISBN = async ( title ) => {
         }
     
         const data = await response.json();
-        console.log("Book title data received:", data)
+        // console.log("Book title data received:", data)
         return data;
     };

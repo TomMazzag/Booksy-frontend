@@ -1,9 +1,9 @@
-// src/Components/Home/NavBar.jsx
+// // src/Components/Structure/NavBar.jsx
 import SignInComponent from "../Authentication/LogInModal";
 import SignUpComponent from "../Authentication/SignUpModal";
 import { useUser } from "@clerk/clerk-react";
 import { UserButton } from "@clerk/clerk-react";
-import "../Home/NavBar.css";
+import "./NavBar.css";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars } from '@fortawesome/free-solid-svg-icons'
 import { SearchBar } from "./SearchBar";
@@ -85,3 +85,7 @@ const Navbar = () => {
 }
 
 export default Navbar;
+
+
+
+

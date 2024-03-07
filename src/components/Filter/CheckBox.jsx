@@ -22,9 +22,9 @@ export const CheckBox = ({ categories, selected, setAddCategory, setRemoveCatego
 };
 
 CheckBox.propTypes = {
-    selected: PropTypes.string.isRequired,
-    categories: PropTypes.array.isRequired,
-    setAddCategory: PropTypes.string.isRequired,
-    setRemoveCategory: PropTypes.string.isRequired
+    selected: PropTypes.string,
+    categories: PropTypes.array,
+    setAddCategory: PropTypes.string,
+    setRemoveCategory: PropTypes.string
 
 };

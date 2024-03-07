@@ -1,16 +1,16 @@
-
 import { removeFromBasket } from "../../services/basket";
-import './CartItem.css';
+import './BasketItem.css';
 import PropTypes from 'prop-types';
 
-const CartItem = ({ user, book, setUpdateBasketItems, onQuantityChange }) => {
+
+const BasketItem = ({ user, book, setUpdateBasketItems, onQuantityChange }) => {
 
     const removeItem = () => {
         removeFromBasket(user.id, book._id);
         setUpdateBasketItems(prev => !prev); // Trigger update for re-fetching items
     };
 
-    console.log("book:", book)
+    // console.log("book:", book)
 
     const handleQuantityChange = (event) => {
         const newQuantity = event.target.value;
@@ -45,11 +45,11 @@ const CartItem = ({ user, book, setUpdateBasketItems, onQuantityChange }) => {
     );
 };
 
-export default CartItem;
+export default BasketItem;
 
-CartItem.propTypes = {
-    user: PropTypes.string.isRequired,
-    book: PropTypes.array.isRequired,
-    setUpdateBasketItems: PropTypes.func.isRequired,
-    onQuantityChange: PropTypes.func.isRequired,
+BasketItem.propTypes = {
+    user: PropTypes.string,
+    book: PropTypes.array,
+    setUpdateBasketItems: PropTypes.func,
+    onQuantityChange: PropTypes.func,
 };

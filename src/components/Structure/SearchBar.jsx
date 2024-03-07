@@ -16,9 +16,9 @@ export const SearchBar = ({ placeholder }) => {
             try {
                 const result = await getBooksBySearchQueryTitleOrAuthorOrISBN(searchQuery);
                 setSearchResults(result.book);
-                console.log("Searching for books..." ,searchResults)
+                // console.log("Searching for books..." ,searchResults)
             } catch (error) {
-                console.log('Error fetching books:', error);
+                // console.log('Error fetching books:', error);
             }
         };
         if (searchQuery.trim().length >= 1) {
@@ -34,7 +34,7 @@ export const SearchBar = ({ placeholder }) => {
         if (searchQuery.trim().length >= 1) {
             try {
                 const result = await getBooksBySearchQueryTitleOrAuthorOrISBN(searchQuery);
-                console.log("Fetched books:", result);
+                // console.log("Fetched books:", result);
                 setSearchResults(result.book);
 
                 // Redirect to book page if search result is a book
@@ -45,7 +45,7 @@ export const SearchBar = ({ placeholder }) => {
                     navigate(`/books/search/author/${searchQuery}`);
                 }
             } catch (error) {
-                console.log('Error fetching books:', error);
+                // console.log('Error fetching books:', error);
             }
         }
     };

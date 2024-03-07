@@ -57,8 +57,8 @@ export const SortBy = ({ books, setBooks }) => {
 };
 
 SortBy.propTypes = {
-    setBooks: PropTypes.array.isRequired,
-    books: PropTypes.array.isRequired,
+    setBooks: PropTypes.array,
+    books: PropTypes.array,
 
 };
 

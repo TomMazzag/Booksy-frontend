@@ -33,7 +33,7 @@ export const updateUserLikedList = async (user_id, bookId, status) => {
         },
         body: JSON.stringify({user_id: user_id, bookId: bookId, status: status }),
     };
-    console.log(JSON.stringify({user_id: user_id, bookId: bookId, status: status }));
+    // console.log(JSON.stringify({user_id: user_id, bookId: bookId, status: status }));
 
     const response = await fetch(`${backend_url}/users/like`, requestOptions);
 
@@ -61,7 +61,7 @@ export const checkLikedBook = async (user_id, bookId) => {
     }
 
     const data = await response.json();
-    console.log(data.state)
+    // console.log(data.state)
     return data.state
 }
 

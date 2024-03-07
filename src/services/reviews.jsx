@@ -1,5 +1,5 @@
-//const BACKEND_URL = "https://booksy-backend.onrender.com"
-const BACKEND_URL = "http://127.0.0.1:3000"
+const BACKEND_URL = "https://booksy-backend.onrender.com"
+// const BACKEND_URL = "http://127.0.0.1:3000"
 
 export const getAllReviewsForBook = async (book_id) => {
     const requestOptions = {
