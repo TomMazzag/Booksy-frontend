@@ -15,6 +15,18 @@ const OrderSuccessPage = () => {
     const urlParams = new URLSearchParams(window.location.search)
     const session_id = urlParams.get('session_id')
 
+    const dateFormatOptions = { 
+        day: '2-digit', 
+        month: 'long', 
+        year: 'numeric' 
+    }
+
+    const formatDate = (dateString) =>  {
+        const date = new Date(dateString)
+        const formattedDate = date.toLocaleString("en-GB", dateFormatOptions)
+        return formattedDate
+    }
+
     useEffect(() => {
         if (user) {
             createOrderRecord({ 
@@ -38,7 +50,19 @@ const OrderSuccessPage = () => {
                 {order ?
                 <div className='order-details'>
                     <p>Your order number is {order._id}</p>
-                    <p>Your ordered on the {order.createdAt} {}</p>
+                    <p>Your ordered on the {formatDate(order.createdAt)} {}</p>
+                    {order.items.map((book, index) => (
+                        <div className='order-book'>
+                            <p>{index + 1}</p>
+                            <img src={book.product.image_url} alt="Book cover" />
+                            <div className='order-book-details'>
+                                <h4>{book.product.title}</h4>
+                                <p className='author'>{book.product.author}</p>
+                                <p>Quantity: {book.quantity}</p>
+                            </div>
+                            <p>£{book.product.price.$numberDecimal}</p>
+                        </div>
+                    ))}
                 </div> 
                 : 
                 <div className='order-loading'>

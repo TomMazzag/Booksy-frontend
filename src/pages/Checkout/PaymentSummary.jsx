@@ -7,6 +7,12 @@ const PaymentSummary = ({ totalPrice, cartItems }) => {
 
     const [disableCheckout, setDisableCheckout] = useState(true)
 
+    useState(() => {
+        if (cartItems) {
+            setDisableCheckout(false)
+        }
+    }, [cartItems])
+
     const priceAndQuantity = cartItems.map(item => {
         var { price, title } = item;
         const numericPrice = parseFloat(price.$numberDecimal);
