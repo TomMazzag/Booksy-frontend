@@ -1,9 +1,9 @@
 
 import { useEffect } from "react";
 import { removeFromBasket } from "../../services/basket";
-import './CartItem.css';
+import './BasketItem.css';
 
-const CartItem = ({ user, book, setUpdateBasketItems, onQuantityChange }) => {
+const BasketItem = ({ user, book, setUpdateBasketItems, onQuantityChange }) => {
 
     const removeItem = () => {
         removeFromBasket(user.id, book._id);
@@ -45,4 +45,4 @@ const CartItem = ({ user, book, setUpdateBasketItems, onQuantityChange }) => {
     );
 };
 
-export default CartItem;
+export default BasketItem;

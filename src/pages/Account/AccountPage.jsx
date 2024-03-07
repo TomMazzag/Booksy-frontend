@@ -2,8 +2,8 @@
 
 import React, { useEffect, useState } from 'react';
 import { useUser } from '@clerk/clerk-react';
-import Navbar from "../../components/Home/NavBar.jsx";
-import Footer from "../../components/Home/Footer.jsx";
+import Navbar from "../../components/Structure/NavBar.jsx";
+import Footer from "../../components/Structure/Footer.jsx";
 import "../Account/AccountPage.css"
 import { updateUserDetails } from '../../services/users.jsx';
 import { getUserById } from '../../services/users.jsx'; 

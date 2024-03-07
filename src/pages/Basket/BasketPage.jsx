@@ -1,15 +1,15 @@
-    //CartPage Component
+    //BasketPage Component
     
     import React, { useState, useEffect } from 'react';
-    import './CartPage.css';
-    import Navbar from '../../components/Home/NavBar';
-    import Footer from '../../components/Home/Footer';
+    import './BasketPage.css';
+    import Navbar from '../../components/Structure/NavBar';
+    import Footer from '../../components/Structure/Footer';
     import { getBasket } from '../../services/basket';
-    import CartItem from './CartItem';
+    import BasketItem from '../../components/Basket/BasketItem';
     import PaymentSummary from '../Checkout/PaymentSummary';
     import { useUser } from '@clerk/clerk-react';
 
-    export const CartPage = () => {
+    export const BasketPage = () => {
         const [basketItems, setBasketItems] = useState([]);
         const [totalPrice, setTotalPrice] = useState(0);
         const { user } = useUser();
@@ -61,7 +61,7 @@
                     <div className="cart-items">
                         {basketItems.length > 0 ? (
                             basketItems.map((item, index) => (
-                                <CartItem 
+                                <BasketItem 
                                     user={user}
                                     key={index} 
                                     book={item} 
@@ -80,4 +80,4 @@
         );
     };
     
-    export default CartPage;
+    export default BasketPage;

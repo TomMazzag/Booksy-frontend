@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { createOrderRecord } from '../../services/order';
-import Navbar from '../../components/Home/NavBar';
-import Footer from '../../components/Home/Footer';
+import Navbar from '../../components/Structure/NavBar';
+import Footer from '../../components/Structure/Footer';
 import "./SuccessPage.css"
 import { useUser } from "@clerk/clerk-react"
 

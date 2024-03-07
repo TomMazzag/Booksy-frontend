@@ -3,14 +3,14 @@
 // import { Checkbox } from "@/components/CheckBox"
 import React, { useEffect, useState } from 'react';
 import { useParams, Link, useLocation } from 'react-router-dom';
-import Navbar from "../../components/Home/NavBar.jsx";
-import Footer from "../../components/Home/Footer.jsx";
+import Navbar from "../../components/Structure/NavBar.jsx";
+import Footer from "../../components/Structure/Footer.jsx";
 import { CheckBox } from "../../components/Filter/CheckBox.jsx";
 import { SortBy } from "../../components/Filter/Sort.jsx";
 import FilterBookCard from "../../components/Filter/FilterBookCard.jsx";
 import { getAllBooksByCategory } from "../../services/filters.jsx";
 
-import "../../components/Home/Footer.css";
+import "../../components/Structure/Footer.css";
 import "./FilterPage.css"
 
 export const FilterPage = () => {

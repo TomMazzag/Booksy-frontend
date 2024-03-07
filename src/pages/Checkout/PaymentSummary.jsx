@@ -40,7 +40,7 @@ const PaymentSummary = ({ totalPrice, cartItems }) => {
 
         {/* Payment summary details */}
         <p>Item(s) total: £{totalPrice.toFixed(2)}</p>
-        {cartItems > 0 ??
+        {cartItems > 0 &&
         <>
             <p>Delivery: £2.60</p> 
             <p>Total: £{(totalPrice + 2.6).toFixed(2)}</p>
