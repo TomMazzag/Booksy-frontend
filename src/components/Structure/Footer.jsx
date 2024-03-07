@@ -1,4 +1,4 @@
-// src/Components/Home/Footer.jsx
+// src/Components/Structure/Footer.jsx
 
 import "./Footer.css";
 

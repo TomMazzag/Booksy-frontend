@@ -29,8 +29,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './cancelPage.css';
-import NavBar from '../../components/Home/NavBar';
-import Footer from '../../components/Home/Footer';
+import NavBar from '../../Structure//NavBar';
+import Footer from '../../Structure/Home/Footer';
 
 const OrderCancelPage = () => {
     return (

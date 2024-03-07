@@ -1,10 +1,10 @@
 // src/Home/HomePage.jsx
 
 import React, { useEffect, useState } from 'react';
-import Navbar from "../../components/Home/NavBar.jsx";
+import Navbar from "../../components/Structure/NavBar.jsx";
 import CategoryCard from "../../components/Home/CategoryCard.jsx";
 import BookCard from "../../components/Home/BookCard.jsx";
-import Footer from "../../components/Home/Footer.jsx";
+import Footer from "../../components/Structure/Footer.jsx";
 import "./HomePage.css";
 import { getAllBooks } from "../../services/books";
 

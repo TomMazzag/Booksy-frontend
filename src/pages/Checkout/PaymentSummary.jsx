@@ -1,14 +1,17 @@
-import React from 'react';
+import React, { useState } from 'react';
 
-// Optional: Import payment method logos if you want to display them
-import applePayLogo from '../../assets/Applepay.png';
-import visaMastercardLogo from '../../assets/Cardspay.png';
-import paypalLogo from '../../assets/Paypal.png';
-import gpayLogo from '../../assets/Gpay.png';
 import './PaymentSummary.css';
 import { initiateOrderAndCheckout } from '../../services/stripe';
 
-    const PaymentSummary = ({ totalPrice, cartItems }) => {
+const PaymentSummary = ({ totalPrice, cartItems }) => {
+
+    const [disableCheckout, setDisableCheckout] = useState(true)
+
+    useState(() => {
+        if (cartItems) {
+            setDisableCheckout(false)
+        }
+    }, [cartItems])
 
     const priceAndQuantity = cartItems.map(item => {
         var { price, title } = item;
@@ -27,7 +30,6 @@ import { initiateOrderAndCheckout } from '../../services/stripe';
     })
 
     const handleCheckout = () => {
-        
         initiateOrderAndCheckout(priceAndQuantity); // Trigger Stripe Checkout with the current cart items
     };
 

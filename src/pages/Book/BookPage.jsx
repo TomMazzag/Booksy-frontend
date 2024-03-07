@@ -2,12 +2,12 @@
 
 import React, { useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
-import Navbar from '../../components/Home/NavBar.jsx';
-import Footer from "../../components/Home/Footer.jsx";
+import Navbar from '../../components/Structure/NavBar.jsx';
+import Footer from "../../components/Structure/Footer.jsx";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHeart, faShoppingBasket, faStar } from '@fortawesome/free-solid-svg-icons';
 import './BookPage.css';
-import { getBookById } from '../../services/books'; 
+import { getBookById } from '../../services/books.jsx'; 
 import LikeButton from '../../components/LikeButton/LikeButton.jsx';
 import { addToBasket } from '../../services/basket';
 import ReviewBox from '../../components/Review/LeaveReview.jsx';
@@ -26,7 +26,8 @@ const BookPage = () => {
     
     const addItemToBasket = async () => {
         await addToBasket(bookId, user.id);
-    }
+    };
+    
 
     useEffect(() => {
         const fetchBook = async () => {
@@ -34,7 +35,7 @@ const BookPage = () => {
             try {
                 const fetchedBook = await getBookById(bookId);
                 setBook(fetchedBook.book);
-                // console.log(fetchedBook.book)
+                // // console.log(fetchedBook.book)
                 setError(null); // Reset error state in case of successful fetch
             } catch (err) {
                 setError('Failed to fetch book details.');

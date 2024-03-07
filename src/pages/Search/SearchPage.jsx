@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { getAllBooks } from '../../services/books';
-import Navbar from '../../components/Home/NavBar';
-import Footer from '../../components/Home/Footer';
+import Navbar from '../../components/Structure/NavBar';
+import Footer from '../../components/Structure/Footer';
 import BookCard from '../../components/Home/BookCard';
 import './SearchPage.css'
 
