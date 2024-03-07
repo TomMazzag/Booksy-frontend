@@ -1,0 +1,68 @@
+/* PaymentCancellation.css */
+
+.payment-cancellation-container {
+    max-width: 800px; /* Limit the width for readability */
+    margin: 0 auto; /* Center the container */
+    padding: 50px 20px; /* Add some padding for space */
+    text-align: center; /* Center the text */
+    background-color: #f9f9f9; /* Light background to differentiate from the footer */
+    border-radius: 8px; /* Soften the edges */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+.payment-cancellation-container h1 {
+    color: #333; /* Dark color for contrast */
+    font-size: 2rem; /* Larger font size for importance */
+    margin-bottom: 20px; /* Space after the heading */
+}
+
+.payment-cancellation-container p {
+    color: #666; /* Lighter color for regular text */
+    font-size: 1rem; /* Regular font size for body text */
+    line-height: 1.6; /* Space between lines for readability */
+    margin-bottom: 20px; /* Space after each paragraph */
+}
+
+.payment-cancellation-container a {
+    color: #A1CCD1; /* Brand color for links */
+    text-decoration: none; /* No underline */
+    font-weight: bold; /* Make it bold */
+}
+
+.payment-cancellation-container a:hover {
+    text-decoration: underline; /* Underline on hover for interactivity */
+}
+
+/* This class is for the button-like links */
+.payment-cancellation-button {
+    display: inline-block; /* Inline block for proper padding */
+    padding: 10px 20px; /* Button-like padding */
+    margin: 10px 5px; /* Margin for space around buttons */
+    border: 2px solid #A1CCD1; /* Border to look like a button */
+    border-radius: 4px; /* Rounded corners */
+    transition: background-color 0.3s, color 0.3s; /* Smooth transition for hover effect */
+}
+
+.payment-cancellation-button:hover {
+    background-color: #A1CCD1; /* Background color on hover */
+    color: #fff; /* Text color on hover */
+    text-decoration: none; /* No underline on hover */
+}
+
+
+
+
+.page-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.content-wrap {
+    flex: 1;
+}
+
+/* Ensure the footer always sticks to the bottom */
+.footer {
+    margin-top: auto;
+}

@@ -38,7 +38,7 @@ const CartItem = ({ user, book, setUpdateBasketItems, onQuantityChange }) => {
                 </div>
                 <div className="delivery-info">
                     <p>Delivery: £2.60</p>
-                    <p>Estimated delivery: 29 Feb - 06 Mar</p>
+                    <p>Estimated delivery:Next Day!</p>
                 </div>
             </article>
         </section>

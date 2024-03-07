@@ -34,17 +34,18 @@ import { initiateOrderAndCheckout } from '../../services/stripe';
 
     return (
         <aside className="payment-summary">
-        <h5>Payment Summary</h5>
+            <h5 className="payment-summary-heading">Payment Summary</h5> {/* Updated line */}
 
-        {/* Payment summary details */}
-        <p>Item(s) total: £{totalPrice.toFixed(2)}</p>
-        <p>Delivery: £2.60</p> {/* Adjust delivery fee as needed */}
-        <p>Total: £{(totalPrice + 2.6).toFixed(2)}</p> {/* Calculate total price including delivery */}
+            {/* Payment summary details */}
+            <p>Item(s) total: £{totalPrice.toFixed(2)}</p>
+            <p>Delivery: £2.60</p> {/* Adjust delivery fee as needed */}
+            <p className="payment-summary-total">Total: £{(totalPrice + 2.6).toFixed(2)}</p> {/* Calculate total price including delivery */}
 
-        {/* Checkout button */}
-        <button onClick={handleCheckout} className="checkout-button">Check out</button>
+
+            {/* Checkout button */}
+            <button onClick={handleCheckout} className="checkout-button">Check out</button>
         </aside>
     );
-    };
+};
 
-    export default PaymentSummary;
+export default PaymentSummary;

@@ -1,27 +1,43 @@
-    /* Cart Container */
-    .cart-container {
-        display: flex;
-        justify-content: space-between;
-        padding: 2rem;
-    }
-    
-  /* Cart Items */
+/* Cart List Styles */
+.cart-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start; /* Align the start of the items */
+    padding: 2rem;
+    gap: 2rem; /* Space between cart list and summary */
+}
+
 .cart-items {
-    width: calc(70% - 1rem); /* Adjust for margin */
+    width: 70%;
+    max-width: 700px; /* Maximum width of the cart list */
     margin-right: 1rem;
-    margin-bottom: 2rem;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden; /* Ensures the child elements adhere to border radius */
 }
 
 .cart-item {
     display: flex;
-    background-color: #f9f9f9;
+    align-items: center;
+    border-bottom: 1px solid #eaeaea; /* Separate items with a line */
     padding: 1rem;
-    margin-bottom: 1rem;
+    transition: background-color 0.2s ease-in-out;
+}
+
+.cart-item:last-child {
+    border-bottom: none; /* No border for the last item */
+}
+
+.cart-item:hover {
+    background-color: #f7f7f7; /* Slight background change on hover */
 }
 
 .cart-item img {
-    width: 100px; /* Adjust image size */
-    height: 100px; /* Adjust image size */
+    width: 80px; /* Smaller image for list-style */
+    height: 120px; /* Aspect ratio of a book */
+    object-fit: cover; /* Cover the image box */
+    border-radius: 4px;
     margin-right: 1rem;
 }
 
@@ -30,45 +46,35 @@
 }
 
 .item-details h3 {
-    margin-bottom: 0.5rem;
+    font-size: 1rem; /* Slightly smaller text size */
+    margin-bottom: 0.3rem; /* Less space between title and price */
 }
 
 .item-details p {
-    margin-bottom: 0.5rem;
+    font-size: 0.9rem; /* Slightly smaller text size */
+    color: #666;
 }
 
-.item-details button {
-    padding: 0.5rem 1rem; /* Adjust button padding */
-    border: none;
-    background-color: #A1CCD1;
-    color: white;
-    cursor: pointer;
-    margin-right: 0.5rem;
-}
+/* Quantity and button styling unchanged */
 
-@media (min-width: 768px) {
-    /* Styles for tablets and desktops */
+@media (max-width: 768px) {
     .cart-container {
-        flex-direction: row; /* Side-by-side layout on wider screens */
+        flex-direction: column;
+        align-items: stretch; /* Stretch to full width */
     }
 
     .cart-items {
-        width: calc(70% - 1rem); /* Adjust width and margin for wider screens */
-        margin-right: 1rem;
-    }
-
-    .cart-item {
-        flex-direction: row; /* Side-by-side layout for cart items on wider screens */
+        width: 100%; /* Full width for smaller screens */
+        margin-bottom: 1rem;
     }
 
     .cart-item img {
-        width: 100px; /* Fixed size for images on wider screens */
-        height: 100px;
-        margin-right: 1rem; /* Add margin to the right of the image */
-        margin-bottom: 0; /* Remove bottom margin */
+        width: 60px; /* Even smaller image on mobile */
+        height: 90px; /* Maintain aspect ratio */
     }
 
-    .item-details {
-        flex-grow: 1; /* Allow item details to fill available space */
+    .item-details h3,
+    .item-details p {
+        font-size: 0.8rem; /* Adjust text size for mobile */
     }
 }
