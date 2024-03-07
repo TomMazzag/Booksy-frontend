@@ -25,23 +25,58 @@ body {
     overflow: hidden;
 }
 
-.category-books-container {
-    overflow: hidden;
-}
 
 .category-grid-selection {
     display: flex;
     animation: carouselAnimation 12s linear infinite; /* Adjust the duration as needed */
 }
 
-.category-book-selection {
-    display: flex;
-}
-
 .book-list-container.paused .category-grid-selection{
     animation-play-state: paused;
 }
 
+.category-books-container {
+    overflow: hidden;
+}
+
+.category-book-selection {
+    display: flex;
+    margin-left: 400px;
+    margin-top: 30px;
+    margin-right: 375px;
+}
+
+.show-more-button {
+    display: inline-block;
+    padding: 120px 20px;
+    font-size: 69px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: rgb(233, 179, 132);
+    background-color: rgb(255, 255, 255);
+    border: transparent;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+    height: 7vh;
+}
+
+.show-more-button:hover {
+    background-color: #ffffff;
+    border-color: #ffffff;
+}
+
+.show-more-button:active {
+    background-color: #ffffff;
+    border-color: #ffffff;
+}
+
+.bestsellers-title {
+    padding: 70px;
+    font-family: inherit;
+    font-style: italic;
+    font-family: "Guardian-EgypTT", "Charter", "Charter Bitstream", "Cambria", "Noto Serif Light", "Droid Serif", "Georgia", "serif";
+}
 
 @keyframes carouselAnimation {
     0% {

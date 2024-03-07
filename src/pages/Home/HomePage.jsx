@@ -24,12 +24,19 @@ export const HomePage = () => {
 
     const [books, setBooks] = useState([]);
     const [categoryBooks, setCategoryBooks] = useState([]);
+    const [number, setNumber] = useState(10);
 
     useEffect(() => {
         const fetchBooks = async () => {
             try {
                 const booksData = await getAllBooks();
                 setBooks(booksData);
+                let categoryList = []
+                    for (let i=number; i<=number+6; i++) {
+                        categoryList.push(booksData[i])
+                    } 
+                    setCategoryBooks(categoryList)
+                    console.log(categoryList)
             } catch (error) {
                 console.error("Error fetching books:", error);
             }
@@ -37,8 +44,6 @@ export const HomePage = () => {
     
         fetchBooks();
     }, []);
-
-    console.log(books)
 
     const [isHovering, setIsHovering] = useState(false);
     
@@ -50,10 +55,15 @@ export const HomePage = () => {
     setIsHovering(false);
         };
     
-    useEffect(() => {
-            const nonFictionBooks = books.filter(book => book.category === 'Non-fiction');
-            setCategoryBooks(nonFictionBooks)
-    }, [books]);
+    const showNextSixBooks = () => {
+        setNumber(number+6)
+        let categoryList = []
+            for (let i=number; i<=number+6; i++) {
+                categoryList.push(books[i])
+            } 
+        setCategoryBooks(categoryList)
+        console.log(categoryList)
+    }
 
 
     return (
@@ -67,8 +77,8 @@ export const HomePage = () => {
                     {categoryBooks.map((categorybook) => (
                         <BookCard key={categorybook._id} book={categorybook} />
                     ))}
+                <p className="show-more-button" onClick={showNextSixBooks}>></p>
                 </div>
-                <button id="show-more-button">Show More</button>
             </div>
             <div className="title">
                 <h1>Shop By Category! </h1>
