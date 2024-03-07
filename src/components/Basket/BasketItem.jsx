@@ -1,16 +1,16 @@
 
 import { useEffect } from "react";
 import { removeFromBasket } from "../../services/basket";
-import './CartItem.css';
+import './BasketItem.css';
 
-const CartItem = ({ user, book, setUpdateBasketItems, onQuantityChange }) => {
+const BasketItem = ({ user, book, setUpdateBasketItems, onQuantityChange }) => {
 
     const removeItem = () => {
         removeFromBasket(user.id, book._id);
         setUpdateBasketItems(prev => !prev); // Trigger update for re-fetching items
     };
 
-    console.log("book:", book)
+    // console.log("book:", book)
 
     const handleQuantityChange = (event) => {
         const newQuantity = event.target.value;
@@ -45,4 +45,4 @@ const CartItem = ({ user, book, setUpdateBasketItems, onQuantityChange }) => {
     );
 };
 
-export default CartItem;
+export default BasketItem;

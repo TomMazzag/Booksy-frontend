@@ -2,9 +2,9 @@
 
 import React, { useEffect, useState } from 'react';
 import { useUser } from '@clerk/clerk-react';
-import Navbar from "../../components/Home/NavBar.jsx";
+import Navbar from "../../components/Structure/NavBar.jsx";
 import BookCard from "../../components/Home/BookCard.jsx";
-import Footer from "../../components/Home/Footer.jsx";
+import Footer from "../../components/Structure/Footer.jsx";
 import "../Home/HomePage.css";
 import { getAllBooks } from "../../services/books.jsx";
 import { getUserById } from '../../services/users.jsx';

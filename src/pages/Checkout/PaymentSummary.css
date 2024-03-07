@@ -1,18 +1,5 @@
-    /* General Reset */
-    * {
-        /* box-sizing: border-box; */
-        margin: 0;
-        padding: 0;
-    }
-    
-    body {
-        font-family: Arial, sans-serif;
-    }
-    
-
-
-        /* Payment Summary */
-    .payment-summary {
+      /* Payment Summary */
+      .payment-summary {
         width: 25%;
         padding: 1rem;
         background-color: #fffdfd;
@@ -33,7 +20,7 @@
     
     .payment-summary input[type="radio"] + img {
         height: 40px; /* Set the height for all payment logos */
-        margin-right: 10px; /* Add some space between the radio button and the logo */
+        margin-right: 0px; /* Add some space between the radio button and the logo */
     }
     
     .payment-summary p {
@@ -97,3 +84,4 @@
         font-size: small; /* Reduce button font size */
     }
 }
+

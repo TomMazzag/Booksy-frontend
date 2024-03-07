@@ -1,15 +1,15 @@
-    //CartPage Component
+    //BasketPage Component
     
     import React, { useState, useEffect } from 'react';
-    import './CartPage.css';
-    import Navbar from '../../components/Home/NavBar';
-    import Footer from '../../components/Home/Footer';
+    import './BasketPage.css';
+    import Navbar from '../../components/Structure/NavBar';
+    import Footer from '../../components/Structure/Footer';
     import { getBasket } from '../../services/basket';
-    import CartItem from './CartItem';
-    import PaymentSummary from './PaymentSummary';
+    import BasketItem from '../../components/Basket/BasketItem';
+    import PaymentSummary from '../Checkout/PaymentSummary';
     import { useUser } from '@clerk/clerk-react';
 
-    export const CartPage = () => {
+    export const BasketPage = () => {
         const [basketItems, setBasketItems] = useState([]);
         const [totalPrice, setTotalPrice] = useState(0);
         const { user } = useUser();
@@ -24,7 +24,7 @@
                             ...item,
                             quantity: 1 // Initialize quantity if not present
                         }));
-                        console.log("123:", basketData.basket.items)
+                        // console.log("123:", basketData.basket.items)
                         setBasketItems(basketData.basket.items);
                         calculateTotal(itemsWithQuantity);
                     } catch (error) {
@@ -37,7 +37,7 @@
         const handleQuantityChange = (bookId, newQuantity) => {
             const parsedQuantity = parseInt(newQuantity, 10); // Parse the new quantity as an integer
             setBasketItems(currentItems => {
-                console.log("currentItems:", currentItems)
+                // console.log("currentItems:", currentItems)
                 return currentItems.map(item => {
                     if (item._id === bookId) {
                         return { ...item, quantity: parsedQuantity }; // Update the quantity of the relevant item
@@ -61,7 +61,7 @@
                     <div className="cart-items">
                         {basketItems.length > 0 ? (
                             basketItems.map((item, index) => (
-                                <CartItem 
+                                <BasketItem 
                                     user={user}
                                     key={index} 
                                     book={item} 
@@ -73,11 +73,11 @@
                             <div className="empty-basket-message">Your Basket is Empty, Fill it please!</div>
                         )}
                     </div>
-                    <PaymentSummary totalPrice={totalPrice} />
+                    <PaymentSummary totalPrice={totalPrice} cartItems={basketItems}/>
                 </main>
                 <Footer />
             </>
         );
     };
     
-    export default CartPage;
+    export default BasketPage;

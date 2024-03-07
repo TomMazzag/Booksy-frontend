@@ -23,7 +23,7 @@ const LikeButton = () => {
         if (user && liked !== undefined) { 
             try {
                 const result = await checkLikedBook(user.id, bookId);
-                // console.log("I am the result:", result)
+                // // console.log("I am the result:", result)
                 setLiked(result);
             } catch (error) {
                 console.error('Error fetching liked status:', error);
@@ -37,14 +37,14 @@ const LikeButton = () => {
 
     const handleLike = async () => {
         setLiked(!liked);
-        console.log(`Like when clicked: ${liked}`);
+        // console.log(`Like when clicked: ${liked}`);
         if (user && liked !== undefined) {
             if (liked) {
                 await updateUserLikedList(user.id, bookId, "unlike");
-                console.log("Sent unlike to DB");
+                // console.log("Sent unlike to DB");
             } else {
                 await updateUserLikedList(user.id, bookId, "like");
-                console.log("Sent like to DB");
+                // console.log("Sent like to DB");
             }
         }
     };

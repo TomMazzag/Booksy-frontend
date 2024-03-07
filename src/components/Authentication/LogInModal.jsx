@@ -7,11 +7,9 @@ function SignInComponent ({text}) {
 
     const [modal, setModal] = useState(false);
     let location = useLocation()
-    console.log(location)
 
     const toggleModal = () => {
         setModal(!modal)
-        console.log(modal)
     }
 
     return (

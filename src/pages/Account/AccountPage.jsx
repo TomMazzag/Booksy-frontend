@@ -2,8 +2,8 @@
 
 import React, { useEffect, useState } from 'react';
 import { useUser } from '@clerk/clerk-react';
-import Navbar from "../../components/Home/NavBar.jsx";
-import Footer from "../../components/Home/Footer.jsx";
+import Navbar from "../../components/Structure/NavBar.jsx";
+import Footer from "../../components/Structure/Footer.jsx";
 import "../Account/AccountPage.css"
 import { updateUserDetails } from '../../services/users.jsx';
 import { getUserById } from '../../services/users.jsx'; 
@@ -44,7 +44,7 @@ export const AccountPage = () => {
             addressObj[formattedKey] = value;
         });
 
-        // console.log("[convertStringToObject] addressObj: ", addressObj)
+        // // console.log("[convertStringToObject] addressObj: ", addressObj)
     
         return addressObj;
     };
@@ -57,9 +57,9 @@ export const AccountPage = () => {
                 setUserData(data);
                 setShowAddressForm(false); // Hide form if address exists
                 if (data.address) {
-                    // console.log("data.address: ", data.address)
+                    // // console.log("data.address: ", data.address)
                     setAddressForm(convertStringToObject(data.address));
-                    // console.log("addressForm: " , addressForm)
+                    // // console.log("addressForm: " , addressForm)
                 }
             } catch (error) {
                 console.error("Error fetching user data:", error);
