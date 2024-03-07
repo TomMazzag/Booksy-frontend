@@ -15,7 +15,6 @@
     cursor: pointer;
     display: inline-block;
     position: relative;
-    z-index: 2;
 }
 
 /* Style for hover and focus states */
