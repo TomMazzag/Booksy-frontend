@@ -10,7 +10,7 @@ const CartItem = ({ user, book, setUpdateBasketItems, onQuantityChange }) => {
         setUpdateBasketItems(prev => !prev); // Trigger update for re-fetching items
     };
 
-    console.log("book:", book)
+    // console.log("book:", book)
 
     const handleQuantityChange = (event) => {
         const newQuantity = event.target.value;

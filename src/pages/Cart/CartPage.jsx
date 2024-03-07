@@ -24,7 +24,7 @@
                             ...item,
                             quantity: 1 // Initialize quantity if not present
                         }));
-                        console.log("123:", basketData.basket.items)
+                        // console.log("123:", basketData.basket.items)
                         setBasketItems(basketData.basket.items);
                         calculateTotal(itemsWithQuantity);
                     } catch (error) {
@@ -37,7 +37,7 @@
         const handleQuantityChange = (bookId, newQuantity) => {
             const parsedQuantity = parseInt(newQuantity, 10); // Parse the new quantity as an integer
             setBasketItems(currentItems => {
-                console.log("currentItems:", currentItems)
+                // console.log("currentItems:", currentItems)
                 return currentItems.map(item => {
                     if (item._id === bookId) {
                         return { ...item, quantity: parsedQuantity }; // Update the quantity of the relevant item

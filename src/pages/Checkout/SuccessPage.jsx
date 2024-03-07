@@ -34,7 +34,7 @@ const OrderSuccessPage = () => {
                 session_id: session_id
             })
             .then((orderResponse) => {
-                console.log(orderResponse.order)
+                // console.log(orderResponse.order)
                 setOrder(orderResponse.order)
             })
         }

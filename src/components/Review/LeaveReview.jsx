@@ -32,7 +32,7 @@ const ReviewBox = ({book_id, setNewReview}) => {
     }, [title, content, rating])
 
     const addReview = () => {
-        console.log(book_id)
+        // console.log(book_id)
         const review = {
             book_id: book_id,
             user_id: user.id,

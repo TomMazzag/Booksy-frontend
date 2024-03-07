@@ -27,7 +27,7 @@ const BookPage = () => {
     const addItemToBasket = async () => {
         await addToBasket(bookId, user.id);
     };
-    }
+    
 
     useEffect(() => {
         const fetchBook = async () => {
@@ -35,7 +35,7 @@ const BookPage = () => {
             try {
                 const fetchedBook = await getBookById(bookId);
                 setBook(fetchedBook.book);
-                // console.log(fetchedBook.book)
+                // // console.log(fetchedBook.book)
                 setError(null); // Reset error state in case of successful fetch
             } catch (err) {
                 setError('Failed to fetch book details.');

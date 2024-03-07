@@ -47,7 +47,7 @@ export const FilterPage = () => {
                     sortAlphabetically(booksData);
                 })
                 .catch(error => {
-                    console.log("Failed to fetch books:", error);
+                    // console.log("Failed to fetch books:", error);
                 });
         }
     }, [checkedCategories, setBooks]);
@@ -59,7 +59,7 @@ export const FilterPage = () => {
                 sortAlphabetically(booksData);
                 })
                 .catch(error => {
-                    console.log("Failed to fetch books:", error);
+                    // console.log("Failed to fetch books:", error);
                 });
         } else {
             setBooks([]);
