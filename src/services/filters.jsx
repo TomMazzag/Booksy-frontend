@@ -9,10 +9,11 @@ export const getAllBooksByCategory = async (categories) => {
     };
 
     let categoriesString = categories.join(",")
+    let encoded_search_query = encodeURIComponent(categoriesString);
     console.log(categoriesString)
 
     const response = await fetch( 
-        `${BACKEND_URL}/books/filter?categories=${categoriesString}`,
+        `${BACKEND_URL}/books/filter?categories=${encoded_search_query}`,
         requestOptions
     );
 

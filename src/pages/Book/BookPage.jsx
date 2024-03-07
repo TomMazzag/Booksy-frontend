@@ -7,7 +7,7 @@ import Footer from "../../components/Home/Footer.jsx";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHeart, faShoppingBasket, faStar } from '@fortawesome/free-solid-svg-icons';
 import './BookPage.css';
-import { getBookById } from '../../services/books'; 
+import { getBookById } from '../../services/books.jsx'; 
 import LikeButton from '../../components/LikeButton/LikeButton.jsx';
 import { addToBasket } from '../../services/basket';
 import ReviewBox from '../../components/Review/LeaveReview.jsx';
@@ -26,6 +26,7 @@ const BookPage = () => {
     
     const addItemToBasket = async () => {
         await addToBasket(bookId, user.id);
+    };
     }
 
     useEffect(() => {

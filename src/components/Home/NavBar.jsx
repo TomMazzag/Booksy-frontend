@@ -36,7 +36,8 @@ const Navbar = () => {
                     </div>
                     <SearchBar />
                     <div className="navbar-actions">
-                        <p>Hello {user.firstName} </p>
+
+                        <Link to="/settings" className="account-link">Hello {user.firstName}</Link>
                         <p className="heart" onClick={() => navigate('/favourites')}>♥</p>
                         <UserButton />
                         <p className="basket" onClick={() => navigate('/basket')}>Basket</p>
@@ -44,9 +45,9 @@ const Navbar = () => {
                     <div className="mobile-menu">
                         <FontAwesomeIcon icon={faBars} onClick={toggleMenu}/>
                         {openMenu ? (<ul className="mobile-menu-options">
-                            <li>Hello {user.firstName}</li>
+                            <li><Link to="/settings" className="account-link">Hello {user.firstName}</Link></li>
                             <li><p className="heart" onClick={() => navigate('/favourites')}>Favourites</p></li>
-                            <li><p className="basket"onClick={() => navigate('/basket')}>Shopping Basket</p></li>
+                            <li><p className="basket" onClick={() => navigate('/basket')}>Basket</p></li>
                         </ul>) : null}
                     </div>
                 </div>
@@ -64,14 +65,14 @@ const Navbar = () => {
                     <div className="navbar-actions">
                         <SignInComponent />
                         <p className="heart" onClick={() => navigate('/favourites')}>♥</p>
-                        <p className="basket"onClick={() => navigate('/basket')}>Basket</p>
+                        <p className="basket" onClick={() => navigate('/basket')}>Basket</p>
                     </div>
                     <div className="mobile-menu">
                         <FontAwesomeIcon icon={faBars} onClick={toggleMenu}/>
                         {openMenu ? (<ul className="mobile-menu-options">
                             <li><SignInComponent /></li>
-                            <li><p className="heart">Favourites</p></li>
-                            <li><p className="basket"onClick={() => navigate('/basket')}>Shopping Basket</p></li>
+                            <li><p className="heart" onClick={() => navigate('/favourites')}>Favourites</p></li>
+                            <li><p className="basket" onClick={() => navigate('/basket')}>Basket</p></li>
                         </ul>) : null}
                     </div>
                 </div>

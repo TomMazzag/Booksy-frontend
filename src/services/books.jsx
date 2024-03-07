@@ -11,7 +11,7 @@ export const getAllBooks = async () => {
             headers: {},
         };
 
-        console.log("Requesting URL:", `${backend_url}/books/all`);
+        // console.log("Requesting URL:", `${backend_url}/books/all`);
         const response = await fetch(`${backend_url}/books/all`, requestOptions);
 
         if (!response.ok) { // This checks for any response status outside the 200-299 range
