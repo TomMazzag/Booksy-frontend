@@ -48,8 +48,8 @@ const BasketItem = ({ user, book, setUpdateBasketItems, onQuantityChange }) => {
 export default BasketItem;
 
 BasketItem.propTypes = {
-    user: PropTypes.string,
-    book: PropTypes.array,
+    user: PropTypes.object,
+    book: PropTypes.object,
     setUpdateBasketItems: PropTypes.func,
     onQuantityChange: PropTypes.func,
 };

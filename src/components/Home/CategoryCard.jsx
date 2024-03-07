@@ -21,6 +21,6 @@ return (
 };
 
 CategoryCard.propTypes = {
-    category: PropTypes.string.isRequired,
+    category: PropTypes.object.isRequired,
 };
 export default CategoryCard;

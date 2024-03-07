@@ -57,7 +57,7 @@ export const SortBy = ({ books, setBooks }) => {
 };
 
 SortBy.propTypes = {
-    setBooks: PropTypes.array,
+    setBooks: PropTypes.func,
     books: PropTypes.array,
 
 };

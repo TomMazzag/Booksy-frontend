@@ -76,6 +76,6 @@ const LikeButton = ({ user, bookId }) => {
 export default LikeButton;
 
 LikeButton.propTypes ={
-    user: PropTypes.string,
-    bookId: PropTypes.string.isRequired,
+    user: PropTypes.object,
+    bookId: PropTypes.string,
 };
