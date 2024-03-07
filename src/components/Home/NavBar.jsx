@@ -32,7 +32,7 @@ const Navbar = () => {
                     <div className="navbar-logo">
                         <p onClick={navigateHomePage}> Booksy </p>
                     </div>
-                    <SearchBar />
+                    <SearchBar placeholder={"Title, author, ISBN..."}/>
                     <div className="navbar-actions">
                         <Link to="/settings" className="account-link">Hello {user.firstName}</Link>
                         <p className="heart" onClick={() => navigate('/favourites')}>♥</p>
@@ -58,7 +58,7 @@ const Navbar = () => {
                         <p onClick={navigateHomePage}> Booksy </p>
 
                     </div>
-                    <SearchBar />
+                    <SearchBar placeholder={"Title, author, ISBN..."}/>
                     <div className="navbar-actions">
                         <div className="dropdown-account">
                             <p>Account</p> 
