@@ -1,9 +1,9 @@
     /* Cart Container */
-    .cart-container {
+.cart-container {
         display: flex;
         justify-content: space-between;
         padding: 2rem;
-    }
+}
     
   /* Cart Items */
 .cart-items {
@@ -20,8 +20,8 @@
 }
 
 .cart-item img {
-    width: 100px; /* Adjust image size */
-    height: 100px; /* Adjust image size */
+    width: 200px; /* Adjust image size */
+    height: 200px; /* Adjust image size */
     margin-right: 1rem;
 }
 
