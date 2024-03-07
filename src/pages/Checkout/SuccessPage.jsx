@@ -52,7 +52,7 @@ const OrderSuccessPage = () => {
                     <p>Your order number is {order._id}</p>
                     <p>Your ordered on the {formatDate(order.createdAt)} {}</p>
                     {order.items.map((book, index) => (
-                        <div className='order-book'>
+                        <div className='order-book' key={index}>
                             <p>{index + 1}</p>
                             <img src={book.product.image_url} alt="Book cover" />
                             <div className='order-book-details'>
