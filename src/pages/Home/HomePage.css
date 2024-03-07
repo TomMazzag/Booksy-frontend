@@ -25,9 +25,17 @@ body {
     overflow: hidden;
 }
 
+.category-books-container {
+    overflow: hidden;
+}
+
 .category-grid-selection {
     display: flex;
     animation: carouselAnimation 12s linear infinite; /* Adjust the duration as needed */
+}
+
+.category-book-selection {
+    display: flex;
 }
 
 .book-list-container.paused .category-grid-selection{

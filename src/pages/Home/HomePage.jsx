@@ -23,6 +23,7 @@ export const HomePage = () => {
     ];
 
     const [books, setBooks] = useState([]);
+    const [categoryBooks, setCategoryBooks] = useState([]);
 
     useEffect(() => {
         const fetchBooks = async () => {
@@ -37,6 +38,8 @@ export const HomePage = () => {
         fetchBooks();
     }, []);
 
+    console.log(books)
+
     const [isHovering, setIsHovering] = useState(false);
     
     const handleMouseEnter = () => {
@@ -47,12 +50,28 @@ export const HomePage = () => {
     setIsHovering(false);
         };
     
+    useEffect(() => {
+            const nonFictionBooks = books.filter(book => book.category === 'Non-fiction');
+            setCategoryBooks(nonFictionBooks)
+    }, [books]);
+
 
     return (
         <>
         <Navbar />
-        <div className="title">
-            <h1>Shop By Category! </h1>
+            <div className="bestsellers-title"> 
+                <h1> Browse our Bestsellers </h1>
+            </div>
+            <div className="category-books-container">
+                <div className="category-book-selection">
+                    {categoryBooks.map((categorybook) => (
+                        <BookCard key={categorybook._id} book={categorybook} />
+                    ))}
+                </div>
+                <button id="show-more-button">Show More</button>
+            </div>
+            <div className="title">
+                <h1>Shop By Category! </h1>
             </div>
             <div className="category-grid-container">
                 <div className="category-grid">
@@ -61,7 +80,6 @@ export const HomePage = () => {
                     ))}
                 </div>
             </div>
-
             <div className="title">
                 <h1>Or see a selection of our favourites </h1>
             </div>
