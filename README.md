@@ -1,7 +1,7 @@
 
 ## Booksy - Online Book Store
 
-Welcome to Booksy, your go-to online bookstore built using the MERN stack (MongoDB, Express.js, React.js, Node.js) with user authentication handled by Clerk and payments processed by Stripe.. Booksy offers a vast collection of books across various genres, providing book lovers with an intuitive platform to explore, select, and purchase their favorite reads with ease. Whether you're into fiction, non-fiction, educational materials, or rare finds, Booksy is designed to cater to your reading preferences.
+Welcome to Booksy, your go-to online bookstore built using the MERN stack  with user authentication handled by Clerk and payments processed by Stripe.. Booksy offers a vast collection of books across various genres, providing book lovers with an intuitive platform to explore, select, and purchase their favorite reads with ease. Whether you're into fiction, non-fiction, educational materials, or rare finds, Booksy is designed to cater to your reading preferences.
 
 ## Features
 
@@ -97,11 +97,10 @@ Start the backend server:
 ## Configuration
 
 Environment Variables
-Set up the required environment variables in .env files within the backend directory:
+Set up the required environment variables in .env files within the backend directory and .env.local in frontend 
 
 MONGO_URI: Connection string for your MongoDB database.
 STRIPE_SECRET_KEY: Secret key for Stripe payment integration.
-JWT_SECRET: Secret key for JSON Web Token authentication.
 Stripe Integration
 Ensure you have set up your Stripe account and obtained the necessary API keys for payment processing.
 
@@ -115,10 +114,10 @@ Contributions are welcome! If you'd like to contribute, please fork the reposito
 
 ## License
 
-Booksy is open-source software licensed under the MIT license.
+Booksy is open-source web application
 
 ## Acknowledgments
 
-Special thanks to Booksy Team mates 
+Special thanks to Booksy and Makers Team 
 
 Happy Reading! 📚
