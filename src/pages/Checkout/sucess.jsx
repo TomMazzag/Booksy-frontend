@@ -35,10 +35,16 @@ const OrderSuccessPage = () => {
                 <h1>Payment Successful!</h1>
                 <p>Your order is being processed.</p>
 
+                {order ?
                 <div className='order-details'>
                     <p>Your order number is {order._id}</p>
                     <p>Your ordered on the {order.createdAt} {}</p>
+                </div> 
+                : 
+                <div className='order-loading'>
+                    <h1>Order is loading ... </h1>
                 </div>
+                }
             </div>
             <Footer />
         </>
