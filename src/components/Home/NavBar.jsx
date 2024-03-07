@@ -46,7 +46,7 @@ const Navbar = () => {
                         {openMenu ? (<ul className="mobile-menu-options">
                             <li>Hello {user.firstName}</li>
                             <li><p className="heart" onClick={() => navigate('/favourites')}>Favourites</p></li>
-                            <li><p className="basket"onClick={() => navigate('/basket')}>Shopping Cart</p></li>
+                            <li><p className="basket"onClick={() => navigate('/basket')}>Shopping Basket</p></li>
                         </ul>) : null}
                     </div>
                 </div>
@@ -64,14 +64,14 @@ const Navbar = () => {
                     <div className="navbar-actions">
                         <SignInComponent />
                         <p className="heart" onClick={() => navigate('/favourites')}>♥</p>
-                        <p className="basket"onClick={() => navigate('/basket')}>Cart</p>
+                        <p className="basket"onClick={() => navigate('/basket')}>Basket</p>
                     </div>
                     <div className="mobile-menu">
                         <FontAwesomeIcon icon={faBars} onClick={toggleMenu}/>
                         {openMenu ? (<ul className="mobile-menu-options">
                             <li><SignInComponent /></li>
                             <li><p className="heart">Favourites</p></li>
-                            <li><p className="basket"onClick={() => navigate('/basket')}>Shopping Cart</p></li>
+                            <li><p className="basket"onClick={() => navigate('/basket')}>Shopping Basket</p></li>
                         </ul>) : null}
                     </div>
                 </div>

@@ -1,4 +1,4 @@
-const backendUrl = "http://127.0.0.1:3000"; // Your backend URL
+const backendUrl = "https://booksy-backend.onrender.com"; // Your backend URL
 
 import {loadStripe} from '@stripe/stripe-js';
 
