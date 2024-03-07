@@ -20,6 +20,7 @@ export const HomePage = () => {
         {name: "Romance", image: "http://books.google.com/books/content?id=oqmBpk1EzvAC&printsec=frontcover&img=1&zoom=1&source=gbs_api"},
         {name: "Thriller", image: "http://books.google.com/books/content?id=XA87EAAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"},
         {name: "Young Adult", image: "http://books.google.com/books/content?id=jaOHDwAAQBAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api"},
+        {name: "Fantasy", image: "http://books.google.com/books/content?id=LmSTEAAAQBAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api"}
     ];
 
     const [books, setBooks] = useState([]);
