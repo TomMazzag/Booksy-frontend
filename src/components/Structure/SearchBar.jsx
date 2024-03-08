@@ -3,7 +3,7 @@ import { getBooksBySearchQueryTitleOrAuthorOrISBN } from '../../services/books';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import { useNavigate } from 'react-router-dom';
-
+import PropTypes from 'prop-types';
 import './SearchBar.css';
 
 export const SearchBar = ({ placeholder }) => {
@@ -94,3 +94,7 @@ export const SearchBar = ({ placeholder }) => {
         </div>
     );
 };
+
+SearchBar.propTypes = { 
+    placeholder: PropTypes.string.isRequired,
+}

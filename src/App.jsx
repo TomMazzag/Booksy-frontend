@@ -7,14 +7,10 @@ import { SignupPage } from "./pages/Home/SignupPage";
 import { FavouritesPage } from './pages/Favourites/FavouritesPage';
 import { AccountPage } from './pages/Account/AccountPage';
 import BookPage from './pages/Book/BookPage';
-
 import { SearchPage } from './pages/Search/SearchPage';
-
 import BasketPage from './pages/Basket/BasketPage';
 import OrderSuccessPage from './pages/Checkout/SuccessPage';
 import OrderCancelPage from './pages/Checkout/CancelPage';
-
-
 
 
 const router = createBrowserRouter([

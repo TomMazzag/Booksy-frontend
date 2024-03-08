@@ -1,4 +1,4 @@
-import { SignIn, useAuth } from "@clerk/clerk-react";
+import { SignIn } from "@clerk/clerk-react";
 import { useState } from 'react'
 import '../Authentication/Modal.css'
 import { useLocation } from "react-router-dom";
@@ -15,7 +15,7 @@ function SignInComponent ({text}) {
     return (
         <div> 
             <div onClick={toggleModal} className="button-modal"> 
-            {text ? text : "Account"}
+            {text ? text : "Log in"}
             </div>
                 {modal && (
                     <div className ="modal">

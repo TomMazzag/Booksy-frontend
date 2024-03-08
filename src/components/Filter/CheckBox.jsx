@@ -1,5 +1,4 @@
-import { useState } from "react";
-
+import PropTypes from 'prop-types';
 
 export const CheckBox = ({ categories, selected, setAddCategory, setRemoveCategory }) => {
 
@@ -22,3 +21,10 @@ export const CheckBox = ({ categories, selected, setAddCategory, setRemoveCatego
     );
 };
 
+CheckBox.propTypes = {
+    selected: PropTypes.boolean,
+    categories: PropTypes.array,
+    setAddCategory: PropTypes.string,
+    setRemoveCategory: PropTypes.string
+
+};

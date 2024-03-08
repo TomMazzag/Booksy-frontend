@@ -2,16 +2,14 @@ import { faHeart} from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import './../Home/BookCard.css';
 import { useEffect, useState} from 'react';
-import { useParams } from 'react-router-dom';
 import Popup from 'reactjs-popup';
 import { useUser } from "@clerk/clerk-react";
 import { updateUserLikedList } from '../../services/users';
 import { checkLikedBook } from '../../services/users';
+import PropTypes from 'prop-types';
 
-const LikeButton = () => {
-
-    const { bookId } = useParams();
-    const { isSignedIn, user } = useUser();
+const LikeButton = ({ user, bookId }) => {
+    const { isSignedIn } = useUser();
     const [liked, setLiked] = useState(false);
     // const [refreshKey, setRefreshKey] = useState(0);
 
@@ -76,3 +74,8 @@ const LikeButton = () => {
     };
 
 export default LikeButton;
+
+LikeButton.propTypes ={
+    user: PropTypes.object,
+    bookId: PropTypes.string,
+};
