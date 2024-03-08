@@ -90,3 +90,28 @@ body {
         transform: translateX(0);
     }
 }
+
+@media (max-width: 760px) {
+    .category-grid-selection {
+        flex-direction: column;
+        animation: none;
+        align-items: center;
+    }
+
+    .category-grid-selection .book-card:nth-child(n + 7) {
+        display: none;
+      }
+
+    .category-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .category-book-selection {
+        flex-direction: column;
+    }
+
+    .bestsellers-title {
+        padding: 40px;
+        padding-bottom: 10px;
+    }
+}
