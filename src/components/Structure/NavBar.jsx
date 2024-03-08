@@ -42,7 +42,7 @@ const Navbar = () => {
                     <div className="mobile-menu">
                         <FontAwesomeIcon icon={faBars} onClick={toggleMenu}/>
                         {openMenu ? (<ul className="mobile-menu-options">
-                            <li><Link to="/settings" className="account-link">Hello {user.firstName}</Link></li>
+                            <li><p className="heart" onClick={() => navigate('/settings')}>Settings</p></li>
                             <li><p className="heart" onClick={() => navigate('/favourites')}>Favourites</p></li>
                             <li><p className="basket" onClick={() => navigate('/basket')}>Basket</p></li>
                         </ul>) : null}

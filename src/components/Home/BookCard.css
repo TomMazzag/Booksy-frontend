@@ -54,7 +54,7 @@
 
 @media (max-width: 760px) {
     .book-card img {
-        height: 100px;
+        height: 300px;
         width: auto;
     }
 
