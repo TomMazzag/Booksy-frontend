@@ -65,6 +65,15 @@ nav p {
     font-size: large;
 }
 
+.account-link {
+    padding: 5px;
+    border-radius: 5px;
+    width: 100%;
+    font-size: larger;
+    color: black;
+    font-weight: 100;
+}
+
 .navbar-actions {
     display: flex;
     align-items: center;

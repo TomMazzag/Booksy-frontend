@@ -71,7 +71,7 @@ export const HomePage = () => {
         <>
         <Navbar />
             <div className="bestsellers-title"> 
-                <h1> Browse our Bestsellers </h1>
+                <h1> Browse Our Bestsellers </h1>
             </div>
             <div className="category-books-container">
                 <div className="category-book-selection">
@@ -92,7 +92,7 @@ export const HomePage = () => {
                 </div>
             </div>
             <div className="title">
-                <h1>Or see a selection of our favourites </h1>
+                <h1>A Selection Of Our Favourites </h1>
             </div>
             <div
                 className={`book-list-container ${isHovering ? 'paused' : ''}`}

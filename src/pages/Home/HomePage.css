@@ -37,16 +37,14 @@ body {
 
 .category-books-container {
     overflow: hidden;
-    /* display: flex;
-    align-items: center;
-    width: 100%; */
+    display: flex;
+    justify-content: center;
+    width: 100%;
 }
 
 .category-book-selection {
     display: flex;
-    margin-left: 200px;
     margin-top: 30px;
-    margin-right: 375px;
 }
 
 .show-more-button {
