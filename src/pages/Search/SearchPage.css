@@ -22,12 +22,12 @@ body {
 
 .search-page-book-cards {
     display: flex;
-    flex-direction: column;
+    flex-direction:row;
     align-items: center;
     text-align: center;
-    padding: 20px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    margin: 5px;
     background-color: #fff;
     border-radius: 8px;
+    justify-content: center;
+    grid-gap: 60px;
 }

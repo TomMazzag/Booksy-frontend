@@ -34,7 +34,7 @@ export const SearchPage = () => {
         <>
             <Navbar />
             <div className="search-page-title">
-                <h1>Search results: Books by { author }</h1>
+                <h1>Books by { author }</h1>
             </div>
             <div className="search-page-results-container">
                 <div className="search-page-results-list">
