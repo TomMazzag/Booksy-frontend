@@ -28,7 +28,7 @@ body {
 
 .category-grid-selection {
     display: flex;
-    animation: carouselAnimation 12s linear infinite; /* Adjust the duration as needed */
+    animation: carouselAnimation 15s linear infinite; /* Adjust the duration as needed */
 }
 
 .book-list-container.paused .category-grid-selection{
@@ -37,11 +37,14 @@ body {
 
 .category-books-container {
     overflow: hidden;
+    /* display: flex;
+    align-items: center;
+    width: 100%; */
 }
 
 .category-book-selection {
     display: flex;
-    margin-left: 400px;
+    margin-left: 200px;
     margin-top: 30px;
     margin-right: 375px;
 }
