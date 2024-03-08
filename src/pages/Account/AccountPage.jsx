@@ -240,7 +240,7 @@ export const AccountPage = () => {
     };
 
     return (
-        <>
+        <div className="page-container">
             <Navbar />
             <div className="account-container">
                 <div className="tabs">
@@ -266,6 +266,6 @@ export const AccountPage = () => {
 
             </div>
             <Footer />
-        </>
+        </div>
     );
 };
