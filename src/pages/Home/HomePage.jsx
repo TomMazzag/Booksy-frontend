@@ -20,15 +20,24 @@ export const HomePage = () => {
         {name: "Romance", image: "http://books.google.com/books/content?id=oqmBpk1EzvAC&printsec=frontcover&img=1&zoom=1&source=gbs_api"},
         {name: "Thriller", image: "http://books.google.com/books/content?id=XA87EAAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"},
         {name: "Young Adult", image: "http://books.google.com/books/content?id=jaOHDwAAQBAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api"},
+        {name: "Fantasy", image: "http://books.google.com/books/content?id=LmSTEAAAQBAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api"}
     ];
 
     const [books, setBooks] = useState([]);
+    const [categoryBooks, setCategoryBooks] = useState([]);
+    const [number, setNumber] = useState(10);
 
     useEffect(() => {
         const fetchBooks = async () => {
             try {
                 const booksData = await getAllBooks();
                 setBooks(booksData);
+                let categoryList = []
+                    for (let i=number; i<=number+6; i++) {
+                        categoryList.push(booksData[i])
+                    } 
+                    setCategoryBooks(categoryList)
+                    console.log(categoryList)
             } catch (error) {
                 console.error("Error fetching books:", error);
             }
@@ -47,12 +56,33 @@ export const HomePage = () => {
     setIsHovering(false);
         };
     
+    const showNextSixBooks = () => {
+        setNumber(number+6)
+        let categoryList = []
+            for (let i=number; i<=number+6; i++) {
+                categoryList.push(books[i])
+            } 
+        setCategoryBooks(categoryList)
+        console.log(categoryList)
+    }
+
 
     return (
         <>
         <Navbar />
-        <div className="title">
-            <h1>Shop By Category! </h1>
+            <div className="bestsellers-title"> 
+                <h1> Browse Our Bestsellers </h1>
+            </div>
+            <div className="category-books-container">
+                <div className="category-book-selection">
+                    {categoryBooks.map((categorybook) => (
+                        <BookCard key={categorybook._id} book={categorybook} />
+                    ))}
+                <p className="show-more-button" onClick={showNextSixBooks}>></p>
+                </div>
+            </div>
+            <div className="title">
+                <h1>Shop By Category! </h1>
             </div>
             <div className="category-grid-container">
                 <div className="category-grid">
@@ -61,9 +91,8 @@ export const HomePage = () => {
                     ))}
                 </div>
             </div>
-
             <div className="title">
-                <h1>Or see a selection of our favourites </h1>
+                <h1>A Selection Of Our Favourites </h1>
             </div>
             <div
                 className={`book-list-container ${isHovering ? 'paused' : ''}`}

@@ -6,9 +6,6 @@ import "./NavBar.css";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars } from '@fortawesome/free-solid-svg-icons'
 import { SearchBar } from "./SearchBar";
-
-
-
 import { useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom'; // Make sure this is imported
 import { useState } from "react";
@@ -34,7 +31,7 @@ const Navbar = () => {
                     <div className="navbar-logo">
                         <p onClick={navigateHomePage}> Booksy </p>
                     </div>
-                    <SearchBar />
+                    <SearchBar placeholder={"Title, Author, ISBN..."}/>
                     <div className="navbar-actions">
 
                         <Link to="/settings" className="account-link">Hello {user.firstName}</Link>
@@ -61,7 +58,7 @@ const Navbar = () => {
                         <p onClick={navigateHomePage}> Booksy </p>
 
                     </div>
-                    <SearchBar />
+                    <SearchBar placeholder={"Title, Author, ISBN..."}/>
                     <div className="navbar-actions">
                         <SignInComponent />
                         <p className="heart" onClick={() => navigate('/favourites')}>♥</p>
