@@ -104,7 +104,7 @@ STRIPE_SECRET_KEY: Secret key for Stripe payment integration.
 Stripe Integration
 Ensure you have set up your Stripe account and obtained the necessary API keys for payment processing.
 
-## mUsage
+## Usage
 
 Explore the bookstore, sign up or log in, add books to your cart, and proceed to checkout. Enjoy a seamless book shopping experience from the comfort of your home.
 
