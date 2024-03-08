@@ -37,7 +37,7 @@ export const HomePage = () => {
                         categoryList.push(booksData[i])
                     } 
                     setCategoryBooks(categoryList)
-                    console.log(categoryList)
+                    // console.log(categoryList)
             } catch (error) {
                 console.error("Error fetching books:", error);
             }
@@ -63,7 +63,7 @@ export const HomePage = () => {
                 categoryList.push(books[i])
             } 
         setCategoryBooks(categoryList)
-        console.log(categoryList)
+        // console.log(categoryList)
     }
 
 
